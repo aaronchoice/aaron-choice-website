@@ -67,7 +67,7 @@ Fixed:
 
 ## Logo, favicon, search & alignment fixes (2026-09-17)
 
-- **Real logo added**: the circular "Community Health & Prevention Care Inc. / Aaron Choice" emblem (from your product labels) now appears next to the wordmark in the nav on every page, and is used as the favicon (`images/favicon.png`) and Apple touch icon (`images/apple-touch-icon.png`). Source: `images/aaron-choice-logo.png` (background removed).
+- **Real logo added**: the circular "Community Health & Prevention Care Inc. / Aaron Choice" emblem now appears next to the wordmark in the nav on every page (`images/aaron-choice-logo.png`, background removed). The favicon and Apple touch icon (`images/favicon.png`, `images/apple-touch-icon.png`) use the simplified two-hands mark on its own — it reads more clearly than the full text badge at browser-tab size.
 - **Shop page card alignment**: quantity stepper and "Add to Cart" button now line up on the same row across all product cards, regardless of how long a product's description or tag list runs (previously Black Turmeric's extra tag caused its row to sit lower than the others).
 - **Homepage search fixed**: typing in the nav search now filters live (as you type) instead of only on Enter, and there's a visible "Clear search" link plus an × button in the search box — previously, clearing the box didn't restore the other products without pressing Enter again, which could leave them stuck dimmed.
 
