@@ -238,6 +238,12 @@ My suggestion: keep the lightbox for now, and revisit dedicated pages once (a) t
   - **If you want a more editorial look later**, the two upgrades that would matter most: (1) a dedicated close-up photo of each raw botanical (turmeric root, ashwagandha root, jackfruit, amla berries, moringa leaves, hummingbird flower) shot against a soft neutral background rather than the product-bottle lifestyle shots — around **1000×1200px** (portrait) each; and (2) a bright, airy hero photo in the same spirit as `ingredients-bg.jpg` but with more open space on the right for the "Nature backed by science" caption — around **1600×1000px** (landscape). Neither is required; the page works fully with what's already in `images/`.
 - Verified at desktop, tablet and mobile widths, tested the pill filter, search, and "View all" expand/collapse interactions, and re-ran the blog regression check — no errors (aside from the sandboxed Google Fonts request, which loads fine once live).
 
+## Blog hero → full-bleed background + thumbnails hidden (2026-09-17)
+
+- **Blog hero rebuilt as a full-bleed background** (matching the homepage/Science/Finder treatment) instead of the two-column layout from the previous round, using the botanical petri-dish/leaf photo you supplied (`images/blog-hero-bg.jpg`, saved at 1536×1024 — the same spec every other full-bleed image on the site uses). A light left-to-right gradient keeps the copy readable over the brighter part of the photo, and the "Nature backed by science." caption now sits bottom-right on desktop and stacks below the copy on mobile/tablet.
+- **Article thumbnails are hidden for now** — the small 66×66px image slot next to each research article is still in the markup (so nothing has to be rebuilt), just switched off with a single CSS rule (`.article-thumb{display:none}` in the `<style>` block). When you're ready to add them, send the images (200–300px square works well) and I'll swap that one line back and drop the images in.
+- Verified at desktop, tablet and mobile — fixed a stacking/positioning issue that appeared while adapting the caption for the mobile layout (it was briefly rendering behind the hero photo, then briefly mis-positioned off-screen) before confirming it displays cleanly at all three widths.
+
 ## Notes / things to swap before going live
 
 - **Checkout**: the "Proceed to Checkout" button still shows an alert. Wire this to a real cart/checkout provider (Shopify, Stripe Checkout, Snipcart, etc.) before launch.
