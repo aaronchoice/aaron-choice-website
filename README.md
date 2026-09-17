@@ -303,6 +303,12 @@ My suggestion: keep the lightbox for now, and revisit dedicated pages once (a) t
 - **Note**: the rest of the page (lead paragraph, Research Philosophy attribution, Featured Research byline, JSON-LD structured data, and the social share card) still refers to him as "Dr. Balasingham Arasabalan," per the original source document. If "(Moses) A. Balasingham" is now the name you want used site-wide, let me know and I'll update all of those to match.
 - Verified at desktop and mobile widths, re-ran the shop.html regression suite — no errors.
 
+## About page: added organization logo + name (2026-09-17)
+
+- Below the new title line, added the Community Health & Preventive Care Inc. mark (`images/chpc-logo.png`) with "Community Health & Preventive Care Inc." next to it, in the About hero.
+- Your supplied logo had a flat white background — removed it programmatically so it sits cleanly on the hero's pale background instead of showing a white box around it (same treatment used for the Aaron Choice logo in the nav).
+- Verified at desktop and mobile widths, re-ran the shop.html regression suite — no errors.
+
 ## Notes / things to swap before going live
 
 - **Checkout**: the "Proceed to Checkout" button still shows an alert. Wire this to a real cart/checkout provider (Shopify, Stripe Checkout, Snipcart, etc.) before launch.
