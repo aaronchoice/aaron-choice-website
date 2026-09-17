@@ -244,6 +244,13 @@ My suggestion: keep the lightbox for now, and revisit dedicated pages once (a) t
 - **Article thumbnails are hidden for now** — the small 66×66px image slot next to each research article is still in the markup (so nothing has to be rebuilt), just switched off with a single CSS rule (`.article-thumb{display:none}` in the `<style>` block). When you're ready to add them, send the images (200–300px square works well) and I'll swap that one line back and drop the images in.
 - Verified at desktop, tablet and mobile — fixed a stacking/positioning issue that appeared while adapting the caption for the mobile layout (it was briefly rendering behind the hero photo, then briefly mis-positioned off-screen) before confirming it displays cleanly at all three widths.
 
+## Dedicated botanical spotlight photography added (2026-09-17)
+
+- Replaced the reused product-lifestyle crops in each "Botanical Spotlight" panel with the 6 dedicated close-up photos you supplied (raw ingredient, soft neutral background, 1000×1200px portrait as requested): `images/black-turmeric-spotlight.jpg`, `images/ashwagandha-spotlight.jpg`, `images/jackfruit-spotlight.jpg`, `images/amla-spotlight.jpg`, `images/moringa-spotlight.jpg`, `images/hummingbird-spotlight.jpg`.
+- Ashwagandha and Amla each now have their own distinct photo instead of sharing one crop of the combined product shot — the whole row now reads as pure, editorial botanical photography rather than product packaging.
+- Article thumbnails are still hidden (unchanged from the last round) since these new images are the larger spotlight-panel size, not the 200–300px square thumbnail size — let me know if/when you'd like square crops made for those too.
+- Verified at desktop and mobile, and re-ran the blog regression check — no errors.
+
 ## Notes / things to swap before going live
 
 - **Checkout**: the "Proceed to Checkout" button still shows an alert. Wire this to a real cart/checkout provider (Shopify, Stripe Checkout, Snipcart, etc.) before launch.
