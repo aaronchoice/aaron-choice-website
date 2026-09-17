@@ -6,7 +6,8 @@
 <meta name="description" content="Shop Aaron Choice — premium plant-based supplements. Browse the full collection, filter by wellness goal, and check out securely.">
 <title>Shop | Aaron Choice</title>
 
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23071D3B'/%3E%3Cpath d='M50 74c14-4 22-16 22-32 0-6-1-11-3-15-9 2-16 6-20 13-3-8-9-14-17-17-3 5-4 11-4 17 0 17 8 30 22 34z' fill='%23B99258'/%3E%3C/svg%3E">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Shop | Aaron Choice">
@@ -34,7 +35,8 @@ button{cursor:pointer}
 .announcement span{color:#93C5FD}
 .nav{height:82px;border-bottom:1px solid rgba(8,29,57,.08);display:flex;align-items:center;position:sticky;top:0;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);z-index:100;box-shadow:0 4px 22px rgba(7,29,59,.035)}
 .nav-inner{width:min(var(--max),calc(100% - 72px));margin:auto;display:flex;align-items:center;justify-content:space-between;gap:30px}
-.logo{font-family:var(--serif);font-weight:600;font-size:25px;color:var(--navy);letter-spacing:-.04em}
+.logo{font-family:var(--serif);font-weight:600;font-size:25px;color:var(--navy);letter-spacing:-.04em;display:flex;align-items:center;gap:11px;white-space:nowrap;flex:none}
+.logo-mark{height:38px;width:auto;display:block;flex:none}
 .navlinks{display:flex;gap:34px;align-items:center;list-style:none}
 .navlinks a{font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:var(--muted);transition:.2s}
 .navlinks a:hover{color:var(--blue)}
@@ -80,7 +82,7 @@ button{cursor:pointer}
 .product-body p{font-size:11.5px;color:var(--muted);line-height:1.7;min-height:38px}
 .product-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
 .product-tag{font-size:9px;text-transform:uppercase;letter-spacing:.06em;color:var(--blue);background:rgba(46,111,209,.08);padding:3px 8px;border-radius:2px}
-.price-row{display:flex;justify-content:space-between;align-items:center;margin-top:16px}
+.price-row{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:16px}
 .price{font:600 21px var(--serif)}
 .cart-row{display:flex;gap:10px;margin-top:16px}
 .qty-select{display:flex;align-items:center;border:1px solid var(--border)}
@@ -134,7 +136,7 @@ footer{background:#030A14;color:#fff;padding:65px 0 25px}
 }
 @media(max-width:620px){
  .container,.nav-inner{width:calc(100% - 30px)}
- .announcement{font-size:9px}.nav{height:64px}.logo{font-size:21px}.cart-btn{padding:10px 13px}
+ .announcement{font-size:9px}.nav{height:64px}.logo{font-size:21px}.logo-mark{height:30px}.cart-btn{padding:10px 13px}
  .toolbar{flex-direction:column;align-items:stretch}
  .toolbar-right{justify-content:space-between}
  .trust-item{padding:5px 15px}.trust-item+.trust-item:before{display:none}
@@ -152,7 +154,7 @@ footer{background:#030A14;color:#fff;padding:65px 0 25px}
     <button class="icon-btn mobile-menu" aria-label="Open menu" onclick="openMenu()">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
-    <a class="logo" href="index.html">Aaron Choice</a>
+    <a class="logo" href="index.html"><img src="images/aaron-choice-logo.png" alt="" class="logo-mark">Aaron Choice</a>
     <ul class="navlinks">
       <li><a href="shop.html" class="active">Shop</a></li><li><a href="index.html#science">Science</a></li>
       <li><a href="index.html#ingredients">Ingredients</a></li><li><a href="index.html#finder">Product Finder</a></li>

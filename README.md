@@ -65,6 +65,12 @@ Fixed:
   - Tested end-to-end (filtering, sorting, quantity stepper, add-to-cart, cart drawer, mobile layout) — all working with no JS errors.
 - **Redesigned "The origin of disease" section** on the homepage: it was too visually heavy as a single large centered image. It's now a compact two-column layout — copy on the left, image on the right — and the image opens in a full-screen lightbox on click for closer viewing. The compliance disclaimer under the image is unchanged.
 
+## Logo, favicon, search & alignment fixes (2026-09-17)
+
+- **Real logo added**: the circular "Community Health & Prevention Care Inc. / Aaron Choice" emblem (from your product labels) now appears next to the wordmark in the nav on every page, and is used as the favicon (`images/favicon.png`) and Apple touch icon (`images/apple-touch-icon.png`). Source: `images/aaron-choice-logo.png` (background removed).
+- **Shop page card alignment**: quantity stepper and "Add to Cart" button now line up on the same row across all product cards, regardless of how long a product's description or tag list runs (previously Black Turmeric's extra tag caused its row to sit lower than the others).
+- **Homepage search fixed**: typing in the nav search now filters live (as you type) instead of only on Enter, and there's a visible "Clear search" link plus an × button in the search box — previously, clearing the box didn't restore the other products without pressing Enter again, which could leave them stuck dimmed.
+
 ## Notes / things to swap before going live
 
 - **Product images**: three of five (Black Turmeric, Cinnamon, Jackfruit) still point to a Wix CDN — hotlinked from someone else's infrastructure and could break or get rate-limited without warning. Moringa and Hummingbird now use your own hosted photos in `images/`. Replace the remaining three with your own product photography the same way.

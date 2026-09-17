@@ -6,7 +6,8 @@
 <meta name="description" content="Aaron Choice — premium botanical supplements rooted in botanical tradition and modern science.">
 <title>Aaron Choice | Premium Botanical Supplements</title>
 
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23071D3B'/%3E%3Cpath d='M50 74c14-4 22-16 22-32 0-6-1-11-3-15-9 2-16 6-20 13-3-8-9-14-17-17-3 5-4 11-4 17 0 17 8 30 22 34z' fill='%23B99258'/%3E%3C/svg%3E">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Aaron Choice | Premium Botanical Supplements">
@@ -36,7 +37,8 @@ button{cursor:pointer}
 .announcement span{color:#93C5FD}
 .nav{height:76px;border-bottom:1px solid var(--border);display:flex;align-items:center;position:sticky;top:0;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);z-index:100}
 .nav-inner{width:min(var(--max),calc(100% - 48px));margin:auto;display:flex;align-items:center;justify-content:space-between;gap:30px}
-.logo{font-family:var(--serif);font-weight:600;font-size:24px;color:var(--navy);letter-spacing:-.02em}
+.logo{font-family:var(--serif);font-weight:600;font-size:24px;color:var(--navy);letter-spacing:-.02em;display:flex;align-items:center;gap:11px;white-space:nowrap;flex:none}
+.logo-mark{height:38px;width:auto;display:block;flex:none}
 .navlinks{display:flex;gap:30px;align-items:center;list-style:none}
 .navlinks a{font-size:12px;text-transform:uppercase;letter-spacing:.11em;color:var(--muted);transition:.2s}
 .navlinks a:hover{color:var(--blue)}
@@ -46,8 +48,15 @@ button{cursor:pointer}
 .cart-btn,.primary{border:0;background:var(--navy);color:#fff;padding:13px 22px;font-size:12px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;transition:.2s}
 .cart-btn:hover,.primary:hover{background:var(--mid);transform:translateY(-1px)}
 .mobile-menu{display:none}
-.search-input{display:none;border:1px solid var(--border);background:#fff;padding:9px 13px;font-size:12px;width:0;opacity:0;transition:.25s}
+.search-wrap{position:relative;display:inline-block}
+.search-input{display:none;border:1px solid var(--border);background:#fff;padding:9px 30px 9px 13px;font-size:12px;width:0;opacity:0;transition:.25s}
 .search-input.open{display:inline-block;width:170px;opacity:1}
+.search-clear{display:none;position:absolute;right:7px;top:50%;transform:translateY(-50%);border:0;background:none;color:var(--muted);padding:2px;width:18px;height:18px}
+.search-clear svg{width:12px;height:12px;display:block}
+.search-clear.show{display:block}
+.search-status{display:none;align-items:center;gap:10px;font-size:12px;color:var(--muted);margin:-6px 0 24px}
+.search-status.show{display:flex}
+.search-status button{border:0;background:none;color:var(--blue);text-decoration:underline;font-size:12px;padding:0}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .trust{background:var(--light);border-bottom:1px solid var(--border)}
 .trust-inner{display:flex;justify-content:center;align-items:center;gap:0;padding:15px 0;flex-wrap:wrap}
@@ -196,7 +205,7 @@ footer{background:var(--dark);color:#fff;padding:65px 0 25px}
 }
 @media(max-width:620px){
  .container,.nav-inner{width:min(100% - 30px,var(--max))}
- .announcement{font-size:9px}.nav{height:64px}.logo{font-size:21px}.cart-btn{padding:10px 13px}
+ .announcement{font-size:9px}.nav{height:64px}.logo{font-size:21px}.logo-mark{height:30px}.cart-btn{padding:10px 13px}
  .hero-grid{padding:48px 0}.hero h1{font-size:48px}.hero-art{min-height:310px}.hero-art img{height:310px}.hero-art:before{width:270px;height:270px}
  .float-card{right:0;bottom:0}.section{padding:62px 0}.section-head{display:block}.section-head h2{margin-bottom:12px}
  .product-grid,.ingredient-grid,.benefit-grid{grid-template-columns:1fr}.product-image{height:330px}
@@ -345,14 +354,19 @@ footer{background:#030A14}
     <button class="icon-btn mobile-menu" aria-label="Open menu" onclick="openMenu()">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
-    <a class="logo" href="#">Aaron Choice</a>
+    <a class="logo" href="#"><img src="images/aaron-choice-logo.png" alt="" class="logo-mark">Aaron Choice</a>
     <ul class="navlinks">
       <li><a href="shop.html">Shop</a></li><li><a href="#science">Science</a></li>
       <li><a href="#ingredients">Ingredients</a></li><li><a href="#finder">Product Finder</a></li>
       <li><a href="#reviews">Reviews</a></li><li><a href="#faq">FAQ</a></li><li><a href="blog.html">Blog</a></li>
     </ul>
     <div class="nav-actions">
-      <input type="text" id="searchInput" class="search-input" placeholder="Search products…" aria-label="Search products" onkeydown="if(event.key==='Enter')doSearch()">
+      <div class="search-wrap">
+        <input type="text" id="searchInput" class="search-input" placeholder="Search products…" aria-label="Search products" oninput="doSearch()" onkeydown="if(event.key==='Enter')doSearch(true); if(event.key==='Escape')toggleSearch(true)">
+        <button type="button" class="search-clear" id="searchClear" aria-label="Clear search" onclick="clearSearch()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
       <button class="icon-btn" aria-label="Search" onclick="toggleSearch()">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       </button>
@@ -435,6 +449,10 @@ footer{background:#030A14}
 <section class="products section" id="shop">
  <div class="container">
   <div class="section-head"><div><div class="eyebrow">The Collection</div><h2>Explore Aaron Choice.</h2></div><p>A focused collection of botanical products designed for everyday wellness routines. <a href="shop.html" style="color:var(--blue);text-decoration:underline">View the full shop →</a></p></div>
+  <div class="search-status" id="searchStatus">
+   <span id="searchStatusText"></span>
+   <button type="button" onclick="clearSearch()">Clear search</button>
+  </div>
   <div class="product-grid">
    <article class="product-card">
     <div class="product-image"><span class="badge">Best Seller</span><img src="https://static.wixstatic.com/media/980903_c5d20335518840478054ba92603fbcf3~mv2.png" alt="Black Turmeric Capsules" loading="lazy"></div>
@@ -603,18 +621,43 @@ function openLightbox(src,alt){
 }
 function closeLightbox(){document.getElementById('lightbox').classList.remove('open')}
 function showToast(t){const x=document.getElementById('toast');x.textContent=t;x.classList.add('show');setTimeout(()=>x.classList.remove('show'),1800)}
-function toggleSearch(){
+function toggleSearch(forceClose){
  const input=document.getElementById('searchInput');
- input.classList.toggle('open');
- if(input.classList.contains('open'))input.focus();
+ const isOpen=input.classList.contains('open');
+ if(forceClose===true||isOpen){
+  input.classList.remove('open');
+  clearSearch();
+ }else{
+  input.classList.add('open');
+  input.focus();
+ }
 }
-function doSearch(){
+function doSearch(scrollTo){
  const q=document.getElementById('searchInput').value.trim().toLowerCase();
+ const status=document.getElementById('searchStatus'), statusText=document.getElementById('searchStatusText');
+ const clearBtn=document.getElementById('searchClear');
+ clearBtn.classList.toggle('show', q.length>0);
+ let matches=0;
  document.querySelectorAll('.product-card').forEach(card=>{
   const name=card.querySelector('h3').textContent.toLowerCase();
-  card.classList.toggle('dimmed', q.length>0 && !name.includes(q));
+  const isMatch=q.length===0||name.includes(q);
+  card.classList.toggle('dimmed', q.length>0 && !isMatch);
+  if(isMatch)matches++;
  });
- document.getElementById('shop').scrollIntoView({behavior:'smooth'});
+ if(q.length>0){
+  status.classList.add('show');
+  statusText.textContent=matches>0?`Showing results for "${document.getElementById('searchInput').value.trim()}"`:`No products match "${document.getElementById('searchInput').value.trim()}"`;
+ }else{
+  status.classList.remove('show');
+ }
+ if(scrollTo)document.getElementById('shop').scrollIntoView({behavior:'smooth'});
+}
+function clearSearch(){
+ const input=document.getElementById('searchInput');
+ input.value='';
+ document.getElementById('searchClear').classList.remove('show');
+ document.getElementById('searchStatus').classList.remove('show');
+ document.querySelectorAll('.product-card').forEach(card=>card.classList.remove('dimmed'));
 }
 function findProduct(){
  const v=document.getElementById('goal').value, r=document.getElementById('finderResult');
