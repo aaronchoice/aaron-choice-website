@@ -68,29 +68,29 @@ button{cursor:pointer}
 .trust-icon svg{width:14px;height:14px}
 @media(max-width:1000px){.trust-item{padding:5px 15px}.trust-item+.trust-item:before{display:none}}
 
-.hero{background:linear-gradient(105deg,#f4f7fd 0%,#fff 54%,#e8f0fb 100%);position:relative;overflow:hidden}
-.hero-flex{display:flex;align-items:stretch;min-height:650px}
-.hero-copy-col{flex:0 0 clamp(420px,44%,600px);box-sizing:border-box;padding:75px 40px 75px max(24px,calc((100vw - 1400px)/2 + 24px));display:flex;flex-direction:column;justify-content:center}
-.eyebrow{font-size:11px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;color:var(--blue);margin-bottom:18px}
-.hero h1{font:500 clamp(48px,6vw,82px)/1.02 var(--serif);letter-spacing:-.045em;max-width:700px}
-.hero h1 em{color:var(--blue);font-style:italic}
-.hero-copy{font-size:16px;color:var(--muted);max-width:560px;margin:24px 0 32px;line-height:1.8}
+.hero{position:relative;overflow:hidden;min-height:650px}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.hero-bg:after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(4,12,26,.86) 0%,rgba(4,12,26,.66) 32%,rgba(4,12,26,.26) 58%,rgba(4,12,26,0) 80%);pointer-events:none}
+.hero-flex{position:relative;z-index:1;display:flex;align-items:stretch;min-height:650px}
+.hero-copy-col{flex:0 0 clamp(420px,44%,600px);box-sizing:border-box;padding:75px 40px 75px max(24px,calc((100vw - 1400px)/2 + 24px));display:flex;flex-direction:column;justify-content:center;color:#fff}
+.eyebrow{font-size:11px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;color:#9DC2F7;margin-bottom:18px}
+.hero h1{font:500 clamp(48px,6vw,82px)/1.02 var(--serif);letter-spacing:-.045em;max-width:700px;color:#fff}
+.hero h1 em{color:#9DC2F7;font-style:italic}
+.hero-copy{font-size:16px;color:rgba(255,255,255,.82);max-width:560px;margin:24px 0 32px;line-height:1.8}
 .actions{display:flex;gap:12px;flex-wrap:wrap}
-.secondary{background:#fff;border:1px solid var(--navy);color:var(--navy);padding:12px 21px;font-size:12px;font-weight:600;letter-spacing:.11em;text-transform:uppercase}
+.secondary{background:transparent;border:1px solid rgba(255,255,255,.55);color:#fff;padding:12px 21px;font-size:12px;font-weight:600;letter-spacing:.11em;text-transform:uppercase}
 .hero-badges{display:flex;gap:28px;margin-top:36px;flex-wrap:wrap}
-.hero-badge{display:flex;align-items:center;gap:9px;font-size:11px;font-weight:600;color:var(--navy);text-transform:uppercase;letter-spacing:.06em}
-.hero-badge svg{width:19px;height:19px;color:var(--blue);flex:none}
+.hero-badge{display:flex;align-items:center;gap:9px;font-size:11px;font-weight:600;color:#fff;text-transform:uppercase;letter-spacing:.06em}
+.hero-badge svg{width:19px;height:19px;color:#9DC2F7;flex:none}
 
-.hero-art{flex:1 1 auto;position:relative;overflow:hidden;min-height:490px}
-.hero-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
-.hero-art:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(4,12,26,.6) 0%,rgba(4,12,26,0) 38%);pointer-events:none}
 .hero-watermark{position:absolute;top:24px;right:28px;text-align:right;color:rgba(255,255,255,.92);font-family:var(--serif);font-style:italic;z-index:2;line-height:1.15}
 .hero-watermark small{display:block;font-style:normal;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:2px}
 .hero-watermark em{font-size:28px}
 .hero-icons{position:absolute;top:130px;right:26px;display:flex;flex-direction:column;gap:15px;z-index:2}
 .hero-icons span{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;width:60px;height:60px;border-radius:50%;background:rgba(7,29,59,.48);backdrop-filter:blur(3px);color:#fff;font-size:6.5px;font-weight:700;letter-spacing:.02em;text-transform:uppercase;text-align:center;line-height:1.1;overflow:hidden;padding:4px;box-sizing:border-box;flex:none}
 .hero-icons svg{width:14px;height:14px;flex:none}
-.hero-caption{position:absolute;left:26px;bottom:24px;color:#fff;z-index:2}
+.hero-caption{position:absolute;right:28px;bottom:24px;text-align:right;color:#fff;z-index:2}
 .hero-caption b{display:block;font-family:var(--serif);font-size:19px;font-weight:500}
 .hero-caption span{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.72)}
 
@@ -230,14 +230,14 @@ footer{background:var(--dark);color:#fff;padding:65px 0 25px}
 @media(max-width:1000px){
  .navlinks{display:none}.mobile-menu{display:block}.product-grid{grid-template-columns:repeat(2,1fr)}
  .benefit-grid{grid-template-columns:repeat(2,1fr)}.science-grid,.finder-box{grid-template-columns:1fr}
- .hero-flex{flex-direction:column}.hero-copy-col{flex-basis:auto;width:100%;padding:48px 24px}.hero-art{order:-1;min-height:390px}.ingredient-grid{grid-template-columns:1fr 1fr}
+ .hero{min-height:600px}.hero-copy-col{flex-basis:auto;width:100%;padding:48px 24px}.hero-bg:after{background:linear-gradient(180deg,rgba(4,12,26,.5) 0%,rgba(4,12,26,.75) 100%)}.ingredient-grid{grid-template-columns:1fr 1fr}
  .footer-grid{grid-template-columns:2fr 1fr 1fr}.review-grid{grid-template-columns:1fr}
 }
 @media(max-width:620px){
  .container,.nav-inner{width:min(100% - 30px,var(--max))}
  .announcement{font-size:9px}.nav{height:64px}.logo{font-size:21px}.cart-btn{padding:10px 13px}.brand{padding-left:68px}.brand-mark{height:64px;top:-20px}.brand-text{font-size:21px}
- .hero-copy-col{padding:40px 18px}.hero h1{font-size:38px}.hero-art{min-height:300px}
- .hero-watermark{top:16px;right:18px}.hero-watermark em{font-size:20px}.hero-caption{left:18px;bottom:16px}.hero-caption b{font-size:16px}
+ .hero{min-height:520px}.hero-copy-col{padding:40px 18px}.hero h1{font-size:38px}
+ .hero-watermark{top:16px;right:18px}.hero-watermark em{font-size:20px}.hero-caption{right:18px;bottom:16px}.hero-caption b{font-size:16px}
  .section{padding:62px 0}.section-head{display:block}.section-head h2{margin-bottom:12px}
  .product-grid,.ingredient-grid,.benefit-grid{grid-template-columns:1fr}.product-image{height:330px}
  .science-copy h2,.finder h2,.cta h2{font-size:40px}.evidence{grid-template-columns:1fr}
@@ -266,24 +266,16 @@ body{background:#fff;color:var(--ink);letter-spacing:-.01em}
 .trust-inner{width:min(1400px,calc(100% - 72px))}
 .trust-item{font-size:10px;letter-spacing:.08em}
 
-.hero{
- min-height:730px;
- background:
- radial-gradient(circle at 78% 35%,rgba(46,111,209,.11),transparent 29%),
- linear-gradient(120deg,#f3f6fb 0%,#fff 53%,#eef4fb 100%);
- position:relative;overflow:hidden
-}
-.hero:after{content:"";position:absolute;inset:auto -10% -35% auto;width:55vw;height:55vw;border:1px solid rgba(46,111,209,.10);border-radius:50%}
+.hero{min-height:730px;position:relative;overflow:hidden}
 .hero-copy-col{padding:105px 40px 105px max(36px,calc((100vw - 1400px)/2 + 36px))}
 .hero h1{font-size:clamp(48px,4.6vw,68px);max-width:600px;line-height:1.02}
-.hero h1 em{color:var(--blue)}
+.hero h1 em{color:#9DC2F7}
 .hero-copy{font-size:15px;max-width:480px;line-height:1.9}
 .eyebrow{font-size:9px;letter-spacing:.28em}
 .primary,.secondary{padding:15px 25px;font-size:10px;letter-spacing:.16em}
-.secondary{border-color:rgba(7,29,59,.28)}
+.secondary{border-color:rgba(255,255,255,.5)}
 .hero-badges{margin-top:40px;gap:24px;flex-wrap:wrap}
 .hero-badge{font-size:10px;letter-spacing:.08em}
-.hero-art{min-height:560px}
 .hero-caption b{font-size:21px}
 
 .section{padding:108px 0}
@@ -364,12 +356,11 @@ footer{background:#030A14}
 
 @media(max-width:1000px){
  .nav-inner,.trust-inner,.container{width:min(100% - 42px,1400px)}
- .hero-copy-col{padding:75px 24px}.hero-art{order:-1}
+ .hero-copy-col{padding:75px 24px}
 }
 @media(max-width:620px){
  .nav-inner,.trust-inner,.container{width:calc(100% - 30px)}
- .hero{min-height:auto}.hero-copy-col{padding:55px 20px 70px}.hero h1{font-size:40px}
- .hero-art{min-height:320px}
+ .hero{min-height:560px}.hero-copy-col{padding:55px 20px 70px}.hero h1{font-size:40px}
  .section{padding:72px 0}.product-image{height:350px}
 }
 </style>
@@ -426,6 +417,9 @@ footer{background:#030A14}
 
 <main>
 <section class="hero">
+  <div class="hero-bg">
+    <img src="images/hero-black-turmeric.jpg" alt="Aaron Choice Black Turmeric Capsules with fresh turmeric root">
+  </div>
   <div class="hero-flex">
     <div class="hero-copy-col">
       <div class="eyebrow">Botanicals · Science · Transparency</div>
@@ -438,12 +432,9 @@ footer{background:#030A14}
         <div class="hero-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-4.5-3-8-6.5-8-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 4.5-3.5 8-8 11z"/></svg>A Brighter Tomorrow</div>
       </div>
     </div>
-    <div class="hero-art">
-      <img src="images/hero-black-turmeric.jpg" alt="Aaron Choice Black Turmeric Capsules with fresh turmeric root">
-      <div class="hero-watermark"><small>Wellness Inspired By</small><em>Nature</em></div>
-      <div class="hero-caption"><b>Black Turmeric</b><span>Flagship Botanical</span></div>
-    </div>
   </div>
+  <div class="hero-watermark"><small>Wellness Inspired By</small><em>Nature</em></div>
+  <div class="hero-caption"><b>Black Turmeric</b><span>Flagship Botanical</span></div>
 </section>
 
 <section class="origin section" id="origin">
