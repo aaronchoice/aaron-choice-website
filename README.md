@@ -149,6 +149,12 @@ My suggestion: keep the lightbox for now, and revisit dedicated pages once (a) t
   - On tablet/mobile, cards stack to a single column and the ingredient photos shrink so nothing overlaps the copy.
 - Verified at desktop, tablet, and mobile widths, and re-ran the full regression suite on shop.html and blog.html — no errors.
 
+## Ingredient intelligence section polish (2026-09-17)
+
+- Removed the "Real Ingredients · Real Evidence · Real Impact" line from the bottom of the section per your feedback.
+- Gave the 3 ingredient cards a frosted/translucent glass look (semi-transparent white background with a backdrop blur, softened border and shadow) so the leaf background shows through them, with a slightly stronger glass effect on hover.
+- Re-ran the full regression suite on shop.html and blog.html — no errors.
+
 ## Notes / things to swap before going live
 
 - **Checkout**: the "Proceed to Checkout" button still shows an alert. Wire this to a real cart/checkout provider (Shopify, Stripe Checkout, Snipcart, etc.) before launch.
