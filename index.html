@@ -123,17 +123,17 @@ button{cursor:pointer}
 
 .products{background:#fff}
 .product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(225px,1fr));gap:18px}
-.product-card{border:1px solid var(--border);background:#fff;transition:.25s;position:relative}
+.product-card{border:1px solid var(--border);background:#fff;transition:.25s;position:relative;display:flex;flex-direction:column}
 .product-card:hover{transform:translateY(-5px);box-shadow:0 18px 45px rgba(11,45,94,.1)}
 .product-card.dimmed{opacity:.3;filter:grayscale(.4)}
 .product-image{background:var(--pale);height:290px;display:grid;place-items:center;overflow:hidden;position:relative}
-.product-image img{width:88%;height:88%;object-fit:contain}
+.product-image img{width:100%;height:100%;object-fit:cover}
 .badge{position:absolute;left:14px;top:14px;background:var(--navy);color:#93C5FD;font-size:9px;letter-spacing:.13em;text-transform:uppercase;padding:5px 9px}
-.product-body{padding:21px}
+.product-body{padding:21px;display:flex;flex-direction:column;flex:1}
 .stars{color:#D79A22;font-size:12px;letter-spacing:2px}
 .product-body h3{font:500 22px var(--serif);margin:9px 0 5px}
 .product-body p{font-size:12px;color:var(--muted);min-height:40px}
-.price-row{display:flex;justify-content:space-between;align-items:center;margin-top:18px}
+.price-row{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:18px}
 .price{font:600 21px var(--serif)}
 .quick{border:1px solid var(--navy);background:#fff;color:var(--navy);padding:9px 11px;font-size:10px;text-transform:uppercase;letter-spacing:.1em;font-weight:600}
 
@@ -473,31 +473,31 @@ footer{background:#030A14}
   </div>
   <div class="product-grid">
    <article class="product-card">
-    <div class="product-image"><span class="badge">Best Seller</span><img src="images/black-turmeric-studio.webp" alt="Black Turmeric Capsules" loading="lazy"></div>
+    <div class="product-image"><span class="badge">Best Seller</span><img src="images/black-turmeric-lifestyle.jpg" alt="Black Turmeric Capsules" loading="lazy"></div>
     <div class="product-body"><div class="stars" aria-hidden="true">★★★★★</div><span class="sr-only">Rated 5 out of 5 stars</span><h3>Black Turmeric Capsules</h3><p>Botanical support for anti-inflammatory, antioxidant, joint and digestive wellness.</p><div class="price-row"><span class="price">$27</span><button class="quick" onclick="addCart('Black Turmeric Capsules',27)">Quick Add</button></div></div>
    </article>
    <article class="product-card">
-    <div class="product-image"><img src="images/cinnamon-studio.webp" alt="Cinnamon Extract" loading="lazy"></div>
+    <div class="product-image"><img src="images/cinnamon-lifestyle.jpg" alt="Cinnamon Extract" loading="lazy"></div>
     <div class="product-body"><div class="stars" aria-hidden="true">★★★★★</div><span class="sr-only">Rated 5 out of 5 stars</span><h3>Cinnamon Extract</h3><p>Plant-based botanical extract for a considered daily wellness routine.</p><div class="price-row"><span class="price">$27</span><button class="quick" onclick="addCart('Cinnamon Extract',27)">Quick Add</button></div></div>
    </article>
    <article class="product-card">
-    <div class="product-image"><img src="images/jackfruit-studio.webp" alt="Jackfruit Extract" loading="lazy"></div>
+    <div class="product-image"><img src="images/jackfruit-lifestyle.jpg" alt="Jackfruit Extract" loading="lazy"></div>
     <div class="product-body"><div class="stars" aria-hidden="true">★★★★★</div><span class="sr-only">Rated 5 out of 5 stars</span><h3>Jackfruit Extract</h3><p>A transparent botanical formulation for a consistent wellness regimen.</p><div class="price-row"><span class="price">$27</span><button class="quick" onclick="addCart('Jackfruit Extract',27)">Quick Add</button></div></div>
    </article>
    <article class="product-card">
-    <div class="product-image"><img src="images/moringa-studio.webp" alt="Moringa Superfood Capsules" loading="lazy"></div>
+    <div class="product-image"><img src="images/moringa-lifestyle.jpg" alt="Moringa Superfood Capsules" loading="lazy"></div>
     <div class="product-body"><div class="stars" aria-hidden="true">★★★★★</div><span class="sr-only">Rated 5 out of 5 stars</span><h3>Moringa Superfood Capsules</h3><p>Plant-based botanical support designed to fit naturally into daily routines.</p><div class="price-row"><span class="price">$27</span><button class="quick" onclick="addCart('Moringa Superfood Capsules',27)">Quick Add</button></div></div>
    </article>
    <article class="product-card">
-    <div class="product-image"><img src="images/hummingbird-studio.webp" alt="Hummingbird Flower Powder Capsules" loading="lazy"></div>
+    <div class="product-image"><img src="images/hummingbird-lifestyle.jpg" alt="Hummingbird Flower Powder Capsules" loading="lazy"></div>
     <div class="product-body"><div class="stars" aria-hidden="true">★★★★★</div><span class="sr-only">Rated 5 out of 5 stars</span><h3>Hummingbird Flower Powder Capsules</h3><p>Nature's sweet floral essence — a delicate botanical powder blend for everyday vitality.</p><div class="price-row"><span class="price">$35</span><button class="quick" onclick="addCart('Hummingbird Flower Powder Capsules',35)">Quick Add</button></div></div>
    </article>
    <article class="product-card">
-    <div class="product-image"><span class="badge">New</span><img src="images/ashwagandha-amla-studio.webp" alt="Ashwagandha & Amla Extract Capsules" loading="lazy"></div>
+    <div class="product-image"><span class="badge">New</span><img src="images/ashwagandha-amla-lifestyle.jpg" alt="Ashwagandha & Amla Extract Capsules" loading="lazy"></div>
     <div class="product-body"><div class="stars" aria-hidden="true">★★★★★</div><span class="sr-only">Rated 5 out of 5 stars</span><h3>Ashwagandha & Amla Extract Capsules</h3><p>Adaptogenic botanical blend formulated to support the body's resilience and everyday antioxidant needs.</p><div class="price-row"><span class="price">$29</span><button class="quick" onclick="addCart('Ashwagandha &amp; Amla Extract Capsules',29)">Quick Add</button></div></div>
    </article>
    <article class="product-card">
-    <div class="product-image"><span class="badge">New</span><img src="images/cinnamon-oil-studio.webp" alt="Cinnamon Oil" loading="lazy"></div>
+    <div class="product-image"><span class="badge">New</span><img src="images/cinnamon-oil-lifestyle.jpg" alt="Cinnamon Oil" loading="lazy"></div>
     <div class="product-body"><div class="stars" aria-hidden="true">★★★★★</div><span class="sr-only">Rated 5 out of 5 stars</span><h3>Cinnamon Oil</h3><p>A pure, warming essential oil pressed to bring a grounding botanical note to your daily ritual.</p><div class="price-row"><span class="price">$19</span><button class="quick" onclick="addCart('Cinnamon Oil',19)">Quick Add</button></div></div>
    </article>
   </div>

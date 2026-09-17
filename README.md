@@ -72,6 +72,12 @@ Fixed:
 - **Shop page card alignment**: quantity stepper and "Add to Cart" button now line up on the same row across all product cards, regardless of how long a product's description or tag list runs (previously Black Turmeric's extra tag caused its row to sit lower than the others).
 - **Homepage search fixed**: typing in the nav search now filters live (as you type) instead of only on Enter, and there's a visible "Clear search" link plus an × button in the search box — previously, clearing the box didn't restore the other products without pressing Enter again, which could leave them stuck dimmed.
 
+## Lifestyle images as primary photos & card alignment (2026-09-17)
+
+- **Lifestyle images now lead everywhere**: the homepage teaser grid and the Shop page catalogue both show each product's Lifestyle (in-context) photo as the main card image instead of the Studio cutout. The Shop page's lightbox carousel still includes both — it now opens on the Lifestyle image first, with the Studio cutout as the second slide, matching what's shown on the card.
+- **Homepage price/Quick Add row alignment fixed**: product cards are now equal-height flex columns, so the price and "Quick Add" button always sit on the same row across all cards regardless of how long a description runs (the Shop page already had this fix from an earlier round).
+- Card images switched from `object-fit:contain` (sized for isolated cutouts) to `object-fit:cover` (full-bleed) on the homepage, since Lifestyle photos are in-context shots rather than transparent cutouts.
+
 ## Hero redesign & two new products (2026-09-17)
 
 - **Homepage hero redesigned**: replaced the simple centered-icon hero with a full-bleed lifestyle photo (Black Turmeric bottle among fresh turmeric root and leaves), a soft bottom gradient for text legibility, an italic serif "Wellness Inspired By Nature" watermark, and a caption naming the flagship botanical. The copy side now includes three badge callouts (Pure Ingredients, Real Wellness, A Brighter Tomorrow) beneath the CTA buttons, matching the richer reference layout you shared.
