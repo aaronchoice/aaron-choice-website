@@ -155,6 +155,12 @@ My suggestion: keep the lightbox for now, and revisit dedicated pages once (a) t
 - Gave the 3 ingredient cards a frosted/translucent glass look (semi-transparent white background with a backdrop blur, softened border and shadow) so the leaf background shows through them, with a slightly stronger glass effect on hover.
 - Re-ran the full regression suite on shop.html and blog.html — no errors.
 
+## Personalised Discovery (product finder) background (2026-09-17)
+
+- Added a full-bleed background photo (`images/finder-bg.jpg` — a mortar and pestle with basil leaves on a dark navy backdrop, with the same thin arc-line accents as the ingredients background) to the "Personalised discovery" / "Find your Aaron Choice" section, replacing the flat navy gradient.
+- Kept a dark gradient tint over the photo so the white heading/body text and the white finder card stay fully readable, matching the full-bleed treatment used on the hero, benefits and science sections.
+- Verified at desktop and mobile widths, and re-ran the full regression suite on shop.html and blog.html — no errors.
+
 ## Notes / things to swap before going live
 
 - **Checkout**: the "Proceed to Checkout" button still shows an alert. Wire this to a real cart/checkout provider (Shopify, Stripe Checkout, Snipcart, etc.) before launch.
