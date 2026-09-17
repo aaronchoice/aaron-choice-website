@@ -128,9 +128,19 @@ button{cursor:pointer}
 .lightbox-close{position:fixed;top:24px;right:24px;background:rgba(255,255,255,.12);border:0;color:#fff;width:44px;height:44px;border-radius:50%;display:grid;place-items:center}
 .lightbox-close svg{width:18px;height:18px}
 @media(max-width:1000px){.origin-grid{grid-template-columns:1fr;gap:36px}.origin-circle{width:min(380px,90%)}}
-.benefits{background:var(--navy);color:#fff}
-.benefit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:45px}
-.benefit{padding:35px 28px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);min-height:210px}
+.benefits{position:relative;overflow:hidden;color:#fff}
+.benefits-bg{position:absolute;inset:0;z-index:0}
+.benefits-bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.benefits-bg:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 90% 6%,rgba(5,15,31,.32) 0%,rgba(5,15,31,.86) 32%,rgba(5,15,31,.94) 62%,rgba(5,15,31,.96) 100%)}
+.benefits .container{position:relative;z-index:1}
+.benefits .eyebrow{color:#9DC2F7;display:flex;align-items:center;gap:14px}
+.benefits .eyebrow:after{content:"";flex:0 0 40px;height:1px;background:rgba(255,255,255,.35)}
+.benefits h2 .dot{color:#6FA3EE}
+.benefits-sub{color:rgba(255,255,255,.72);font-size:15px;line-height:1.8;max-width:640px;margin-top:16px}
+.benefit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:45px}
+.benefit{padding:35px 28px 30px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.05);border-radius:14px;min-height:210px;text-align:left}
+.benefit-icon{width:110px;height:110px;margin:0 auto 18px;display:block}
+.benefit-icon img{width:100%;height:100%;object-fit:contain;display:block}
 .benefit-num{font:400 40px var(--serif);color:#93C5FD}
 .benefit h3{font-size:16px;margin:15px 0 9px}
 .benefit p{font-size:12px;color:rgba(255,255,255,.58);line-height:1.75}
@@ -280,10 +290,9 @@ body{background:#fff;color:var(--ink);letter-spacing:-.01em}
 .section-head h2{font-size:clamp(39px,4.3vw,61px)}
 .section-head p{font-size:13px;line-height:1.9}
 
-.benefits{background:linear-gradient(135deg,#071D3B,#0E315D)}
-.benefit-grid{gap:0;margin-top:55px}
-.benefit{padding:42px 34px;min-height:240px;border-color:rgba(255,255,255,.08);background:rgba(255,255,255,.025);transition:.3s}
-.benefit:hover{background:rgba(255,255,255,.07);transform:translateY(-4px)}
+.benefit-grid{gap:22px;margin-top:55px}
+.benefit{padding:38px 30px 32px;min-height:240px;border-color:rgba(255,255,255,.14);background:rgba(255,255,255,.05);border-radius:16px;transition:.3s}
+.benefit:hover{background:rgba(255,255,255,.09);transform:translateY(-4px)}
 .benefit-num{font-size:45px;color:#A8C9F5}.benefit h3{font-size:15px;letter-spacing:.01em}.benefit p{font-size:11px}
 
 .products{background:#fff}
@@ -465,14 +474,18 @@ footer{background:#030A14}
 </div>
 
 <section class="benefits section">
+  <div class="benefits-bg">
+    <img src="images/benefits-bg.jpg" alt="" loading="lazy">
+  </div>
   <div class="container">
     <div class="eyebrow">Why Aaron Choice</div>
-    <h2 style="font:500 clamp(35px,4vw,54px)/1.08 var(--serif)">The standard we hold<br>ourselves to.</h2>
+    <h2 style="font:500 clamp(35px,4vw,54px)/1.08 var(--serif)">The standard we hold<br>ourselves to<span class="dot">.</span></h2>
+    <p class="benefits-sub">From nature to your wellbeing — every product is thoughtfully developed, transparently made, and uncompromisingly pure.</p>
     <div class="benefit-grid">
-      <article class="benefit"><div class="benefit-num">01</div><h3>Botanically Pure</h3><p>Whole-plant extracts and focused formulations, with transparency at the centre of the product experience.</p></article>
-      <article class="benefit"><div class="benefit-num">02</div><h3>Science Backed</h3><p>Scientific information is presented clearly, with room for evidence, references and formulation details to grow with the brand.</p></article>
-      <article class="benefit"><div class="benefit-num">03</div><h3>Transparently Made</h3><p>Make ingredients, doses, sourcing and quality information easy for customers to understand.</p></article>
-      <article class="benefit"><div class="benefit-num">04</div><h3>Quality Focused</h3><p>Build confidence through appropriate manufacturing, testing and batch-level transparency.</p></article>
+      <article class="benefit"><div class="benefit-icon"><img src="images/benefit-botanically-pure.png" alt="" loading="lazy"></div><div class="benefit-num">01</div><h3>Botanically Pure</h3><p>Whole-plant extracts and focused formulations, with transparency at the centre of the product experience.</p></article>
+      <article class="benefit"><div class="benefit-icon"><img src="images/benefit-science-backed.png" alt="" loading="lazy"></div><div class="benefit-num">02</div><h3>Science Backed</h3><p>Scientific information is presented clearly, with room for evidence, references and formulation details to grow with the brand.</p></article>
+      <article class="benefit"><div class="benefit-icon"><img src="images/benefit-transparently-made.png" alt="" loading="lazy"></div><div class="benefit-num">03</div><h3>Transparently Made</h3><p>Make ingredients, doses, sourcing and quality information easy for customers to understand.</p></article>
+      <article class="benefit"><div class="benefit-icon"><img src="images/benefit-quality-focused.png" alt="" loading="lazy"></div><div class="benefit-num">04</div><h3>Quality Focused</h3><p>Build confidence through appropriate manufacturing, testing and batch-level transparency.</p></article>
     </div>
   </div>
 </section>
