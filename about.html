@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="About Aaron Choice — Dr. Balasingham Arasabalan, PhD, Clinical Psychology, on the science behind mind-body wellness and the research informing Aaron Choice.">
+<title>About | Aaron Choice</title>
+
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="About | Aaron Choice">
+<meta property="og:description" content="Dr. Balasingham Arasabalan, PhD — Clinical Psychology, Mental Health, Research, Psychophysiology.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="About | Aaron Choice">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@300;400;500;600;700&family=Luckiest+Guy&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0B2D5E;--mid:#1A4A8A;--blue:#2563C4;--pale:#F4F7FD;
+  --light:#E8F0FB;--white:#fff;--ink:#0B2D5E;--muted:#5A6E8C;
+  --border:#D0DDF0;--dark:#070F1E;--gold:#B88A44;
+  --serif:'Playfair Display',Georgia,serif;--sans:'DM Sans',Arial,sans-serif;
+  --max:1320px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:#fff;line-height:1.5}
+a{text-decoration:none;color:inherit}
+button,input{font:inherit}
+button{cursor:pointer}
+.container{width:min(var(--max),calc(100% - 48px));margin:auto}
+.announcement{background:var(--navy);color:#fff;text-align:center;padding:10px 20px;font-size:11px;letter-spacing:.13em;text-transform:uppercase}
+.announcement span{color:#93C5FD}
+.nav{height:76px;border-bottom:1px solid var(--border);display:flex;align-items:center;position:sticky;top:0;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);z-index:100}
+.nav-inner{width:min(var(--max),calc(100% - 48px));margin:auto;display:flex;align-items:center;justify-content:space-between;gap:30px}
+.logo{font-family:var(--serif);font-weight:600;font-size:24px;color:var(--navy);letter-spacing:-.02em;display:flex;align-items:center;gap:11px;white-space:nowrap;flex:none}
+.brand{position:relative;display:flex;align-items:center;color:var(--navy);white-space:nowrap;flex:none;padding-left:104px}
+.brand-mark{position:absolute;top:-24px;left:0;height:98px;width:auto;display:block;pointer-events:none}
+.brand-text{font-family:var(--serif);font-weight:600;font-size:24px;color:var(--navy);letter-spacing:-.02em}
+.navlinks{display:flex;gap:30px;align-items:center;list-style:none}
+.navlinks a{font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);transition:.2s}
+.navlinks a:hover{color:var(--blue)}
+.navlinks a.active{color:var(--navy);font-weight:700}
+.nav-actions{display:flex;gap:10px;align-items:center}
+.icon-btn{width:42px;height:42px;border:0;background:transparent;color:var(--navy);font-size:19px;display:grid;place-items:center}
+.icon-btn svg{width:19px;height:19px}
+.cart-btn,.primary{border:0;background:var(--navy);color:#fff;padding:13px 22px;font-size:12px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;transition:.2s;display:inline-flex;align-items:center;gap:8px}
+.cart-btn:hover,.primary:hover{background:var(--mid);transform:translateY(-1px)}
+.secondary{border:1px solid var(--navy);background:transparent;color:var(--navy);padding:13px 22px;font-size:12px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;transition:.2s;display:inline-flex;align-items:center;gap:8px}
+.secondary:hover{background:var(--navy);color:#fff}
+.mobile-menu{display:none}
+
+.section{padding:100px 0}
+.eyebrow{font-size:13px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--blue);margin-bottom:18px;display:flex;align-items:center;gap:10px}
+.eyebrow:before{content:"";width:28px;height:2px;background:currentColor;flex:none}
+.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:46px}
+.section-head h2{font:500 clamp(30px,3.4vw,44px)/1.1 var(--serif);letter-spacing:-.02em}
+.section-head p{max-width:460px;color:var(--muted);font-size:14px;line-height:1.8}
+.section-head .eyebrow{margin-bottom:16px}
+
+/* hero */
+.about-hero{background:var(--pale);overflow:hidden}
+.about-hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;padding:80px 0}
+.about-copy p.lead{color:var(--muted);font-size:14px;line-height:1.85;max-width:480px;margin:20px 0 26px}
+.about-h1{font:500 clamp(34px,4vw,50px)/1.14 var(--serif);letter-spacing:-.02em}
+.about-location{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);margin-bottom:26px}
+.about-location svg{width:15px;height:15px;color:var(--blue)}
+.about-cta-row{display:flex;gap:14px;flex-wrap:wrap}
+.about-visual{position:relative}
+.about-photo{position:relative;width:100%;aspect-ratio:4/4.6;background:linear-gradient(145deg,#e4ecf8,#cfdcf2);border:1px solid var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:var(--mid)}
+.about-photo svg{width:64px;height:64px;opacity:.55}
+.about-photo span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;opacity:.6}
+.about-watermark{position:absolute;top:24px;right:24px;background:rgba(11,45,94,.85);color:#fff;padding:16px 18px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;line-height:2;text-align:right}
+
+/* intro */
+.intro-grid{display:grid;grid-template-columns:1.15fr .55fr 1fr;gap:40px;align-items:center}
+.intro-copy p{color:var(--muted);font-size:14px;line-height:1.85;margin-bottom:14px}
+.intro-copy .learn-more{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--navy);margin-top:10px}
+.intro-leaf{position:relative;background:var(--light);aspect-ratio:1/1.15;display:flex}
+.intro-leaf img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 30%}
+.intro-leaf .tag{position:relative;z-index:1;align-self:flex-end;padding:20px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--navy);line-height:1.9}
+.intro-list{font:500 26px/1.35 var(--serif);color:var(--navy)}
+.intro-list small{display:block;margin-top:18px;font:600 10px/1.7 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* practice */
+.practice{background:var(--navy);color:#fff}
+.practice-head{display:flex;justify-content:space-between;align-items:flex-start;gap:30px;margin-bottom:56px;flex-wrap:wrap}
+.practice .eyebrow{color:#9DC2F7}
+.practice-head h2{font:500 clamp(28px,3.2vw,38px)/1.15 var(--serif);color:#fff;max-width:520px}
+.practice-head .side{max-width:420px;padding-top:6px}
+.practice-head .side p{color:rgba(255,255,255,.62);font-size:14px;line-height:1.8;margin-bottom:14px}
+.practice-head .side a{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:#9DC2F7}
+.practice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.practice-item{display:flex;flex-direction:column;gap:16px}
+.practice-item .ic{width:56px;height:56px;border-radius:50%;border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;color:#9DC2F7;flex:none}
+.practice-item .ic svg{width:24px;height:24px}
+.practice-item h3{font:500 19px var(--serif)}
+.practice-item p{font-size:13px;color:rgba(255,255,255,.6);line-height:1.75}
+
+/* featured research */
+.research-grid{display:grid;grid-template-columns:1fr .85fr;gap:44px;align-items:start}
+.research-visual{width:100%;height:170px;background:linear-gradient(145deg,#e4ecf8,#cfdcf2);border:1px solid var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--mid);margin-bottom:22px}
+.research-visual svg{width:40px;height:40px;opacity:.55}
+.research-visual span{font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;opacity:.6}
+.research-card h3{font:500 21px/1.4 var(--serif);margin-bottom:10px}
+.research-meta{font-size:11px;color:var(--muted);letter-spacing:.02em;margin-bottom:16px}
+.research-meta b{color:var(--ink);font-weight:600}
+.research-card p{font-size:13px;color:var(--muted);line-height:1.85;margin-bottom:22px}
+.research-links{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.research-links a.doi{font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--blue);display:inline-flex;align-items:center;gap:6px}
+.diagram{background:var(--pale);border:1px solid var(--border);padding:34px 28px;text-align:center}
+.diagram .d-title{font:500 15px var(--serif);color:var(--navy);margin-bottom:6px}
+.diagram .d-sub{font-size:10.5px;color:var(--muted);margin-bottom:18px}
+.d-arrow{width:1px;height:22px;background:var(--border);margin:0 auto}
+.d-box{font-size:12px;font-weight:600;color:var(--navy);letter-spacing:.02em}
+.d-row{display:flex;justify-content:space-between;gap:14px;margin:20px 0}
+.d-node{flex:1;display:flex;flex-direction:column;align-items:center;gap:8px}
+.d-node .n-ic{width:42px;height:42px;border-radius:50%;background:#fff;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--blue)}
+.d-node .n-ic svg{width:19px;height:19px}
+.d-node b{font-size:11.5px;color:var(--ink)}
+.d-node small{font-size:9.5px;color:var(--muted)}
+.d-measures{font-size:11px;color:var(--muted);letter-spacing:.02em;margin-top:14px}
+
+/* interests */
+.interests{background:var(--dark);color:#fff}
+.interests .eyebrow{color:#9DC2F7}
+.interests-head{display:flex;justify-content:space-between;align-items:flex-start;gap:30px;margin-bottom:56px;flex-wrap:wrap}
+.interests-head h2{font:500 clamp(28px,3.2vw,38px)/1.15 var(--serif);color:#fff;max-width:520px}
+.interests-head .side{max-width:420px;padding-top:6px}
+.interests-head .side p{color:rgba(255,255,255,.6);font-size:14px;line-height:1.8;margin-bottom:14px}
+.interests-head .side a{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:#9DC2F7}
+.interests-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:26px}
+.interest-item{display:flex;flex-direction:column;align-items:flex-start;gap:14px}
+.interest-item .ic{width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.28);display:flex;align-items:center;justify-content:center;color:#9DC2F7;flex:none}
+.interest-item .ic svg{width:20px;height:20px}
+.interest-item b{font:500 15px var(--serif);color:#fff}
+.interest-item small{font-size:11.5px;color:rgba(255,255,255,.55);line-height:1.6}
+
+/* systems / venn */
+.systems-grid{display:grid;grid-template-columns:.95fr 1fr 1.05fr;gap:44px;align-items:center}
+.systems-copy p{color:var(--muted);font-size:14px;line-height:1.85}
+.venn{position:relative;width:100%;aspect-ratio:1/1;max-width:400px;margin:0 auto}
+.venn-circle{position:absolute;border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;font-size:11px;font-weight:700;color:var(--navy);letter-spacing:.02em;line-height:1.3;padding:10px}
+.venn-center{width:34%;height:34%;left:33%;top:33%;background:#fff;border:2px solid var(--navy);z-index:5;font-size:12px}
+.venn-top{width:44%;height:44%;left:28%;top:0;background:rgba(37,99,196,.16)}
+.venn-ur{width:44%;height:44%;right:0;top:20%;background:rgba(46,111,209,.14)}
+.venn-lr{width:44%;height:44%;right:8%;bottom:0;background:rgba(37,99,196,.1)}
+.venn-ll{width:44%;height:44%;left:8%;bottom:0;background:rgba(11,45,94,.14)}
+.venn-ul{width:44%;height:44%;left:0;top:20%;background:rgba(46,111,209,.18)}
+.focus-list{border-top:1px solid var(--border)}
+.focus-row{display:flex;justify-content:space-between;gap:20px;padding:14px 2px;border-bottom:1px solid var(--border)}
+.focus-row b{font-size:13px;color:var(--ink);flex:0 0 150px}
+.focus-row span{font-size:12.5px;color:var(--muted);text-align:right}
+
+/* philosophy */
+.philosophy{background:linear-gradient(180deg,#e3ecf7,#eef3f9);position:relative}
+.philosophy-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:center}
+.philosophy blockquote{font:italic 500 26px/1.5 var(--serif);color:var(--navy);position:relative}
+.philosophy .eyebrow{margin-bottom:22px}
+.philosophy-side p{font-size:13px;color:var(--muted);line-height:1.85;margin-bottom:20px}
+.philosophy-attr{display:flex;align-items:center;gap:14px;margin-top:24px}
+.philosophy-attr .line{width:30px;height:1px;background:var(--navy)}
+.philosophy-attr span{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--navy)}
+
+/* pub + cta band */
+.pub-band{display:grid;grid-template-columns:1fr 1fr}
+.pub-side{background:#fff;padding:80px 48px}
+.pub-side .eyebrow{margin-bottom:20px}
+.pub-side h3{font:500 20px/1.5 var(--serif);margin-bottom:14px;max-width:420px}
+.pub-meta{font-size:12px;color:var(--muted);line-height:1.8;margin-bottom:18px}
+.pub-links{display:flex;gap:22px;flex-wrap:wrap}
+.pub-links a{font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--blue);display:inline-flex;align-items:center;gap:6px}
+.pub-doc{width:66px;height:88px;border:1px solid var(--border);background:var(--pale);margin-bottom:22px;position:relative}
+.pub-doc:before{content:"";position:absolute;left:10px;right:10px;top:16px;height:2px;background:var(--border);box-shadow:0 8px 0 var(--border),0 16px 0 var(--border),0 24px 0 var(--border)}
+.cta-side{background:var(--navy);color:#fff;padding:80px 48px;display:flex;flex-direction:column;justify-content:center}
+.cta-side h3{font:500 clamp(26px,2.6vw,34px)/1.2 var(--serif);margin-bottom:14px}
+.cta-side p{font-size:13px;color:rgba(255,255,255,.62);line-height:1.8;margin-bottom:26px;max-width:360px}
+.cta-side .row{display:flex;align-items:center;gap:26px;flex-wrap:wrap}
+.cta-side .loc{display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(255,255,255,.7)}
+.cta-side .loc svg{width:15px;height:15px;color:#9DC2F7}
+.cta-side .primary{background:#fff;color:var(--navy)}
+.cta-side .primary:hover{background:#e8f0fb}
+
+footer{background:var(--dark);color:#fff;padding:65px 0 25px}
+.footer-grid{display:grid;grid-template-columns:2fr repeat(4,1fr);gap:45px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.1)}
+.footer-logo{font:600 25px var(--serif);margin-bottom:13px}
+.footer-desc{font-size:12px;color:rgba(255,255,255,.42);line-height:1.8;max-width:260px}
+footer h4{font-size:10px;color:#93C5FD;letter-spacing:.18em;text-transform:uppercase;margin-bottom:17px}
+footer ul{list-style:none;display:grid;gap:9px;margin:0;padding:0}
+footer li{font-size:12px;color:rgba(255,255,255,.48)}
+.footer-bottom{display:flex;justify-content:space-between;gap:20px;padding-top:20px;font-size:10px;color:rgba(255,255,255,.27)}
+
+.drawer{position:fixed;inset:0;background:rgba(7,15,30,.42);z-index:200;display:none}
+.drawer.open{display:block}
+.mobile-nav{position:absolute;left:0;top:0;height:100%;width:min(340px,88vw);background:#fff;padding:25px;display:flex;flex-direction:column}
+.mobile-nav ul{list-style:none;margin-top:20px;display:grid}
+.mobile-nav li a{display:block;padding:17px 2px;font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:var(--ink);border-bottom:1px solid var(--border);font-weight:500}
+.mobile-nav li a:hover{color:var(--blue)}
+.cart-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);padding-bottom:17px}
+.cart-head .logo{font:500 27px var(--serif)}
+.close{border:0;background:none;color:var(--muted);display:grid;place-items:center;width:32px;height:32px}
+.close svg{width:18px;height:18px}
+
+@media(max-width:1100px){
+  .about-hero-grid{grid-template-columns:1fr;gap:40px}
+  .about-visual{max-width:420px}
+  .intro-grid{grid-template-columns:1fr;gap:30px}
+  .intro-leaf{order:3;aspect-ratio:16/9}
+  .practice-grid{grid-template-columns:1fr;gap:36px}
+  .research-grid{grid-template-columns:1fr}
+  .interests-grid{grid-template-columns:repeat(3,1fr);row-gap:34px}
+  .systems-grid{grid-template-columns:1fr;gap:40px}
+  .venn{max-width:320px}
+  .philosophy-grid{grid-template-columns:1fr;gap:30px}
+  .pub-band{grid-template-columns:1fr}
+  .pub-side,.cta-side{padding:56px 32px}
+}
+@media(max-width:1000px){
+  .navlinks{display:none}.mobile-menu{display:block}
+  .footer-grid{grid-template-columns:2fr 1fr 1fr}
+  .practice-head,.interests-head{display:block}
+  .practice-head .side,.interests-head .side{margin-top:16px;max-width:none}
+}
+@media(max-width:620px){
+  .container,.nav-inner{width:min(100% - 30px,var(--max))}
+  .announcement{font-size:9px}.nav{height:64px}.logo{font-size:21px}.cart-btn{padding:10px 13px}.brand{padding-left:68px}.brand-mark{height:64px;top:-20px}.brand-text{font-size:21px}
+  .section{padding:62px 0}
+  .section-head{display:block}
+  .about-hero-grid{padding:48px 0}
+  .about-cta-row{flex-direction:column;align-items:flex-start}
+  .about-watermark{position:static;margin-top:16px;text-align:left;display:inline-block}
+  .interests-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:1/-1}
+  .footer-bottom{display:block}.footer-bottom div+div{margin-top:8px}
+  .pub-side,.cta-side{padding:44px 22px}
+}
+</style>
+
+<style id="premium-overrides">
+:root{
+ --navy:#071D3B; --mid:#123B70; --blue:#2E6FD1; --pale:#F6F8FC;
+ --light:#EAF1FA; --white:#fff; --ink:#081D39; --muted:#687992;
+ --border:rgba(8,29,57,.12); --dark:#040C18; --gold:#B99258;
+}
+body{background:#fff;color:var(--ink);letter-spacing:-.01em}
+.announcement{background:#071D3B;padding:9px 20px;font-size:10px;letter-spacing:.17em}
+.nav{height:82px;border-bottom:1px solid rgba(8,29,57,.08);box-shadow:0 4px 22px rgba(7,29,59,.035)}
+.nav-inner{width:min(1400px,calc(100% - 72px))}
+.logo{font-size:25px;letter-spacing:-.04em}
+.navlinks{gap:34px}
+.navlinks a{font-size:13px;letter-spacing:.13em}
+.icon-btn{font-size:21px}
+.cart-btn{padding:12px 19px;font-size:10px;border-radius:2px}
+.secondary{padding:12px 19px;font-size:10px;border-radius:2px}
+.section{padding:110px 0 100px}
+.container{width:min(1400px,calc(100% - 72px))}
+footer{background:#030A14}
+.footer-grid{border-bottom-color:rgba(255,255,255,.08)}
+.footer-logo{font-size:27px}
+footer h4{font-size:9px;letter-spacing:.22em}
+.drawer{backdrop-filter:blur(7px)}
+@media(max-width:1100px){.container{width:min(100% - 42px,1400px)}}
+@media(max-width:620px){.nav-inner,.container{width:calc(100% - 30px)}}
+</style>
+</head>
+<body>
+
+<div class="announcement">Free shipping on all orders &nbsp;|&nbsp; <span>90-Day Money-Back Guarantee</span> &nbsp;|&nbsp; Subscribe & Save up to 40%</div>
+
+<header class="nav">
+  <div class="nav-inner">
+    <button class="icon-btn mobile-menu" aria-label="Open menu" onclick="openMenu()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <a class="brand" href="index.html"><img src="images/aaron-choice-logo.png" alt="" class="brand-mark"><span class="brand-text">Aaron Choice</span></a>
+    <ul class="navlinks">
+      <li><a href="about.html" class="active">About</a></li><li><a href="shop.html">Shop</a></li><li><a href="index.html#science">Science</a></li>
+      <li><a href="index.html#ingredients">Ingredients</a></li><li><a href="index.html#finder">Product Finder</a></li>
+      <li><a href="index.html#reviews">Reviews</a></li><li><a href="index.html#faq">FAQ</a></li>
+      <li><a href="blog.html">Blog</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a class="cart-btn" href="shop.html">Shop Now</a>
+    </div>
+  </div>
+</header>
+
+<div class="drawer" id="menuDrawer" onclick="if(event.target===this)closeMenu()">
+ <aside class="mobile-nav">
+  <div class="cart-head"><span class="logo">Aaron Choice</span><button class="close" aria-label="Close menu" onclick="closeMenu()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg></button></div>
+  <ul>
+    <li><a href="about.html" onclick="closeMenu()">About</a></li><li><a href="shop.html" onclick="closeMenu()">Shop</a></li><li><a href="index.html#science" onclick="closeMenu()">Science</a></li>
+    <li><a href="index.html#ingredients" onclick="closeMenu()">Ingredients</a></li><li><a href="index.html#finder" onclick="closeMenu()">Product Finder</a></li>
+    <li><a href="index.html#reviews" onclick="closeMenu()">Reviews</a></li><li><a href="index.html#faq" onclick="closeMenu()">FAQ</a></li>
+    <li><a href="blog.html" onclick="closeMenu()">Blog</a></li>
+  </ul>
+ </aside>
+</div>
+
+<main>
+
+<!-- HERO -->
+<section class="about-hero">
+ <div class="container about-hero-grid">
+  <div class="about-copy">
+   <div class="eyebrow">Science &middot; People &middot; Better Lives</div>
+   <h1 class="about-h1">Understanding the mind. Measuring the body. Connecting the two.</h1>
+   <p class="lead">Dr. Balasingham Arasabalan works at the intersection of clinical psychology, mental health, social work, psychological assessment and clinical research — research that helps shape the science behind Aaron Choice.</p>
+   <div class="about-location"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Toronto, Canada</div>
+   <div class="about-cta-row">
+    <a class="primary" href="#research">View Research &rarr;</a>
+    <a class="secondary" href="#focus">Professional Profile</a>
+   </div>
+  </div>
+  <div class="about-visual">
+   <div class="about-photo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="15" rx="2"/><circle cx="12" cy="12.5" r="3.7"/><path d="M8 5l1.3-2h5.4L16 5"/></svg>
+    <span>Portrait coming soon</span>
+   </div>
+   <div class="about-watermark">Mind<br>Behaviour<br>Physiology<br>Health</div>
+  </div>
+ </div>
+</section>
+
+<!-- ABOUT INTRO -->
+<section class="section" id="about">
+ <div class="container intro-grid">
+  <div class="intro-copy">
+   <div class="eyebrow">About</div>
+   <h2 style="font:500 clamp(28px,3.2vw,38px)/1.15 var(--serif);letter-spacing:-.02em;margin-bottom:16px">A multidisciplinary view of wellbeing.</h2>
+   <p>Dr. Balasingham Arasabalan is a Toronto-based professional working at the intersection of clinical psychology, mental health, social work, psychological assessment and clinical research.</p>
+   <p>With a PhD in Clinical Psychology and professional experience in Ontario's mental-health and social-work environments, his work reflects a multidisciplinary approach to understanding psychological wellbeing and its relationship with behavioural, social and physiological factors.</p>
+   <a class="learn-more" href="#practice">Learn more &rarr;</a>
+  </div>
+  <div class="intro-leaf">
+   <img src="images/leaf-branch-1.png" alt="" loading="lazy">
+   <div class="tag">People<br>Context<br>Science<br>Possibilities</div>
+  </div>
+  <div class="intro-list">
+   Psychology<br>Mental Health<br>Behaviour<br>Physiology<br>Research
+   <small>Different perspectives<br>A healthier tomorrow</small>
+  </div>
+ </div>
+</section>
+
+<!-- PRACTICE -->
+<section class="section practice" id="practice">
+ <div class="container">
+  <div class="practice-head">
+   <div><div class="eyebrow">Clinical &amp; Professional Practice</div><h2>A broader view of psychological wellbeing.</h2></div>
+   <div class="side">
+    <p>Integrating clinical practice, assessment and social understanding to support meaningful, evidence-informed outcomes.</p>
+    <a href="#research">Learn more &rarr;</a>
+   </div>
+  </div>
+  <div class="practice-grid">
+   <div class="practice-item">
+    <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3.5a3 3 0 0 0-3 3v1a3 3 0 0 0-1.5 5.6A3.5 3.5 0 0 0 7 18.5a3 3 0 0 0 2 2.9V21a2 2 0 0 0 4 0v-.5"/><path d="M15 3.5a3 3 0 0 1 3 3v1a3 3 0 0 1 1.5 5.6A3.5 3.5 0 0 1 17 18.5a3 3 0 0 1-2 2.9"/><path d="M9 6.5v11M15 6.5v9"/></svg></span>
+    <h3>Mental Health &amp; Clinical Psychology</h3>
+    <p>Psychological wellbeing, mental-health assessment, behavioural health and the relationship between psychological and physiological functioning.</p>
+   </div>
+   <div class="practice-item">
+    <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3.5h6a1 1 0 0 1 1 1V6h1.5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-11a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1H8V4.5a1 1 0 0 1 1-1z"/><line x1="8.5" y1="11" x2="15.5" y2="11"/><line x1="8.5" y1="14.5" x2="15.5" y2="14.5"/><line x1="8.5" y1="18" x2="12.5" y2="18"/></svg></span>
+    <h3>Psychological Assessment</h3>
+    <p>Formal mental-health and psychological assessments, including work within legal and insurance contexts such as Ontario Licence Appeal Tribunal (LAT) matters.</p>
+   </div>
+   <div class="practice-item">
+    <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M2.5 20c0-3.3 2.5-6 5.5-6s5.5 2.7 5.5 6M10.5 20c0-3.3 2.5-6 5.5-6s5.5 2.7 5.5 6"/></svg></span>
+    <h3>Social Work</h3>
+    <p>Understanding the social and environmental factors that influence mental health and functional wellbeing.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- FEATURED RESEARCH -->
+<section class="section" id="research">
+ <div class="container">
+  <div class="section-head">
+   <div><div class="eyebrow">Featured Research &middot; 2026</div><h2>From psychological regulation to measurable physiology.</h2></div>
+  </div>
+  <div class="research-grid">
+   <div class="research-card">
+    <div class="research-visual"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-6 4 4 5-7 4 5"/><path d="M3 20h18"/></svg><span>Research imagery placeholder</span></div>
+    <h3>The effectiveness of HeartMath biofeedback intervention to improve blood glucose levels among type 2 diabetes mellitus patients</h3>
+    <div class="research-meta"><b>Dr. Balasingham Arasabalan</b> &middot; 2026<br>International Journal of Research in Medical Sciences, 14(4), 1405&ndash;1410.</div>
+    <p>This research examines the application of HeartMath emWave Pro biofeedback in adults with type 2 diabetes mellitus, focusing on the relationship between physiological regulation and metabolic health.</p>
+    <div class="research-links">
+     <a class="primary" href="https://www.msjonline.org/index.php/ijrms/article/view/16711" target="_blank" rel="noopener">Read Publication &rarr;</a>
+     <a class="doi" href="https://doi.org/10.18203/2320-6012.ijrms20260947" target="_blank" rel="noopener">View DOI &rarr;</a>
+    </div>
+   </div>
+   <div class="diagram">
+    <div class="d-title">Biofeedback</div>
+    <div class="d-sub">(HeartMath emWave Pro)</div>
+    <div class="d-arrow"></div>
+    <div class="d-box">Physiological Regulation</div>
+    <div class="d-row">
+     <div class="d-node"><span class="n-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-4.5-3-8-6.5-8-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 4.5-3.5 8-8 11z"/></svg></span><b>HRV</b><small>Autonomic regulation</small></div>
+     <div class="d-node"><span class="n-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 13c1.6 0 1.6-4 3.2-4s1.6 4 3.2 4 1.6-4 3.2-4 1.6 4 3.2 4 1.6-4 3.2-4 1.6 4 3.2 4"/></svg></span><b>Breathing</b><small>Patterns</small></div>
+     <div class="d-node"><span class="n-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3 4 6 7.5 6 11.5A6 6 0 0 1 6 14.5C6 10.5 9 7 12 3z"/></svg></span><b>Cortisol</b><small>Stress regulation</small></div>
+    </div>
+    <div class="d-arrow"></div>
+    <div class="d-box">Metabolic Measures</div>
+    <div class="d-measures">HbA1c &middot; Fasting Blood Glucose &middot; Post-prandial Glucose</div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- RESEARCH INTERESTS -->
+<section class="section interests" id="interests">
+ <div class="container">
+  <div class="interests-head">
+   <div><div class="eyebrow">Research Interests</div><h2>Questions at the intersection of mind and body.</h2></div>
+   <div class="side">
+    <p>Exploring the relationships between psychological processes, physiological functioning and health outcomes.</p>
+    <a href="#focus">Learn more &rarr;</a>
+   </div>
+  </div>
+  <div class="interests-grid">
+   <div class="interest-item"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3.5a3 3 0 0 0-3 3v1a3 3 0 0 0-1.5 5.6A3.5 3.5 0 0 0 7 18.5a3 3 0 0 0 2 2.9V21a2 2 0 0 0 4 0v-.5"/><path d="M15 3.5a3 3 0 0 1 3 3v1a3 3 0 0 1 1.5 5.6A3.5 3.5 0 0 1 17 18.5a3 3 0 0 1-2 2.9"/><path d="M9 6.5v11M15 6.5v9"/></svg></span><b>Clinical Psychology</b><small>Psychological wellbeing and behavioural health</small></div>
+   <div class="interest-item"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2 7 4-14 2 7h6" /></svg></span><b>Psychophysiology</b><small>Psychological states and physiological processes</small></div>
+   <div class="interest-item"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-4.5-3-8-6.5-8-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 4.5-3.5 8-8 11z"/></svg></span><b>Heart-Rate Variability</b><small>Autonomic regulation and HRV</small></div>
+   <div class="interest-item"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3 4.5 7 7 7 11.5A7 7 0 0 1 5 14.5C5 10 9 7.5 12 3z"/></svg></span><b>Biofeedback</b><small>Physiological regulation and behavioural change</small></div>
+   <div class="interest-item"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="12" r="5.2"/><circle cx="16" cy="12" r="5.2"/></svg></span><b>Mind&ndash;Body Health</b><small>Psychological processes and physical health</small></div>
+   <div class="interest-item"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="19" x2="5" y2="12"/><line x1="12" y1="19" x2="12" y2="7"/><line x1="19" y1="19" x2="19" y2="14"/></svg></span><b>Metabolic Health</b><small>Behavioural factors and metabolic health</small></div>
+  </div>
+ </div>
+</section>
+
+<!-- ONE SYSTEM MANY PERSPECTIVES -->
+<section class="section" id="focus">
+ <div class="container systems-grid">
+  <div class="systems-copy">
+   <div class="eyebrow">A Multidisciplinary Research Perspective</div>
+   <h2 style="font:500 clamp(28px,3.2vw,38px)/1.15 var(--serif);letter-spacing:-.02em;margin-bottom:16px">One system. Many perspectives.</h2>
+   <p>This interdisciplinary perspective allows clinical questions to be considered alongside measurable physiological parameters and emerging evidence from behavioural and health sciences.</p>
+  </div>
+  <div class="venn">
+   <div class="venn-circle venn-top">Clinical<br>Psychology</div>
+   <div class="venn-circle venn-ur">Physiology</div>
+   <div class="venn-circle venn-lr">Biofeedback<br>&amp; HRV</div>
+   <div class="venn-circle venn-ll">Social<br>Work</div>
+   <div class="venn-circle venn-ul">Behaviour &amp;<br>Mental Health</div>
+   <div class="venn-circle venn-center">Human<br>Health</div>
+  </div>
+  <div>
+   <h3 style="font:500 20px var(--serif);margin-bottom:16px">Areas of professional focus.</h3>
+   <div class="focus-list">
+    <div class="focus-row"><b>Clinical Psychology</b><span>Psychological wellbeing and behavioural health</span></div>
+    <div class="focus-row"><b>Mental Health</b><span>Assessment and clinical understanding</span></div>
+    <div class="focus-row"><b>Social Work</b><span>Social and environmental determinants</span></div>
+    <div class="focus-row"><b>Assessment</b><span>Psychological, functional, legal and insurance contexts</span></div>
+    <div class="focus-row"><b>Psychophysiology</b><span>Psychology&ndash;physiology relationships</span></div>
+    <div class="focus-row"><b>Biofeedback</b><span>HRV and physiological regulation</span></div>
+    <div class="focus-row"><b>Research</b><span>Evidence-informed clinical investigation</span></div>
+    <div class="focus-row"><b>Health Research</b><span>Metabolic and behavioural health</span></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy">
+ <div class="container philosophy-grid" style="padding:80px 0">
+  <div>
+   <div class="eyebrow">Research Philosophy</div>
+   <blockquote>&ldquo;Understanding health requires looking beyond symptoms&mdash;to the interaction between mind, body, behaviour and environment.&rdquo;</blockquote>
+   <div class="philosophy-attr"><span class="line"></span><span>Dr. Balasingham Arasabalan</span></div>
+  </div>
+  <div class="philosophy-side">
+   <p>Clinical experience and scientific inquiry come together to explore how psychological and physiological processes interact in health and wellbeing.</p>
+  </div>
+ </div>
+</section>
+
+<!-- PUBLICATION + CTA BAND -->
+<div class="pub-band">
+ <div class="pub-side">
+  <div class="eyebrow">Selected Publication</div>
+  <div class="pub-doc"></div>
+  <h3>The effectiveness of HeartMath biofeedback intervention to improve blood glucose levels among type 2 diabetes mellitus patients</h3>
+  <div class="pub-meta">B. Arasabalan &middot; 2026<br>International Journal of Research in Medical Sciences, 14(4), 1405&ndash;1410.</div>
+  <div class="pub-links">
+   <a href="https://www.msjonline.org/index.php/ijrms/article/view/16711" target="_blank" rel="noopener">View Publication &rarr;</a>
+   <a href="https://doi.org/10.18203/2320-6012.ijrms20260947" target="_blank" rel="noopener">View DOI &rarr;</a>
+  </div>
+ </div>
+ <div class="cta-side">
+  <h3>Let's explore the work further.</h3>
+  <p>For professional, research or academic enquiries.</p>
+  <div class="row">
+   <a class="primary" href="mailto:hello@aaronchoice.com">Get in Touch &rarr;</a>
+   <span class="loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Toronto, Canada</span>
+  </div>
+ </div>
+</div>
+
+</main>
+
+<footer>
+ <div class="container">
+  <div class="footer-grid">
+   <div><div class="footer-logo">Aaron Choice</div><p class="footer-desc">Premium plant-based supplements rooted in botanical tradition and presented with modern transparency.</p></div>
+   <div><h4>Shop</h4><ul><li><a href="shop.html" style="color:inherit">All Products</a></li><li>Best Sellers</li><li>Bundles</li><li>Subscribe &amp; Save</li></ul></div>
+   <div><h4>Science</h4><ul><li><a href="index.html#ingredients" style="color:inherit">Ingredients</a></li><li>Formulation</li><li>Quality</li><li>Batch Testing</li></ul></div>
+   <div><h4>Company</h4><ul><li><a href="about.html" style="color:inherit">Our Story</a></li><li><a href="blog.html" style="color:inherit">Blog</a></li><li><a href="index.html#reviews" style="color:inherit">Reviews</a></li><li>Contact</li></ul></div>
+   <div><h4>Support</h4><ul><li><a href="index.html#faq" style="color:inherit">FAQ</a></li><li>Shipping</li><li>Returns</li><li>Privacy</li></ul></div>
+  </div>
+  <div class="footer-bottom"><div>&copy; 2026 Aaron Choice. All rights reserved.</div><div>Science for a more human tomorrow.</div></div>
+ </div>
+</footer>
+
+<script>
+function openMenu(){document.getElementById('menuDrawer').classList.add('open')}
+function closeMenu(){document.getElementById('menuDrawer').classList.remove('open')}
+</script>
+
+</body>
+</html>

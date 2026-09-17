@@ -1,6 +1,6 @@
 # Aaron Choice — Website
 
-A static site for Aaron Choice (premium botanical supplements): a marketing homepage (`index.html`), a full retail Shop page (`shop.html`), and a research Blog (`blog.html`). Pure HTML/CSS/JS, no build step, no dependencies.
+A static site for Aaron Choice (premium botanical supplements): a marketing homepage (`index.html`), a full retail Shop page (`shop.html`), a research Blog (`blog.html`), and an About page (`about.html`). Pure HTML/CSS/JS, no build step, no dependencies.
 
 ## Deploying to Cloudflare Pages (via GitHub)
 
@@ -204,6 +204,21 @@ My suggestion: keep the lightbox for now, and revisit dedicated pages once (a) t
 - **Eyebrow consistency site-wide**: every small uppercase kicker label (Botanicals · Science · Transparency, Why Aaron Choice, Root-Cause Thinking, Science without the noise, Personalised discovery, What's Inside, Community, Support) now shares the same font size (13px), weight, letter-spacing and short accent-line treatment. Previously a leftover "premium" theme rule was silently shrinking every eyebrow down to 9px, and several of them (Community, Support, Personalised discovery, Aaron Choice on the CTA) used a pale light-blue that had very low contrast against light backgrounds — those now use a bold, readable blue, while eyebrows on dark photo backgrounds (hero, benefits, science, finder) keep a light blue for contrast there.
 - Verified at desktop and mobile widths, and re-ran the full regression suite on shop.html and blog.html — no errors.
 
+## New About page — Dr. Balasingham Arasabalan (2026-09-17)
+
+- **Added `about.html`**, a new page profiling Dr. Balasingham Arasabalan (clinical psychology / social work / research), and added an **"About"** link as the first item in the main nav — before "Shop" — on every page (`index.html`, `shop.html`, `blog.html`, `about.html`), desktop and mobile menus alike.
+- Content was sourced from the supplied document (`Dr_Balasingham_Arasabalan_Portfolio_About.docx`) and organized into sections that mirror the reference design you shared:
+  - **Hero**: headline, intro paragraph, Toronto location, and two CTA buttons ("View Research", "Professional Profile").
+  - **About intro**: a 3-column layout pairing a short bio with a decorative leaf image and a stacked list of his areas (Psychology, Mental Health, Behaviour, Physiology, Research).
+  - **Clinical & Professional Practice**: a dark 3-item icon grid (Mental Health & Clinical Psychology, Psychological Assessment, Social Work).
+  - **Featured Research**: a research card summarizing his published study, with real links to the publication and its DOI, alongside a diagram of his biofeedback → physiological regulation → metabolic measures research model.
+  - **Research Interests**: a dark 6-item grid (Clinical Psychology, Psychophysiology, Heart-Rate Variability, Biofeedback, Mind–Body Health, Metabolic Health).
+  - **"One system. Many perspectives."**: a CSS-only 5-circle Venn-style diagram (no image asset needed) showing how his focus areas overlap, next to a list of his professional focus areas.
+  - A pull-quote/philosophy band, and a closing publication + "get in touch" call-to-action split section.
+- **No real photo of Dr. Balasingham was supplied**, so the hero and the research card both use a placeholder treatment (soft gradient box, a line-style icon, and a small "coming soon" / "placeholder" label) instead of leaving a broken image or a stock photo standing in for him. Swap these for real photography/imagery whenever it's available — they're the `.about-photo` block in the hero and the `.research-visual` block in the Featured Research card.
+- The page reuses the site's existing design tokens (navy/blue palette, Playfair Display + DM Sans, the same `.eyebrow` kicker style) so it reads as part of the same site rather than a bolted-on page, and reuses one existing image (`images/leaf-branch-1.png`) rather than adding new assets.
+- Verified at desktop and mobile widths (including the new nav item doesn't cause any wrapping/overflow with all 8 nav links present), tested the mobile hamburger menu on the new page, and re-ran the full regression suite on `shop.html` and `blog.html` after the nav markup changed — no errors.
+
 ## Notes / things to swap before going live
 
 - **Checkout**: the "Proceed to Checkout" button still shows an alert. Wire this to a real cart/checkout provider (Shopify, Stripe Checkout, Snipcart, etc.) before launch.
@@ -211,6 +226,7 @@ My suggestion: keep the lightbox for now, and revisit dedicated pages once (a) t
 - **Reviews**: sample testimonials are included; replace with verified customer reviews before launch (using placeholder names/quotes as if genuine is a legal risk once live).
 - **Legal/compliance copy**: the FAQ and footer include notes flagging language that should be reviewed against your actual return policy, supplement regulations, and SKU-level claims before publishing.
 - **Footer social links & newsletter**: the 5 footer social icons currently link to `#`, and the newsletter form just shows a "Subscribed!" confirmation toast. Point the social icons at your real profiles and wire the form up to an email service (Mailchimp, Klaviyo, etc.) before launch.
+- **About page photo**: `about.html` currently uses placeholder graphics in place of a real photo of Dr. Balasingham Arasabalan (hero portrait and research imagery) — swap in real photography once available.
 
 ## File structure
 
@@ -219,6 +235,7 @@ My suggestion: keep the lightbox for now, and revisit dedicated pages once (a) t
 ├── index.html    # the marketing homepage (HTML + CSS + JS inline)
 ├── shop.html     # the full retail Shop page (filter, sort, cart)
 ├── blog.html     # the research Blog, organized by ingredient
+├── about.html    # About page — Dr. Balasingham Arasabalan profile
 ├── images/       # product photos and the "origin of disease" infographic
 ├── _headers      # Cloudflare Pages response headers
 ├── robots.txt
