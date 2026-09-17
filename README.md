@@ -72,6 +72,14 @@ Fixed:
 - **Shop page card alignment**: quantity stepper and "Add to Cart" button now line up on the same row across all product cards, regardless of how long a product's description or tag list runs (previously Black Turmeric's extra tag caused its row to sit lower than the others).
 - **Homepage search fixed**: typing in the nav search now filters live (as you type) instead of only on Enter, and there's a visible "Clear search" link plus an × button in the search box — previously, clearing the box didn't restore the other products without pressing Enter again, which could leave them stuck dimmed.
 
+## Hero redesign & two new products (2026-09-17)
+
+- **Homepage hero redesigned**: replaced the simple centered-icon hero with a full-bleed lifestyle photo (Black Turmeric bottle among fresh turmeric root and leaves), a soft bottom gradient for text legibility, an italic serif "Wellness Inspired By Nature" watermark, and a caption naming the flagship botanical. The copy side now includes three badge callouts (Pure Ingredients, Real Wellness, A Brighter Tomorrow) beneath the CTA buttons, matching the richer reference layout you shared.
+- **Two new products added** — Ashwagandha & Amla Extract Capsules ($29) and Cinnamon Oil ($19) — to both the homepage teaser grid and the full Shop page, each tagged "New." Both include Studio (background-removed) and Lifestyle images and are wired into the Shop page's lightbox carousel, filters (Daily Wellness / Antioxidant Support), sorting, and cart exactly like the original five products.
+  - The two new source images you sent had a checkerboard "transparency" pattern baked into flat pixels rather than a real alpha channel, so I rebuilt clean transparent cutouts from them programmatically (edge-aware background detection, not a simple color key) before optimizing them the same way as the rest of the catalogue.
+  - **Prices are placeholders** — set to fit the existing $19–$35 range. Update `data-price` and the visible `$` amounts in `shop.html` (and the matching `addCart(...)` price in `index.html`) once you have real pricing.
+- Fixed a small stale bug from the previous round: the Shop page's "N products" counter now always reflects the true count on page load (it previously showed a hardcoded "5 products" until you touched a filter).
+
 ## New product photography & lightbox carousel (2026-09-17)
 
 - **All 5 products now use your own photography** — no more Wix hotlinks anywhere on the site. For each product you supplied two shots: a lifestyle photo (with background) and a studio cutout (transparent background). Both are hosted locally in `images/`:

@@ -314,6 +314,36 @@ footer{background:#030A14;color:#fff;padding:65px 0 25px}
       </div>
     </article>
 
+    <article class="product-card" data-categories="daily antioxidant" data-price="29" data-name="Ashwagandha & Amla Extract Capsules">
+      <div class="product-image" onclick="openProductLightbox(5)"><span class="badge">New</span><img src="images/ashwagandha-amla-studio.webp" alt="Ashwagandha & Amla Extract Capsules" loading="lazy"><span class="image-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span></div>
+      <div class="product-body">
+        <div class="stars" aria-hidden="true">★★★★★</div><span class="sr-only">Rated 5 out of 5 stars</span>
+        <h3>Ashwagandha & Amla Extract Capsules</h3>
+        <p>Adaptogenic botanical blend formulated to support the body's resilience and everyday antioxidant needs.</p>
+        <div class="product-tags"><span class="product-tag">Daily Wellness</span><span class="product-tag">Antioxidant</span></div>
+        <div class="price-row"><span class="price">$29</span></div>
+        <div class="cart-row">
+          <div class="qty-select"><button aria-label="Decrease quantity" onclick="stepQty(this,-1)">−</button><input type="number" class="qty-input" value="1" min="1" aria-label="Quantity" readonly><button aria-label="Increase quantity" onclick="stepQty(this,1)">+</button></div>
+          <button class="add-cart-btn" onclick="addToCartFromCard(this,'Ashwagandha & Amla Extract Capsules',29)">Add to Cart</button>
+        </div>
+      </div>
+    </article>
+
+    <article class="product-card" data-categories="daily" data-price="19" data-name="Cinnamon Oil">
+      <div class="product-image" onclick="openProductLightbox(6)"><span class="badge">New</span><img src="images/cinnamon-oil-studio.webp" alt="Cinnamon Oil" loading="lazy"><span class="image-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span></div>
+      <div class="product-body">
+        <div class="stars" aria-hidden="true">★★★★★</div><span class="sr-only">Rated 5 out of 5 stars</span>
+        <h3>Cinnamon Oil</h3>
+        <p>A pure, warming essential oil pressed to bring a grounding botanical note to your daily ritual.</p>
+        <div class="product-tags"><span class="product-tag">Daily Wellness</span></div>
+        <div class="price-row"><span class="price">$19</span></div>
+        <div class="cart-row">
+          <div class="qty-select"><button aria-label="Decrease quantity" onclick="stepQty(this,-1)">−</button><input type="number" class="qty-input" value="1" min="1" aria-label="Quantity" readonly><button aria-label="Increase quantity" onclick="stepQty(this,1)">+</button></div>
+          <button class="add-cart-btn" onclick="addToCartFromCard(this,'Cinnamon Oil',19)">Add to Cart</button>
+        </div>
+      </div>
+    </article>
+
   </div>
 </div>
 
@@ -412,7 +442,9 @@ const productGallery=[
  {name:'Cinnamon Extract',images:[{src:'images/cinnamon-studio.webp',label:'Studio'},{src:'images/cinnamon-lifestyle.jpg',label:'Lifestyle'}]},
  {name:'Jackfruit Extract',images:[{src:'images/jackfruit-studio.webp',label:'Studio'},{src:'images/jackfruit-lifestyle.jpg',label:'Lifestyle'}]},
  {name:'Moringa Superfood Capsules',images:[{src:'images/moringa-studio.webp',label:'Studio'},{src:'images/moringa-lifestyle.jpg',label:'Lifestyle'}]},
- {name:'Hummingbird Flower Powder Capsules',images:[{src:'images/hummingbird-studio.webp',label:'Studio'},{src:'images/hummingbird-lifestyle.jpg',label:'Lifestyle'}]}
+ {name:'Hummingbird Flower Powder Capsules',images:[{src:'images/hummingbird-studio.webp',label:'Studio'},{src:'images/hummingbird-lifestyle.jpg',label:'Lifestyle'}]},
+ {name:'Ashwagandha & Amla Extract Capsules',images:[{src:'images/ashwagandha-amla-studio.webp',label:'Studio'},{src:'images/ashwagandha-amla-lifestyle.jpg',label:'Lifestyle'}]},
+ {name:'Cinnamon Oil',images:[{src:'images/cinnamon-oil-studio.webp',label:'Studio'},{src:'images/cinnamon-oil-lifestyle.jpg',label:'Lifestyle'}]}
 ];
 let currentProductIdx=0, currentImageIdx=0;
 
@@ -501,6 +533,7 @@ function sortProducts(){
  });
  cards.forEach(c=>grid.appendChild(c));
 }
+applyFilter();
 </script>
 </body>
 </html>
