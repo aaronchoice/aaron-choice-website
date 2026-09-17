@@ -297,6 +297,12 @@ My suggestion: keep the lightbox for now, and revisit dedicated pages once (a) t
 - **Added the leaf panel to the product grid**: switched the grid from a fluid auto-fit layout to a fixed 4-columns-on-desktop grid (3 on tablet, 2 on small tablet, 1 on mobile), so the 7 products leave exactly one empty slot — filled with your supplied leaf image (`images/shop-leaf-panel.jpg`) and a "Small choices. A healthier tomorrow." message linking to the homepage's Ingredients section. The panel automatically hides when a wellness-goal filter narrows the results (since the "one gap" layout only makes sense on the full, unfiltered grid) and stays pinned as the last grid item when sorting.
 - Verified at desktop, tablet and mobile widths, tested the filter/sort interactions with the new leaf panel, and re-ran the shop.html regression suite — no errors.
 
+## About page: added name & professional title (2026-09-17)
+
+- Added a name/title block in the About hero, between the eyebrow and headline: **"(Moses) A. Balasingham, PhD (PSY.), PhD (I-MD)"** with the subtitle **"Mental Health Consultant · Integrative & Functional Medical Practitioner"**.
+- **Note**: the rest of the page (lead paragraph, Research Philosophy attribution, Featured Research byline, JSON-LD structured data, and the social share card) still refers to him as "Dr. Balasingham Arasabalan," per the original source document. If "(Moses) A. Balasingham" is now the name you want used site-wide, let me know and I'll update all of those to match.
+- Verified at desktop and mobile widths, re-ran the shop.html regression suite — no errors.
+
 ## Notes / things to swap before going live
 
 - **Checkout**: the "Proceed to Checkout" button still shows an alert. Wire this to a real cart/checkout provider (Shopify, Stripe Checkout, Snipcart, etc.) before launch.
