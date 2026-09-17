@@ -1,6 +1,6 @@
 # Aaron Choice — Website
 
-A single-page static site for Aaron Choice (premium botanical supplements). Pure HTML/CSS/JS, no build step, no dependencies.
+A static site for Aaron Choice (premium botanical supplements): a one-page storefront (`index.html`) plus a research Blog (`blog.html`). Pure HTML/CSS/JS, no build step, no dependencies.
 
 ## Deploying to Cloudflare Pages (via GitHub)
 
@@ -45,6 +45,16 @@ Fixed:
 - Removed dead JS (an empty event listener)
 - Product images lazy-load below the fold
 
+## Product photography & Blog (2026-09-17)
+
+- Replaced the Moringa product image with the real Aaron Choice product photo, and added **Hummingbird Flower Powder Capsules** ($35) as a fifth product with its own photo. Both images live in `images/` (resized/compressed for web) instead of hotlinking.
+- Added a **"The origin of disease"** section below the hero with a supplied infographic — flagged in-page with a disclaimer, since content connecting a supplement brand to "causes of disease" is the most disease-adjacent material on the site and should get a compliance review before launch (FTC/FDA rules on implied disease claims for supplements are strict).
+- Added **`blog.html`** — a Blog page, linked from the main nav/footer/mobile menu, organized by ingredient (Black Turmeric, Ashwagandha, Jackfruit, Amla, Moringa, Hummingbird Tree Flower) with jump-to-section pills. It compiles:
+  - The original featured Semantic Scholar citation (Black Turmeric / ABTS antioxidant study), and
+  - 26 additional PubMed/PMC citations supplied via `Aaron_Choice_Scientific_Publication_Links.docx`, grouped under their ingredient.
+  - **Titles shown in italics** on a handful of entries are topic descriptors (as given in the source document), not confirmed published titles — PubMed blocks automated fetches with a bot-check, so those specific titles couldn't be independently verified. Everything else shown in normal type was confirmed against a live search of the PMID. Recommend spot-checking the italicized ones before this page is considered final.
+  - A disclaimer at the bottom clarifies these citations are educational context, not medical advice or disease claims about the products.
+
 ## Notes / things to swap before going live
 
 - **Product images**: three of four still point to a Wix CDN and one to an Unsplash stock photo — these are hotlinked from someone else's infrastructure and could break or get rate-limited without warning. Replace with your own hosted product photography.
@@ -57,7 +67,9 @@ Fixed:
 
 ```
 .
-├── index.html    # the entire site (HTML + CSS + JS inline)
+├── index.html    # the storefront (HTML + CSS + JS inline)
+├── blog.html     # the research Blog, organized by ingredient
+├── images/       # product photos and the "origin of disease" infographic
 ├── _headers      # Cloudflare Pages response headers
 ├── robots.txt
 ├── sitemap.xml
