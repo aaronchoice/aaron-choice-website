@@ -273,6 +273,24 @@ My suggestion: keep the lightbox for now, and revisit dedicated pages once (a) t
 - Switched the eyebrow, quote and attribution text to white/light-blue so they read clearly over the new dark photo background, and widened the vertical padding slightly so the quote has more breathing room against the image.
 - Verified at desktop and mobile widths, and re-ran the shop.html and blog.html regression suites — no errors.
 
+## WhatsApp/social link previews + SEO pass (2026-09-17)
+
+**Link previews (WhatsApp, iMessage, Facebook, Slack, etc.)**
+- The old setup wouldn't have shown a preview image reliably: `og:image` on the homepage pointed to a relative path (`images/...`), which most link-preview crawlers — including WhatsApp's — can't resolve, and `shop.html`, `blog.html` and `about.html` had no `og:image` at all.
+- Designed **4 dedicated 1200×630px share cards** (the standard size social platforms crop to), one per page, each combining your logo, a page-specific headline, and a relevant photo: `images/share-home.jpg`, `images/share-shop.jpg`, `images/share-blog.jpg`, `images/share-about.jpg`. These looked cleaner and more on-brand than cropping an existing page photo down to the 1.91:1 ratio link previews expect.
+- Every page now has a full set of Open Graph + Twitter Card tags with **absolute URLs** (`og:url`, `og:image` with width/height/alt, `twitter:image`, `og:site_name`) plus a `<link rel="canonical">` tag — this is what WhatsApp, iMessage, Slack and Facebook actually read to build a link preview.
+- **One thing to know**: all the URLs used (`https://aaron-choice-website.pages.dev/...`) point at the current Cloudflare Pages address. If you move to a custom domain later, these need a find-and-replace to the new domain, or previews will keep pointing at the old one. Also, WhatsApp/Facebook cache previews aggressively — after deploying, test with Facebook's [Sharing Debugger](https://developers.facebook.com/tools/debug/) (paste the URL and click "Scrape Again") to force a refresh if an old/blank preview was already cached from an earlier share.
+
+**SEO**
+- **`sitemap.xml`**: was missing `about.html` entirely — added it, plus `lastmod` dates on all 4 URLs.
+- **Structured data (JSON-LD)** added so Google can understand the site better and potentially show richer search results:
+  - Homepage: `Organization` + `WebSite` schema.
+  - Shop page: `Product` schema for all 7 products (name, image, description, price, availability) — this is what can make star ratings/prices show up directly in Google search results.
+  - About page: `Person` schema for Dr. Balasingham Arasabalan (credentials, affiliation, areas of expertise).
+  - **Note**: product prices in the schema are marked `CAD` based on the footer's "Proudly Canadian" line — confirm that's correct (vs. USD) before launch, and update `data-price` values too if not (there's already a note about this below for the 2 newest products).
+- Audited all 4 pages: every image already has descriptive `alt` text, every page has exactly one `<h1>`, and all titles/meta descriptions are within Google's recommended length — no changes needed there.
+- Existing `robots.txt` and per-page meta descriptions were already in decent shape from an earlier round and are unchanged.
+
 ## Notes / things to swap before going live
 
 - **Checkout**: the "Proceed to Checkout" button still shows an alert. Wire this to a real cart/checkout provider (Shopify, Stripe Checkout, Snipcart, etc.) before launch.
@@ -280,6 +298,8 @@ My suggestion: keep the lightbox for now, and revisit dedicated pages once (a) t
 - **Reviews**: sample testimonials are included; replace with verified customer reviews before launch (using placeholder names/quotes as if genuine is a legal risk once live).
 - **Legal/compliance copy**: the FAQ and footer include notes flagging language that should be reviewed against your actual return policy, supplement regulations, and SKU-level claims before publishing.
 - **Footer social links & newsletter**: the 5 footer social icons currently link to `#`, and the newsletter form just shows a "Subscribed!" confirmation toast. Point the social icons at your real profiles and wire the form up to an email service (Mailchimp, Klaviyo, etc.) before launch.
+- **Domain in SEO/social tags**: canonical links, `og:url`, `og:image`, `twitter:image` and the sitemap all currently point at `https://aaron-choice-website.pages.dev`. If/when you connect a custom domain, do a find-and-replace across all 4 HTML files + `sitemap.xml` + `robots.txt` to the new domain, or search engines and link previews will keep referencing the old address.
+- **Product schema currency**: the `Product` structured data on `shop.html` is marked `CAD` (based on the footer's "Proudly Canadian" line) — confirm this matches your actual pricing currency before launch.
 
 ## File structure
 
