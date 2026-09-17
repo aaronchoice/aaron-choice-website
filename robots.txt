@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aaron-choice-website.pages.dev/sitemap.xml
