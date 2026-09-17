@@ -15,7 +15,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Shop | Aaron Choice">
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@300;400;500;600;700&family=Luckiest+Guy&display=swap" rel="stylesheet">
 <style>
 :root{
   --navy:#071D3B; --mid:#123B70; --blue:#2E6FD1; --pale:#F6F8FC;
@@ -36,7 +36,9 @@ button{cursor:pointer}
 .nav{height:82px;border-bottom:1px solid rgba(8,29,57,.08);display:flex;align-items:center;position:sticky;top:0;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);z-index:100;box-shadow:0 4px 22px rgba(7,29,59,.035)}
 .nav-inner{width:min(var(--max),calc(100% - 72px));margin:auto;display:flex;align-items:center;justify-content:space-between;gap:30px}
 .logo{font-family:var(--serif);font-weight:600;font-size:25px;color:var(--navy);letter-spacing:-.04em;display:flex;align-items:center;gap:11px;white-space:nowrap;flex:none}
-.logo-mark{height:38px;width:auto;display:block;flex:none}
+.brand{position:relative;display:flex;align-items:center;color:var(--navy);white-space:nowrap;flex:none;padding-left:128px}
+.brand-mark{position:absolute;top:-30px;left:0;height:118px;width:auto;display:block;pointer-events:none}
+.brand-text{font-family:'Luckiest Guy',cursive;font-weight:400;font-size:29px;color:var(--navy);letter-spacing:.01em;line-height:1;margin-top:6px}
 .navlinks{display:flex;gap:34px;align-items:center;list-style:none}
 .navlinks a{font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:var(--muted);transition:.2s}
 .navlinks a:hover{color:var(--blue)}
@@ -136,7 +138,7 @@ footer{background:#030A14;color:#fff;padding:65px 0 25px}
 }
 @media(max-width:620px){
  .container,.nav-inner{width:calc(100% - 30px)}
- .announcement{font-size:9px}.nav{height:64px}.logo{font-size:21px}.logo-mark{height:30px}.cart-btn{padding:10px 13px}
+ .announcement{font-size:9px}.nav{height:64px}.logo{font-size:21px}.cart-btn{padding:10px 13px}.brand{padding-left:82px}.brand-mark{height:76px;top:-19px}.brand-text{font-size:19px;margin-top:2px}
  .toolbar{flex-direction:column;align-items:stretch}
  .toolbar-right{justify-content:space-between}
  .trust-item{padding:5px 15px}.trust-item+.trust-item:before{display:none}
@@ -154,7 +156,7 @@ footer{background:#030A14;color:#fff;padding:65px 0 25px}
     <button class="icon-btn mobile-menu" aria-label="Open menu" onclick="openMenu()">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
-    <a class="logo" href="index.html"><img src="images/aaron-choice-logo.png" alt="" class="logo-mark">Aaron Choice</a>
+    <a class="brand" href="index.html"><img src="images/aaron-choice-logo.png" alt="" class="brand-mark"><span class="brand-text">Aaron Choice</span></a>
     <ul class="navlinks">
       <li><a href="shop.html" class="active">Shop</a></li><li><a href="index.html#science">Science</a></li>
       <li><a href="index.html#ingredients">Ingredients</a></li><li><a href="index.html#finder">Product Finder</a></li>
