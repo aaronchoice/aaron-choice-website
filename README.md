@@ -72,9 +72,26 @@ Fixed:
 - **Shop page card alignment**: quantity stepper and "Add to Cart" button now line up on the same row across all product cards, regardless of how long a product's description or tag list runs (previously Black Turmeric's extra tag caused its row to sit lower than the others).
 - **Homepage search fixed**: typing in the nav search now filters live (as you type) instead of only on Enter, and there's a visible "Clear search" link plus an × button in the search box — previously, clearing the box didn't restore the other products without pressing Enter again, which could leave them stuck dimmed.
 
+## New product photography & lightbox carousel (2026-09-17)
+
+- **All 5 products now use your own photography** — no more Wix hotlinks anywhere on the site. For each product you supplied two shots: a lifestyle photo (with background) and a studio cutout (transparent background). Both are hosted locally in `images/`:
+  - Studio cutouts (`*-studio.webp`) are used for the catalogue grid on `shop.html` and the homepage teaser/hero on `index.html` — transparent background keeps them looking consistent against the site's colors.
+  - Lifestyle photos (`*-lifestyle.jpg`) are used as the second image in each product's lightbox.
+- **Shop page product lightbox**: clicking any product image on `shop.html` now opens a full-screen lightbox carousel showing that product's Studio and Lifestyle images, with:
+  - Crossfade transition between images
+  - Dot indicators and prev/next arrow buttons
+  - Keyboard support (← → to switch images, Esc to close)
+  - Click-outside-to-close
+- Tested across all 5 products — both images load correctly in every case, and existing filtering/sorting/cart functionality has no regressions.
+
+### Separate product pages vs. the lightbox carousel — my recommendation
+
+You asked whether each product should get its own dedicated page instead. For a 5-product catalogue like this, **the lightbox carousel is the right call for now** — it's fast to browse, keeps people on the Shop page (so filtering/sorting/cart stay one click away), and it's what you already have live. Full product detail pages are the more "regular retail" pattern, but they earn their keep when there's more to say per product: longer descriptions, ingredient/dosage breakdowns, individual customer reviews, FAQs, or SEO copy you want Google to index under its own URL. Right now every product's info fits in the card itself, so a separate page would mostly just repeat what's already on `shop.html` with extra clicks in between.
+
+My suggestion: keep the lightbox for now, and revisit dedicated pages once (a) the catalogue grows past ~10–15 SKUs, or (b) you have enough unique content per product (lab results, usage guides, verified reviews) to justify a page each. If you want, I can build out one example product page later so you can compare the experience directly before deciding.
+
 ## Notes / things to swap before going live
 
-- **Product images**: three of five (Black Turmeric, Cinnamon, Jackfruit) still point to a Wix CDN — hotlinked from someone else's infrastructure and could break or get rate-limited without warning. Moringa and Hummingbird now use your own hosted photos in `images/`. Replace the remaining three with your own product photography the same way.
 - **Checkout**: the "Proceed to Checkout" button still shows an alert. Wire this to a real cart/checkout provider (Shopify, Stripe Checkout, Snipcart, etc.) before launch.
 - **Search**: currently a simple client-side name filter over the products shown. If your catalogue grows or you want full-text/typo-tolerant search, connect a real search service.
 - **Reviews**: sample testimonials are included; replace with verified customer reviews before launch (using placeholder names/quotes as if genuine is a legal risk once live).
