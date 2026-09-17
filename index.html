@@ -76,12 +76,23 @@ button{cursor:pointer}
 .section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:42px}
 .section-head h2{font:500 clamp(34px,4vw,54px)/1.08 var(--serif);letter-spacing:-.03em}
 .section-head p{max-width:500px;color:var(--muted);font-size:14px;line-height:1.8}
-.origin{background:#fff;text-align:center}
-.origin .section-head{display:block;text-align:center;margin-bottom:36px}
-.origin .section-head p{margin:14px auto 0;text-align:center}
-.origin-figure{max-width:880px;margin:0 auto}
-.origin-figure img{width:100%;height:auto;border-radius:6px;box-shadow:0 24px 60px rgba(11,45,94,.12)}
-.origin-caption{margin-top:18px;font-size:11px;color:var(--muted);letter-spacing:.03em}
+.origin{background:#fff}
+.origin-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+.origin-copy .eyebrow{margin-bottom:16px}
+.origin-copy h2{font:500 clamp(32px,3.6vw,46px)/1.1 var(--serif);letter-spacing:-.03em;margin-bottom:16px}
+.origin-copy p{color:var(--muted);font-size:14px;line-height:1.85;max-width:480px}
+.origin-figure{position:relative;cursor:zoom-in;max-width:420px}
+.origin-figure img{width:100%;height:auto;border-radius:6px;box-shadow:0 18px 45px rgba(11,45,94,.12);display:block;transition:.25s}
+.origin-figure:hover img{box-shadow:0 22px 55px rgba(11,45,94,.18)}
+.origin-zoom-hint{position:absolute;right:12px;bottom:12px;background:rgba(7,29,59,.78);color:#fff;font-size:10px;letter-spacing:.05em;padding:7px 12px;border-radius:20px;display:flex;align-items:center;gap:6px;pointer-events:none}
+.origin-zoom-hint svg{width:12px;height:12px}
+.origin-caption{margin-top:14px;font-size:10px;color:var(--muted);letter-spacing:.02em;max-width:420px}
+.lightbox{position:fixed;inset:0;background:rgba(4,10,20,.92);z-index:400;display:none;align-items:center;justify-content:center;padding:50px;cursor:zoom-out}
+.lightbox.open{display:flex}
+.lightbox img{max-width:100%;max-height:100%;box-shadow:0 30px 80px rgba(0,0,0,.5);border-radius:4px}
+.lightbox-close{position:fixed;top:24px;right:24px;background:rgba(255,255,255,.12);border:0;color:#fff;width:44px;height:44px;border-radius:50%;display:grid;place-items:center}
+.lightbox-close svg{width:18px;height:18px}
+@media(max-width:1000px){.origin-grid{grid-template-columns:1fr;gap:36px}.origin-figure{max-width:100%;margin:0 auto}}
 .benefits{background:var(--navy);color:#fff}
 .benefit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:45px}
 .benefit{padding:35px 28px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);min-height:210px}
@@ -336,7 +347,7 @@ footer{background:#030A14}
     </button>
     <a class="logo" href="#">Aaron Choice</a>
     <ul class="navlinks">
-      <li><a href="#shop">Shop</a></li><li><a href="#science">Science</a></li>
+      <li><a href="shop.html">Shop</a></li><li><a href="#science">Science</a></li>
       <li><a href="#ingredients">Ingredients</a></li><li><a href="#finder">Product Finder</a></li>
       <li><a href="#reviews">Reviews</a></li><li><a href="#faq">FAQ</a></li><li><a href="blog.html">Blog</a></li>
     </ul>
@@ -362,7 +373,7 @@ footer{background:#030A14}
  <aside class="mobile-nav">
   <div class="cart-head"><span class="logo">Aaron Choice</span><button class="close" aria-label="Close menu" onclick="closeMenu()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg></button></div>
   <ul>
-    <li><a href="#shop" onclick="closeMenu()">Shop</a></li><li><a href="#science" onclick="closeMenu()">Science</a></li>
+    <li><a href="shop.html">Shop</a></li><li><a href="#science" onclick="closeMenu()">Science</a></li>
     <li><a href="#ingredients" onclick="closeMenu()">Ingredients</a></li><li><a href="#finder" onclick="closeMenu()">Product Finder</a></li>
     <li><a href="#reviews" onclick="closeMenu()">Reviews</a></li><li><a href="#faq" onclick="closeMenu()">FAQ</a></li><li><a href="blog.html">Blog</a></li>
   </ul>
@@ -376,7 +387,7 @@ footer{background:#030A14}
       <div class="eyebrow">Botanicals · Science · Transparency</div>
       <h1>Nature, formulated <em>with purpose.</em></h1>
       <p class="hero-copy">Premium plant-based supplements rooted in botanical tradition and presented with the clarity, transparency and quality standards modern wellness deserves.</p>
-      <div class="actions"><a class="primary" href="#shop">Shop Supplements</a><a class="secondary" href="#science">Explore the Science</a></div>
+      <div class="actions"><a class="primary" href="shop.html">Shop Supplements</a><a class="secondary" href="#science">Explore the Science</a></div>
     </div>
     <div class="hero-art">
       <div></div>
@@ -387,18 +398,26 @@ footer{background:#030A14}
 </section>
 
 <section class="origin section" id="origin">
-  <div class="container">
-    <div class="section-head">
+  <div class="container origin-grid">
+    <div class="origin-copy">
       <div class="eyebrow">Root-Cause Thinking</div>
       <h2>The origin of disease.</h2>
       <p>Wellness starts with understanding the many interconnected factors that influence how the body functions — genetics, lifestyle, environment and more.</p>
     </div>
-    <div class="origin-figure">
-      <img src="images/origin-of-disease.jpg" alt="Diagram illustrating interconnected contributing factors to disease, including infections, stress, adrenal fatigue, nutrient deficiencies, environmental toxins, inflammation, GI dysfunction, emotional trauma, mold biotoxins, hormone dysfunction, mitochondrial dysfunction, electromagnetic pollution, immune dysfunction, and food sensitivities, arranged around a central figure with genetic susceptibility, lifestyle, environment and interactions at the core" loading="lazy">
+    <div>
+      <div class="origin-figure" onclick="openLightbox('images/origin-of-disease.jpg','Diagram illustrating interconnected contributing factors to disease')">
+        <img src="images/origin-of-disease.jpg" alt="Diagram illustrating interconnected contributing factors to disease, including infections, stress, adrenal fatigue, nutrient deficiencies, environmental toxins, inflammation, GI dysfunction, emotional trauma, mold biotoxins, hormone dysfunction, mitochondrial dysfunction, electromagnetic pollution, immune dysfunction, and food sensitivities, arranged around a central figure with genetic susceptibility, lifestyle, environment and interactions at the core" loading="lazy">
+        <span class="origin-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>Click to enlarge</span>
+      </div>
       <p class="origin-caption">For educational context only — not a diagnostic tool. Consult a qualified healthcare professional about any health condition.</p>
     </div>
   </div>
 </section>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" aria-label="Close" onclick="closeLightbox()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg></button>
+  <img id="lightboxImg" src="" alt="">
+</div>
 
 <section class="benefits section">
   <div class="container">
@@ -415,7 +434,7 @@ footer{background:#030A14}
 
 <section class="products section" id="shop">
  <div class="container">
-  <div class="section-head"><div><div class="eyebrow">The Collection</div><h2>Explore Aaron Choice.</h2></div><p>A focused collection of botanical products designed for everyday wellness routines. Product details remain configurable as the catalogue grows.</p></div>
+  <div class="section-head"><div><div class="eyebrow">The Collection</div><h2>Explore Aaron Choice.</h2></div><p>A focused collection of botanical products designed for everyday wellness routines. <a href="shop.html" style="color:var(--blue);text-decoration:underline">View the full shop →</a></p></div>
   <div class="product-grid">
    <article class="product-card">
     <div class="product-image"><span class="badge">Best Seller</span><img src="https://static.wixstatic.com/media/980903_c5d20335518840478054ba92603fbcf3~mv2.png" alt="Black Turmeric Capsules" loading="lazy"></div>
@@ -475,7 +494,7 @@ footer{background:#030A14}
 
 <section class="finder section" id="finder">
  <div class="container finder-box">
-  <div><div class="eyebrow" style="color:#93C5FD">Personalised discovery</div><h2>Find your Aaron Choice.</h2><p>Use a simple wellness product finder to discover which product information is most relevant to you. This is a product-discovery tool, not a medical diagnostic or prescribing system.</p><a href="#shop" class="secondary">Browse all products</a></div>
+  <div><div class="eyebrow" style="color:#93C5FD">Personalised discovery</div><h2>Find your Aaron Choice.</h2><p>Use a simple wellness product finder to discover which product information is most relevant to you. This is a product-discovery tool, not a medical diagnostic or prescribing system.</p><a href="shop.html" class="secondary">Browse all products</a></div>
   <div class="finder-card">
    <label for="goal">What are you exploring?</label>
    <select id="goal"><option value="">Choose a wellness area</option><option>Joint & mobility support</option><option>Digestive wellness</option><option>Antioxidant support</option><option>Daily botanical wellness</option></select>
@@ -509,14 +528,14 @@ footer{background:#030A14}
  </div>
 </section>
 
-<section class="cta"><div class="container"><div class="eyebrow">Aaron Choice</div><h2>Start your <em>wellness journey.</em></h2><p>Premium botanical supplements with a clearer approach to ingredients, formulation and quality.</p><a class="primary" href="#shop">Shop Aaron Choice</a></div></section>
+<section class="cta"><div class="container"><div class="eyebrow">Aaron Choice</div><h2>Start your <em>wellness journey.</em></h2><p>Premium botanical supplements with a clearer approach to ingredients, formulation and quality.</p><a class="primary" href="shop.html">Shop Aaron Choice</a></div></section>
 </main>
 
 <footer>
  <div class="container">
   <div class="footer-grid">
    <div><div class="footer-logo">Aaron Choice</div><p class="footer-desc">Premium plant-based supplements rooted in botanical tradition and presented with modern transparency.</p></div>
-   <div><h4>Shop</h4><ul><li>All Products</li><li>Best Sellers</li><li>Bundles</li><li>Subscribe & Save</li></ul></div>
+   <div><h4>Shop</h4><ul><li><a href="shop.html" style="color:inherit">All Products</a></li><li>Best Sellers</li><li>Bundles</li><li>Subscribe & Save</li></ul></div>
    <div><h4>Science</h4><ul><li>Ingredients</li><li>Formulation</li><li>Quality</li><li>Batch Testing</li></ul></div>
    <div><h4>Company</h4><ul><li>Our Story</li><li><a href="blog.html" style="color:inherit">Blog</a></li><li>Reviews</li><li>Contact</li></ul></div>
    <div><h4>Support</h4><ul><li>FAQ</li><li>Shipping</li><li>Returns</li><li>Privacy</li></ul></div>
@@ -577,6 +596,12 @@ function openCart(){document.getElementById('drawer').classList.add('open')}
 function closeCart(){document.getElementById('drawer').classList.remove('open')}
 function openMenu(){document.getElementById('menuDrawer').classList.add('open')}
 function closeMenu(){document.getElementById('menuDrawer').classList.remove('open')}
+function openLightbox(src,alt){
+ document.getElementById('lightboxImg').src=src;
+ document.getElementById('lightboxImg').alt=alt;
+ document.getElementById('lightbox').classList.add('open');
+}
+function closeLightbox(){document.getElementById('lightbox').classList.remove('open')}
 function showToast(t){const x=document.getElementById('toast');x.textContent=t;x.classList.add('show');setTimeout(()=>x.classList.remove('show'),1800)}
 function toggleSearch(){
  const input=document.getElementById('searchInput');

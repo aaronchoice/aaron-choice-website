@@ -1,6 +1,6 @@
 # Aaron Choice — Website
 
-A static site for Aaron Choice (premium botanical supplements): a one-page storefront (`index.html`) plus a research Blog (`blog.html`). Pure HTML/CSS/JS, no build step, no dependencies.
+A static site for Aaron Choice (premium botanical supplements): a marketing homepage (`index.html`), a full retail Shop page (`shop.html`), and a research Blog (`blog.html`). Pure HTML/CSS/JS, no build step, no dependencies.
 
 ## Deploying to Cloudflare Pages (via GitHub)
 
@@ -55,11 +55,21 @@ Fixed:
   - **Titles shown in italics** on a handful of entries are topic descriptors (as given in the source document), not confirmed published titles — PubMed blocks automated fetches with a bot-check, so those specific titles couldn't be independently verified. Everything else shown in normal type was confirmed against a live search of the PMID. Recommend spot-checking the italicized ones before this page is considered final.
   - A disclaimer at the bottom clarifies these citations are educational context, not medical advice or disease claims about the products.
 
+## Shop page & origin section redesign (2026-09-17)
+
+- **Built `shop.html`** — a dedicated retail page for the full product catalogue, linked from the nav, hero, mobile menu, footer and homepage product teaser (which now says "View the full shop →"). It includes:
+  - Filter pills by wellness goal (Joint & Mobility, Digestive Wellness, Antioxidant Support, Daily Wellness), matching the categories used in the homepage Product Finder.
+  - A sort dropdown (Featured / Price: Low–High / Price: High–Low / Name A–Z) with a live "N products" count.
+  - All 5 products (Black Turmeric, Cinnamon, Jackfruit, Moringa, Hummingbird Flower Powder), each with a quantity stepper and its own "Add to Cart" button.
+  - The same cart drawer, toast notifications, mobile menu and footer as the rest of the site, so it feels like one continuous store rather than a bolted-on page.
+  - Tested end-to-end (filtering, sorting, quantity stepper, add-to-cart, cart drawer, mobile layout) — all working with no JS errors.
+- **Redesigned "The origin of disease" section** on the homepage: it was too visually heavy as a single large centered image. It's now a compact two-column layout — copy on the left, image on the right — and the image opens in a full-screen lightbox on click for closer viewing. The compliance disclaimer under the image is unchanged.
+
 ## Notes / things to swap before going live
 
-- **Product images**: three of four still point to a Wix CDN and one to an Unsplash stock photo — these are hotlinked from someone else's infrastructure and could break or get rate-limited without warning. Replace with your own hosted product photography.
+- **Product images**: three of five (Black Turmeric, Cinnamon, Jackfruit) still point to a Wix CDN — hotlinked from someone else's infrastructure and could break or get rate-limited without warning. Moringa and Hummingbird now use your own hosted photos in `images/`. Replace the remaining three with your own product photography the same way.
 - **Checkout**: the "Proceed to Checkout" button still shows an alert. Wire this to a real cart/checkout provider (Shopify, Stripe Checkout, Snipcart, etc.) before launch.
-- **Search**: currently a simple client-side name filter over the four products shown. If your catalogue grows or you want full-text/typo-tolerant search, connect a real search service.
+- **Search**: currently a simple client-side name filter over the products shown. If your catalogue grows or you want full-text/typo-tolerant search, connect a real search service.
 - **Reviews**: sample testimonials are included; replace with verified customer reviews before launch (using placeholder names/quotes as if genuine is a legal risk once live).
 - **Legal/compliance copy**: the FAQ and footer include notes flagging language that should be reviewed against your actual return policy, supplement regulations, and SKU-level claims before publishing.
 
@@ -67,7 +77,8 @@ Fixed:
 
 ```
 .
-├── index.html    # the storefront (HTML + CSS + JS inline)
+├── index.html    # the marketing homepage (HTML + CSS + JS inline)
+├── shop.html     # the full retail Shop page (filter, sort, cart)
 ├── blog.html     # the research Blog, organized by ingredient
 ├── images/       # product photos and the "origin of disease" infographic
 ├── _headers      # Cloudflare Pages response headers
