@@ -161,20 +161,33 @@ button{cursor:pointer}
 .price{font:600 21px var(--serif)}
 .quick{border:1px solid var(--navy);background:#fff;color:var(--navy);padding:9px 11px;font-size:10px;text-transform:uppercase;letter-spacing:.1em;font-weight:600}
 
-.science{background:var(--pale)}
+.science{position:relative;overflow:hidden;color:#fff}
+.science-bg{position:absolute;inset:0;z-index:0}
+.science-bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.science-bg:after{content:"";position:absolute;inset:0;background:rgba(4,12,26,.62)}
+.science .container{position:relative;z-index:1}
 .science-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
-.science-visual{min-height:440px;background:var(--navy);position:relative;padding:42px;color:#fff;overflow:hidden}
-.science-visual:after{content:"";position:absolute;width:280px;height:280px;border:1px solid rgba(147,197,253,.25);border-radius:50%;right:-80px;bottom:-80px}
-.flow{display:grid;gap:12px;position:relative;z-index:1}
-.flow-step{display:flex;align-items:center;gap:15px;padding:15px 16px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05)}
-.flow-step strong{font-family:var(--serif);font-size:17px;font-weight:500}
-.flow-step small{display:block;color:rgba(255,255,255,.5);font-size:10px;letter-spacing:.1em;text-transform:uppercase}
-.science-copy h2{font:500 50px/1.1 var(--serif);margin-bottom:18px}
-.science-copy>p{color:var(--muted);font-size:14px;line-height:1.8;margin-bottom:24px}
-.evidence{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.evidence div{padding:16px;background:#fff;border:1px solid var(--border)}
-.evidence b{font-size:12px;display:block;margin-bottom:4px}
-.evidence span{font-size:11px;color:var(--muted)}
+.science-visual{position:relative;padding:20px 0}
+.flow{display:grid;gap:0;position:relative}
+.flow:before{content:"";position:absolute;left:55px;top:55px;bottom:55px;width:1px;border-left:1px solid rgba(147,197,253,.3);border-radius:50%}
+.flow-step{display:flex;align-items:center;gap:24px;padding:14px 0;position:relative;z-index:1}
+.flow-icon{width:110px;height:110px;border-radius:50%;flex:none;overflow:hidden}
+.flow-icon img{width:100%;height:100%;object-fit:cover;display:block}
+.flow-step strong{font-family:var(--serif);font-size:20px;font-weight:500;display:block;color:#fff}
+.flow-step span.step-num{font-family:var(--serif);font-size:24px;color:#93C5FD;display:block;margin-bottom:2px}
+.flow-step small{display:block;color:rgba(255,255,255,.55);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;margin-top:4px}
+.science-tagline{position:absolute;left:0;bottom:-10px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(147,197,253,.7);line-height:2}
+.science-copy .eyebrow{display:flex;align-items:center;gap:14px;color:#9DC2F7}
+.science-copy .eyebrow:after{content:"";flex:0 0 40px;height:1px;background:rgba(255,255,255,.35)}
+.science-copy h2{font:500 50px/1.1 var(--serif);margin-bottom:18px;color:#fff}
+.science-copy>p{color:rgba(255,255,255,.72);font-size:14px;line-height:1.8;margin-bottom:24px}
+.evidence{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.evidence>div{padding:18px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.16);border-radius:10px;display:flex;gap:12px;align-items:flex-start}
+.evidence .ic{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;color:#9DC2F7;flex:none}
+.evidence .ic svg{width:16px;height:16px}
+.evidence b{font-size:13px;display:block;margin-bottom:4px;color:#fff;font-weight:600}
+.evidence span{font-size:11.5px;color:rgba(255,255,255,.62);line-height:1.6}
+.science-bottom{margin-top:56px;text-align:right;font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.4);position:relative;z-index:1}
 
 .ingredients{background:#fff}
 .ingredient-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
@@ -308,16 +321,12 @@ body{background:#fff;color:var(--ink);letter-spacing:-.01em}
 .product-body p{font-size:11px;line-height:1.7}
 .price{font-size:22px}.quick{font-size:9px;padding:10px 13px}
 
-.science{background:#f5f8fc}
 .science-grid{gap:90px}
-.science-visual{min-height:500px;padding:48px;background:linear-gradient(145deg,#061a34,#103a6c);box-shadow:var(--shadow)}
-.science-visual:before{content:"SCIENCE × BOTANICALS";position:absolute;right:-32px;top:45px;transform:rotate(90deg);font-size:8px;letter-spacing:.35em;color:rgba(255,255,255,.25)}
-.flow{gap:9px}
-.flow-step{padding:17px;border-color:rgba(255,255,255,.10);transition:.25s}
-.flow-step:hover{transform:translateX(5px);background:rgba(255,255,255,.08)}
+.flow-step{transition:.25s}
+.flow-step:hover{transform:translateX(5px)}
 .science-copy h2{font-size:clamp(42px,4.3vw,60px)}
 .science-copy>p{font-size:13px;line-height:1.9}
-.evidence div{padding:18px 20px;box-shadow:0 8px 25px rgba(7,29,59,.04)}
+.evidence>div{padding:18px 20px}
 .evidence b{font-size:11px;letter-spacing:.02em}.evidence span{font-size:10px}
 
 .ingredients{background:#fff}
@@ -531,24 +540,31 @@ footer{background:#030A14}
 </section>
 
 <section class="science section" id="science">
+ <div class="science-bg"><img src="images/science-bg.jpg" alt="" loading="lazy"></div>
  <div class="container science-grid">
   <div class="science-visual">
-   <div class="eyebrow" style="color:#93C5FD">Our formulation approach</div>
    <div class="flow">
-    <div class="flow-step"><span>01</span><div><strong>Botanical Source</strong><small>Ingredient identity & sourcing</small></div></div>
-    <div class="flow-step"><span>02</span><div><strong>Extraction</strong><small>Focused botanical preparation</small></div></div>
-    <div class="flow-step"><span>03</span><div><strong>Formulation</strong><small>Dose & product architecture</small></div></div>
-    <div class="flow-step"><span>04</span><div><strong>Quality Testing</strong><small>Testing & documentation</small></div></div>
-    <div class="flow-step"><span>05</span><div><strong>Finished Product</strong><small>Ready for your routine</small></div></div>
+    <div class="flow-step"><div class="flow-icon"><img src="images/science-01-source.png" alt="" loading="lazy"></div><div><span class="step-num">01</span><strong>Botanical Source</strong><small>Ingredient identity & sourcing</small></div></div>
+    <div class="flow-step"><div class="flow-icon"><img src="images/science-02-extraction.png" alt="" loading="lazy"></div><div><span class="step-num">02</span><strong>Extraction</strong><small>Focused botanical preparation</small></div></div>
+    <div class="flow-step"><div class="flow-icon"><img src="images/science-03-formulation.png" alt="" loading="lazy"></div><div><span class="step-num">03</span><strong>Formulation</strong><small>Dose & product architecture</small></div></div>
+    <div class="flow-step"><div class="flow-icon"><img src="images/science-04-testing.png" alt="" loading="lazy"></div><div><span class="step-num">04</span><strong>Quality Testing</strong><small>Testing & documentation</small></div></div>
+    <div class="flow-step"><div class="flow-icon"><img src="images/science-05-finished.png" alt="" loading="lazy"></div><div><span class="step-num">05</span><strong>Finished Product</strong><small>Ready for your routine</small></div></div>
    </div>
+   <div class="science-tagline">Pure Botanicals<br>Real Impact</div>
   </div>
   <div class="science-copy">
    <div class="eyebrow">Science, without the noise</div>
    <h2>Know what you're taking. Know why it's there.</h2>
    <p>Aaron Choice can make scientific transparency a core part of the customer experience: ingredient identity, formulation role, dosage, evidence and quality information presented in a way that is understandable without oversimplifying the science.</p>
-   <div class="evidence"><div><b>Ingredient transparency</b><span>Clear ingredient and serving information</span></div><div><b>Evidence-ready</b><span>References can be connected to each ingredient</span></div><div><b>Batch transparency</b><span>Architecture for future batch/CoA lookup</span></div><div><b>Responsible claims</b><span>Wellness language without unsupported disease claims</span></div></div>
+   <div class="evidence">
+    <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c6-1.5 9-6.5 9-13 0-2-.3-3.7-1-5-3.5.7-6.3 2.3-8 5-1.2-3-3.5-5.3-6-6.5-.7 2-1 4-1 6 0 6.5 3.5 12 7 13.5z"/></svg></span><div><b>Ingredient transparency</b><span>Clear ingredient and serving information</span></div></div>
+    <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l5 5v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg></span><div><b>Evidence-ready</b><span>References can be connected to each ingredient</span></div></div>
+    <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v5.5L5.5 17a2 2 0 0 0 1.8 3h9.4a2 2 0 0 0 1.8-3L14 8.5V3"/></svg></span><div><b>Batch transparency</b><span>Architecture for future batch/CoA lookup</span></div></div>
+    <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.4 8.4-8 10-4.6-1.6-8-5-8-10V7l8-4z"/><path d="M9 12l2 2 4-4"/></svg></span><div><b>Responsible claims</b><span>Wellness language without unsupported disease claims</span></div></div>
+   </div>
   </div>
  </div>
+ <div class="science-bottom">Plants · People · A Healthier Tomorrow</div>
 </section>
 
 <section class="ingredients section" id="ingredients">

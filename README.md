@@ -125,6 +125,20 @@ My suggestion: keep the lightbox for now, and revisit dedicated pages once (a) t
   - Each of the 4 cards (Botanically Pure, Science Backed, Transparently Made, Quality Focused) now has its own circular icon image above the number — `images/benefit-botanically-pure.png`, `images/benefit-science-backed.png`, `images/benefit-transparently-made.png`, `images/benefit-quality-focused.png` (resized down from your originals since they were much larger than needed at this display size). Cards now have rounded corners and a subtle border/hover treatment on the semi-transparent glass background.
 - Verified at desktop and mobile widths, and re-ran the full regression suite on shop.html and blog.html — no errors.
 
+## Icon size bump on "Why Aaron Choice" (2026-09-17)
+
+- Increased the 4 benefit icons from 110px to 150px per your feedback — checked they still fit cleanly in the cards at desktop, tablet (2-column) and mobile widths.
+
+## Science section redesign (2026-09-17)
+
+- Rebuilt the "Our formulation approach" / "Know what you're taking" section (`#science`) using your reference layout and new assets:
+  - A full-bleed dark background photo (`images/science-bg.jpg` — leaves and rock over a navy backdrop) with a flat dark overlay for text contrast, matching the hero/benefits full-bleed treatment.
+  - The 5-step formulation flow (Botanical Source → Extraction → Formulation → Quality Testing → Finished Product) now has its own circular photo for each step (`images/science-01-source.png` through `images/science-05-finished.png`, resized down from your originals) next to the step number and heading, connected by a thin vertical line, with a "Pure Botanicals / Real Impact" label at the bottom.
+  - The right column's 4 info cards (Ingredient transparency, Evidence-ready, Batch transparency, Responsible claims) each got a circular line-icon (leaf, document, flask, shield) matching the site's existing icon style — no new images needed there.
+  - Added a "Plants · People · A Healthier Tomorrow" line in the bottom-right corner, matching your reference.
+  - Fixed a CSS specificity bug while building this: the card border/background rule was initially matching every `<div>` inside the info cards (including the inner text wrapper), producing a "double card" look — scoped it to direct children only.
+- Verified at desktop and mobile widths, and re-ran the full regression suite on shop.html and blog.html — no errors.
+
 ## Notes / things to swap before going live
 
 - **Checkout**: the "Proceed to Checkout" button still shows an alert. Wire this to a real cart/checkout provider (Shopify, Stripe Checkout, Snipcart, etc.) before launch.
