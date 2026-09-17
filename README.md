@@ -291,6 +291,12 @@ My suggestion: keep the lightbox for now, and revisit dedicated pages once (a) t
 - Audited all 4 pages: every image already has descriptive `alt` text, every page has exactly one `<h1>`, and all titles/meta descriptions are within Google's recommended length — no changes needed there.
 - Existing `robots.txt` and per-page meta descriptions were already in decent shape from an earlier round and are unchanged.
 
+## Shop page hero redesign (2026-09-17)
+
+- **Rebuilt the Shop page hero** to match the reference layout you shared: a light cream section with the eyebrow ("The Aaron Choice Collection"), a large serif headline ("Botanical wellness, thoughtfully formulated."), copy, and an "Explore the Collection" button on the left, and your supplied hero photo (`images/shop-hero.jpg` — turmeric, moringa, amla and hibiscus on a stone slab) bleeding to the right edge of the page. The photo carries the italic "Nature / Research / Real Wellbeing" caption top-right and the "Traditional Botanicals / Modern Science / Brighter Tomorrows" caps list bottom-right, both with a soft white glow so they stay legible over the busy photo. A "Plants · Research · A Healthier Tomorrow" tagline sits in its own thin strip beneath, before the trust bar. Replaced the old plain centered text header (with breadcrumb) entirely.
+- **Added the leaf panel to the product grid**: switched the grid from a fluid auto-fit layout to a fixed 4-columns-on-desktop grid (3 on tablet, 2 on small tablet, 1 on mobile), so the 7 products leave exactly one empty slot — filled with your supplied leaf image (`images/shop-leaf-panel.jpg`) and a "Small choices. A healthier tomorrow." message linking to the homepage's Ingredients section. The panel automatically hides when a wellness-goal filter narrows the results (since the "one gap" layout only makes sense on the full, unfiltered grid) and stays pinned as the last grid item when sorting.
+- Verified at desktop, tablet and mobile widths, tested the filter/sort interactions with the new leaf panel, and re-ran the shop.html regression suite — no errors.
+
 ## Notes / things to swap before going live
 
 - **Checkout**: the "Proceed to Checkout" button still shows an alert. Wire this to a real cart/checkout provider (Shopify, Stripe Checkout, Snipcart, etc.) before launch.
