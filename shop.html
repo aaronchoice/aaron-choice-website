@@ -36,11 +36,11 @@ button{cursor:pointer}
 .nav{height:82px;border-bottom:1px solid rgba(8,29,57,.08);display:flex;align-items:center;position:sticky;top:0;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);z-index:100;box-shadow:0 4px 22px rgba(7,29,59,.035)}
 .nav-inner{width:min(var(--max),calc(100% - 72px));margin:auto;display:flex;align-items:center;justify-content:space-between;gap:30px}
 .logo{font-family:var(--serif);font-weight:600;font-size:25px;color:var(--navy);letter-spacing:-.04em;display:flex;align-items:center;gap:11px;white-space:nowrap;flex:none}
-.brand{position:relative;display:flex;align-items:center;color:var(--navy);white-space:nowrap;flex:none;padding-left:128px}
-.brand-mark{position:absolute;top:-30px;left:0;height:118px;width:auto;display:block;pointer-events:none}
-.brand-text{font-family:'Luckiest Guy',cursive;font-weight:400;font-size:29px;color:var(--navy);letter-spacing:.01em;line-height:1;margin-top:6px}
+.brand{position:relative;display:flex;align-items:center;color:var(--navy);white-space:nowrap;flex:none;padding-left:104px}
+.brand-mark{position:absolute;top:-24px;left:0;height:98px;width:auto;display:block;pointer-events:none}
+.brand-text{font-family:var(--serif);font-weight:600;font-size:25px;color:var(--navy);letter-spacing:-.04em}
 .navlinks{display:flex;gap:34px;align-items:center;list-style:none}
-.navlinks a{font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:var(--muted);transition:.2s}
+.navlinks a{font-size:13px;text-transform:uppercase;letter-spacing:.13em;color:var(--muted);transition:.2s}
 .navlinks a:hover{color:var(--blue)}
 .navlinks a.active{color:var(--navy);font-weight:700}
 .nav-actions{display:flex;gap:10px;align-items:center}
@@ -50,7 +50,7 @@ button{cursor:pointer}
 .cart-btn:hover,.primary:hover{background:var(--mid);transform:translateY(-1px)}
 .mobile-menu{display:none}
 
-.breadcrumb{font-size:11px;color:var(--muted);padding:22px 0 0}
+.breadcrumb{font-size:11px;color:var(--muted);padding:36px 0 0}
 .breadcrumb a{color:var(--muted)}
 .breadcrumb a:hover{color:var(--blue)}
 .breadcrumb span{margin:0 6px}
@@ -138,7 +138,7 @@ footer{background:#030A14;color:#fff;padding:65px 0 25px}
 }
 @media(max-width:620px){
  .container,.nav-inner{width:calc(100% - 30px)}
- .announcement{font-size:9px}.nav{height:64px}.logo{font-size:21px}.cart-btn{padding:10px 13px}.brand{padding-left:82px}.brand-mark{height:76px;top:-19px}.brand-text{font-size:19px;margin-top:2px}
+ .announcement{font-size:9px}.nav{height:64px}.logo{font-size:21px}.cart-btn{padding:10px 13px}.brand{padding-left:68px}.brand-mark{height:64px;top:-20px}.brand-text{font-size:21px}
  .toolbar{flex-direction:column;align-items:stretch}
  .toolbar-right{justify-content:space-between}
  .trust-item{padding:5px 15px}.trust-item+.trust-item:before{display:none}
