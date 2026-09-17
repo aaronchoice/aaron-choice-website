@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Aaron Choice — premium botanical supplements rooted in botanical tradition and modern science.">
+<title>Aaron Choice | Premium Botanical Supplements</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0B2D5E;--mid:#1A4A8A;--blue:#2563C4;--pale:#F4F7FD;
+  --light:#E8F0FB;--white:#fff;--ink:#0B2D5E;--muted:#5A6E8C;
+  --border:#D0DDF0;--dark:#070F1E;--gold:#B88A44;
+  --serif:'Playfair Display',Georgia,serif;--sans:'DM Sans',Arial,sans-serif;
+  --max:1320px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:#fff;line-height:1.5}
+a{text-decoration:none;color:inherit}
+button,input{font:inherit}
+button{cursor:pointer}
+.container{width:min(var(--max),calc(100% - 48px));margin:auto}
+.announcement{background:var(--navy);color:#fff;text-align:center;padding:10px 20px;font-size:11px;letter-spacing:.13em;text-transform:uppercase}
+.announcement span{color:#93C5FD}
+.nav{height:76px;border-bottom:1px solid var(--border);display:flex;align-items:center;position:sticky;top:0;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);z-index:100}
+.nav-inner{width:min(var(--max),calc(100% - 48px));margin:auto;display:flex;align-items:center;justify-content:space-between;gap:30px}
+.logo{font-family:var(--serif);font-weight:600;font-size:24px;color:var(--navy);letter-spacing:-.02em}
+.navlinks{display:flex;gap:30px;align-items:center;list-style:none}
+.navlinks a{font-size:12px;text-transform:uppercase;letter-spacing:.11em;color:var(--muted);transition:.2s}
+.navlinks a:hover{color:var(--blue)}
+.nav-actions{display:flex;gap:10px;align-items:center}
+.icon-btn{width:42px;height:42px;border:0;background:transparent;color:var(--navy);font-size:19px}
+.cart-btn,.primary{border:0;background:var(--navy);color:#fff;padding:13px 22px;font-size:12px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;transition:.2s}
+.cart-btn:hover,.primary:hover{background:var(--mid);transform:translateY(-1px)}
+.mobile-menu{display:none}
+.trust{background:var(--light);border-bottom:1px solid var(--border)}
+.trust-inner{display:flex;justify-content:space-between;gap:20px;padding:11px 0;flex-wrap:wrap}
+.trust-item{font-size:11px;color:var(--mid);font-weight:500;letter-spacing:.04em;display:flex;gap:7px;align-items:center}
+
+.hero{background:linear-gradient(105deg,#f4f7fd 0%,#fff 54%,#e8f0fb 100%);min-height:650px;display:grid;align-items:center}
+.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:60px;align-items:center;padding:75px 0}
+.eyebrow{font-size:11px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;color:var(--blue);margin-bottom:18px}
+.hero h1{font:500 clamp(48px,6vw,82px)/1.02 var(--serif);letter-spacing:-.045em;max-width:700px}
+.hero h1 em{color:var(--blue);font-style:italic}
+.hero-copy{font-size:16px;color:var(--muted);max-width:560px;margin:24px 0 32px;line-height:1.8}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.secondary{background:#fff;border:1px solid var(--navy);color:var(--navy);padding:12px 21px;font-size:12px;font-weight:600;letter-spacing:.11em;text-transform:uppercase}
+.hero-art{min-height:490px;position:relative;display:grid;place-items:center}
+.hero-art:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:#dfeafb}
+.hero-art img{position:relative;width:min(470px,90%);height:470px;object-fit:contain;filter:drop-shadow(0 25px 35px rgba(11,45,94,.15));z-index:1}
+.float-card{position:absolute;right:0;bottom:28px;background:#fff;border:1px solid var(--border);padding:16px 18px;box-shadow:0 14px 40px rgba(11,45,94,.1);z-index:2}
+.float-card b{display:block;font-family:var(--serif);font-size:18px}
+.float-card span{font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+
+.section{padding:90px 0}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:42px}
+.section-head h2{font:500 clamp(34px,4vw,54px)/1.08 var(--serif);letter-spacing:-.03em}
+.section-head p{max-width:500px;color:var(--muted);font-size:14px;line-height:1.8}
+.benefits{background:var(--navy);color:#fff}
+.benefit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:45px}
+.benefit{padding:35px 28px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);min-height:210px}
+.benefit-num{font:400 40px var(--serif);color:#93C5FD}
+.benefit h3{font-size:16px;margin:15px 0 9px}
+.benefit p{font-size:12px;color:rgba(255,255,255,.58);line-height:1.75}
+
+.products{background:#fff}
+.product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.product-card{border:1px solid var(--border);background:#fff;transition:.25s;position:relative}
+.product-card:hover{transform:translateY(-5px);box-shadow:0 18px 45px rgba(11,45,94,.1)}
+.product-image{background:var(--pale);height:290px;display:grid;place-items:center;overflow:hidden;position:relative}
+.product-image img{width:88%;height:88%;object-fit:contain}
+.badge{position:absolute;left:14px;top:14px;background:var(--navy);color:#93C5FD;font-size:9px;letter-spacing:.13em;text-transform:uppercase;padding:5px 9px}
+.product-body{padding:21px}
+.stars{color:#D79A22;font-size:12px;letter-spacing:2px}
+.product-body h3{font:500 22px var(--serif);margin:9px 0 5px}
+.product-body p{font-size:12px;color:var(--muted);min-height:40px}
+.price-row{display:flex;justify-content:space-between;align-items:center;margin-top:18px}
+.price{font:600 21px var(--serif)}
+.quick{border:1px solid var(--navy);background:#fff;color:var(--navy);padding:9px 11px;font-size:10px;text-transform:uppercase;letter-spacing:.1em;font-weight:600}
+
+.science{background:var(--pale)}
+.science-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.science-visual{min-height:440px;background:var(--navy);position:relative;padding:42px;color:#fff;overflow:hidden}
+.science-visual:after{content:"";position:absolute;width:280px;height:280px;border:1px solid rgba(147,197,253,.25);border-radius:50%;right:-80px;bottom:-80px}
+.flow{display:grid;gap:12px;position:relative;z-index:1}
+.flow-step{display:flex;align-items:center;gap:15px;padding:15px 16px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05)}
+.flow-step strong{font-family:var(--serif);font-size:17px;font-weight:500}
+.flow-step small{display:block;color:rgba(255,255,255,.5);font-size:10px;letter-spacing:.1em;text-transform:uppercase}
+.science-copy h2{font:500 50px/1.1 var(--serif);margin-bottom:18px}
+.science-copy>p{color:var(--muted);font-size:14px;line-height:1.8;margin-bottom:24px}
+.evidence{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.evidence div{padding:16px;background:#fff;border:1px solid var(--border)}
+.evidence b{font-size:12px;display:block;margin-bottom:4px}
+.evidence span{font-size:11px;color:var(--muted)}
+
+.ingredients{background:#fff}
+.ingredient-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.ingredient{border:1px solid var(--border);padding:28px;min-height:220px}
+.ingredient .circle{width:48px;height:48px;background:var(--light);display:grid;place-items:center;border-radius:50%;font-size:21px;margin-bottom:20px}
+.ingredient h3{font:500 22px var(--serif);margin-bottom:5px}
+.ingredient small{font-size:10px;color:var(--blue);letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+.ingredient p{font-size:12px;color:var(--muted);line-height:1.7;margin-top:12px}
+
+.finder{background:linear-gradient(120deg,#0b2d5e,#1a4a8a);color:#fff}
+.finder-box{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.finder h2{font:500 50px/1.08 var(--serif)}
+.finder p{color:rgba(255,255,255,.62);margin:15px 0 24px;max-width:500px;font-size:14px;line-height:1.8}
+.finder-card{background:#fff;color:var(--navy);padding:28px}
+.finder-card label{font-size:11px;text-transform:uppercase;letter-spacing:.12em;font-weight:600;color:var(--muted)}
+.finder-card select{width:100%;padding:13px;border:1px solid var(--border);margin:8px 0 15px;background:#fff;color:var(--navy)}
+.finder-result{display:none;margin-top:12px;padding:13px;background:var(--light);font-size:12px}
+
+.reviews{background:#fff}
+.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.review{border:1px solid var(--border);padding:30px}
+.review q{display:block;font:italic 18px/1.65 var(--serif);margin:18px 0}
+.review cite{font-style:normal;font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+.verified{font-size:10px;color:#24924b;margin-top:8px}
+
+.cta{background:var(--light);text-align:center;padding:85px 20px}
+.cta h2{font:500 52px/1.08 var(--serif)}
+.cta p{color:var(--muted);font-size:14px;margin:14px auto 25px;max-width:550px}
+
+footer{background:var(--dark);color:#fff;padding:65px 0 25px}
+.footer-grid{display:grid;grid-template-columns:2fr repeat(4,1fr);gap:45px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.1)}
+.footer-logo{font:600 25px var(--serif);margin-bottom:13px}
+.footer-desc{font-size:12px;color:rgba(255,255,255,.42);line-height:1.8;max-width:260px}
+.footer h4{font-size:10px;color:#93C5FD;letter-spacing:.18em;text-transform:uppercase;margin-bottom:17px}
+.footer ul{list-style:none;display:grid;gap:9px}
+.footer li{font-size:12px;color:rgba(255,255,255,.48)}
+.footer-bottom{display:flex;justify-content:space-between;gap:20px;padding-top:20px;font-size:10px;color:rgba(255,255,255,.27)}
+
+.drawer{position:fixed;inset:0;background:rgba(7,15,30,.42);z-index:200;display:none}
+.drawer.open{display:block}
+.cart-drawer{position:absolute;right:0;top:0;height:100%;width:min(430px,92vw);background:#fff;padding:25px;display:flex;flex-direction:column}
+.cart-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);padding-bottom:17px}
+.cart-head h3{font:500 27px var(--serif)}
+.close{border:0;background:none;font-size:25px;color:var(--muted)}
+.cart-empty{flex:1;display:grid;place-items:center;text-align:center;color:var(--muted);font-size:13px}
+.cart-total{border-top:1px solid var(--border);padding-top:18px}
+.total-row{display:flex;justify-content:space-between;margin-bottom:15px}
+.toast{position:fixed;right:22px;bottom:22px;background:var(--navy);color:#fff;padding:13px 17px;font-size:12px;z-index:300;transform:translateY(100px);transition:.25s}
+.toast.show{transform:none}
+
+@media(max-width:1000px){
+ .navlinks{display:none}.mobile-menu{display:block}.product-grid{grid-template-columns:repeat(2,1fr)}
+ .benefit-grid{grid-template-columns:repeat(2,1fr)}.hero-grid,.science-grid,.finder-box{grid-template-columns:1fr}
+ .hero-art{order:-1;min-height:390px}.hero-art img{height:380px}.ingredient-grid{grid-template-columns:1fr 1fr}
+ .footer-grid{grid-template-columns:2fr 1fr 1fr}.review-grid{grid-template-columns:1fr}
+}
+@media(max-width:620px){
+ .container,.nav-inner{width:min(100% - 30px,var(--max))}
+ .announcement{font-size:9px}.nav{height:64px}.logo{font-size:21px}.cart-btn{padding:10px 13px}
+ .hero-grid{padding:48px 0}.hero h1{font-size:48px}.hero-art{min-height:310px}.hero-art img{height:310px}.hero-art:before{width:270px;height:270px}
+ .float-card{right:0;bottom:0}.section{padding:62px 0}.section-head{display:block}.section-head h2{margin-bottom:12px}
+ .product-grid,.ingredient-grid,.benefit-grid{grid-template-columns:1fr}.product-image{height:330px}
+ .science-copy h2,.finder h2,.cta h2{font-size:40px}.evidence{grid-template-columns:1fr}
+ .footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:1/-1}
+ .footer-bottom{display:block}.footer-bottom div+div{margin-top:8px}
+}
+</style>
+
+<style id="premium-overrides">
+:root{
+ --navy:#071D3B; --mid:#123B70; --blue:#2E6FD1; --pale:#F6F8FC;
+ --light:#EAF1FA; --white:#fff; --ink:#081D39; --muted:#687992;
+ --border:rgba(8,29,57,.12); --dark:#040C18; --gold:#B99258;
+ --shadow:0 24px 70px rgba(7,29,59,.10);
+}
+body{background:#fff;color:var(--ink);letter-spacing:-.01em}
+.announcement{background:#071D3B;padding:9px 20px;font-size:10px;letter-spacing:.17em}
+.nav{height:82px;border-bottom:1px solid rgba(8,29,57,.08);box-shadow:0 4px 22px rgba(7,29,59,.035)}
+.nav-inner{width:min(1400px,calc(100% - 72px))}
+.logo{font-size:25px;letter-spacing:-.04em}
+.navlinks{gap:34px}
+.navlinks a{font-size:10px;letter-spacing:.15em}
+.icon-btn{font-size:21px}
+.cart-btn{padding:12px 19px;font-size:10px;border-radius:2px}
+.trust{background:#fbfcfe}
+.trust-inner{width:min(1400px,calc(100% - 72px));padding:12px 0}
+.trust-item{font-size:10px;letter-spacing:.08em}
+
+.hero{
+ min-height:730px;
+ background:
+ radial-gradient(circle at 78% 35%,rgba(46,111,209,.11),transparent 29%),
+ linear-gradient(120deg,#f3f6fb 0%,#fff 53%,#eef4fb 100%);
+ position:relative;overflow:hidden
+}
+.hero:after{content:"";position:absolute;inset:auto -10% -35% auto;width:55vw;height:55vw;border:1px solid rgba(46,111,209,.10);border-radius:50%}
+.hero-grid{width:min(1400px,calc(100% - 72px));padding:105px 0;gap:70px}
+.hero h1{font-size:clamp(55px,7vw,96px);max-width:760px;line-height:.96}
+.hero h1 em{color:var(--blue)}
+.hero-copy{font-size:15px;max-width:525px;line-height:1.9}
+.eyebrow{font-size:9px;letter-spacing:.28em}
+.primary,.secondary{padding:15px 25px;font-size:10px;letter-spacing:.16em}
+.secondary{border-color:rgba(7,29,59,.28)}
+.hero-art{min-height:530px}
+.hero-art:before{width:475px;height:475px;background:rgba(226,235,248,.75);box-shadow:inset 0 0 80px rgba(255,255,255,.7)}
+.hero-art img{width:min(510px,94%);height:510px;filter:drop-shadow(0 32px 32px rgba(7,29,59,.18))}
+.float-card{right:2%;bottom:18px;padding:18px 22px;min-width:190px;box-shadow:0 20px 50px rgba(7,29,59,.14)}
+.float-card b{font-size:20px}.float-card span{font-size:9px;letter-spacing:.15em}
+
+.section{padding:108px 0}
+.container{width:min(1400px,calc(100% - 72px))}
+.section-head{margin-bottom:50px}
+.section-head h2{font-size:clamp(39px,4.3vw,61px)}
+.section-head p{font-size:13px;line-height:1.9}
+
+.benefits{background:linear-gradient(135deg,#071D3B,#0E315D)}
+.benefit-grid{gap:0;margin-top:55px}
+.benefit{padding:42px 34px;min-height:240px;border-color:rgba(255,255,255,.08);background:rgba(255,255,255,.025);transition:.3s}
+.benefit:hover{background:rgba(255,255,255,.07);transform:translateY(-4px)}
+.benefit-num{font-size:45px;color:#A8C9F5}.benefit h3{font-size:15px;letter-spacing:.01em}.benefit p{font-size:11px}
+
+.products{background:#fff}
+.product-grid{gap:20px}
+.product-card{border:1px solid rgba(8,29,57,.09);box-shadow:0 8px 25px rgba(7,29,59,.025);overflow:hidden}
+.product-card:hover{box-shadow:0 24px 60px rgba(7,29,59,.12)}
+.product-image{height:330px;background:linear-gradient(145deg,#f7f9fc,#edf3fa)}
+.product-image img{transition:transform .55s ease;filter:drop-shadow(0 16px 22px rgba(7,29,59,.08))}
+.product-card:hover .product-image img{transform:scale(1.045)}
+.badge{font-size:8px;letter-spacing:.17em;padding:6px 10px}
+.product-body{padding:24px}
+.product-body h3{font-size:23px}
+.product-body p{font-size:11px;line-height:1.7}
+.price{font-size:22px}.quick{font-size:9px;padding:10px 13px}
+
+.science{background:#f5f8fc}
+.science-grid{gap:90px}
+.science-visual{min-height:500px;padding:48px;background:linear-gradient(145deg,#061a34,#103a6c);box-shadow:var(--shadow)}
+.science-visual:before{content:"SCIENCE × BOTANICALS";position:absolute;right:-32px;top:45px;transform:rotate(90deg);font-size:8px;letter-spacing:.35em;color:rgba(255,255,255,.25)}
+.flow{gap:9px}
+.flow-step{padding:17px;border-color:rgba(255,255,255,.10);transition:.25s}
+.flow-step:hover{transform:translateX(5px);background:rgba(255,255,255,.08)}
+.science-copy h2{font-size:clamp(42px,4.3vw,60px)}
+.science-copy>p{font-size:13px;line-height:1.9}
+.evidence div{padding:18px 20px;box-shadow:0 8px 25px rgba(7,29,59,.04)}
+.evidence b{font-size:11px;letter-spacing:.02em}.evidence span{font-size:10px}
+
+.ingredients{background:#fff}
+.ingredient-grid{gap:20px}
+.ingredient{padding:32px;min-height:250px;transition:.3s}
+.ingredient:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:rgba(46,111,209,.3)}
+.ingredient .circle{width:52px;height:52px}
+.ingredient h3{font-size:24px}
+
+.finder{background:linear-gradient(120deg,#071D3B,#123B70)}
+.finder-card{padding:32px;box-shadow:0 25px 70px rgba(0,0,0,.2)}
+.finder-card select{padding:15px;border-color:#d8e2ef;font-size:12px}
+.finder-card .primary{background:var(--navy)}
+
+.reviews{background:#fbfcfe}
+.review-grid{gap:20px}
+.review{padding:34px;background:#fff;box-shadow:0 8px 30px rgba(7,29,59,.04);transition:.25s}
+.review:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.review q{font-size:19px}
+
+details{border-bottom:1px solid var(--border);padding:2px 0}
+details summary{list-style:none;cursor:pointer;padding:22px 4px;font:500 18px var(--serif);display:flex;justify-content:space-between}
+details summary::-webkit-details-marker{display:none}
+details summary:after{content:"+";font:400 22px var(--sans);color:var(--blue)}
+details[open] summary:after{content:"−"}
+details p{padding:0 4px 22px;color:var(--muted);font-size:12px;line-height:1.8}
+
+.cta{background:linear-gradient(120deg,#e9f0fa,#f7f9fc);position:relative;overflow:hidden}
+.cta:before{content:"";position:absolute;width:500px;height:500px;border:1px solid rgba(46,111,209,.1);border-radius:50%;left:-200px;top:-220px}
+.cta h2{font-size:clamp(48px,5vw,68px)}
+.cta h2 em{font-style:italic;color:var(--blue)}
+
+footer{background:#030A14}
+.footer-grid{border-bottom-color:rgba(255,255,255,.08)}
+.footer-logo{font-size:27px}
+.footer h4{font-size:9px;letter-spacing:.22em}
+
+.drawer{backdrop-filter:blur(7px)}
+.cart-drawer{box-shadow:-25px 0 70px rgba(0,0,0,.18)}
+.toast{box-shadow:0 12px 35px rgba(0,0,0,.2)}
+
+@media(max-width:1000px){
+ .nav-inner,.trust-inner,.hero-grid,.container{width:min(100% - 42px,1400px)}
+ .hero-grid{padding:75px 0}.hero-art{order:-1}
+}
+@media(max-width:620px){
+ .nav-inner,.trust-inner,.hero-grid,.container{width:calc(100% - 30px)}
+ .hero{min-height:auto}.hero-grid{padding:55px 0 70px}.hero h1{font-size:52px}
+ .hero-art{min-height:340px}.hero-art img{height:340px}.hero-art:before{width:300px;height:300px}
+ .section{padding:72px 0}.product-image{height:350px}
+}
+</style>
+
+</head>
+<body>
+
+<div class="announcement">Free shipping on all orders &nbsp;|&nbsp; <span>90-Day Money-Back Guarantee</span> &nbsp;|&nbsp; Subscribe & Save up to 40%</div>
+
+<header class="nav">
+  <div class="nav-inner">
+    <button class="icon-btn mobile-menu" aria-label="Open menu" onclick="alert('Mobile navigation')">☰</button>
+    <a class="logo" href="#">Aaron Choice</a>
+    <ul class="navlinks">
+      <li><a href="#shop">Shop</a></li><li><a href="#science">Science</a></li>
+      <li><a href="#ingredients">Ingredients</a></li><li><a href="#finder">Product Finder</a></li>
+      <li><a href="#reviews">Reviews</a></li><li><a href="#faq">FAQ</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="icon-btn" aria-label="Search" onclick="alert('Search can be connected to your CMS')">⌕</button>
+      <button class="cart-btn" onclick="openCart()">Cart (<span id="cartCount">0</span>)</button>
+    </div>
+  </div>
+</header>
+
+<div class="trust"><div class="container trust-inner">
+  <div class="trust-item">🌿 100% Plant-Based</div><div class="trust-item">🔬 Third-Party Tested</div>
+  <div class="trust-item">🏭 GMP Certified</div><div class="trust-item">🚚 Free Shipping</div><div class="trust-item">🔒 Secure Checkout</div>
+</div></div>
+
+<main>
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">Botanicals · Science · Transparency</div>
+      <h1>Nature, formulated <em>with purpose.</em></h1>
+      <p class="hero-copy">Premium plant-based supplements rooted in botanical tradition and presented with the clarity, transparency and quality standards modern wellness deserves.</p>
+      <div class="actions"><a class="primary" href="#shop">Shop Supplements</a><a class="secondary" href="#science">Explore the Science</a></div>
+    </div>
+    <div class="hero-art">
+      <div></div>
+      <img src="https://static.wixstatic.com/media/980903_c5d20335518840478054ba92603fbcf3~mv2.png" alt="Aaron Choice Black Turmeric Capsules">
+      <div class="float-card"><b>Black Turmeric</b><span>Aaron Choice flagship botanical</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="benefits section">
+  <div class="container">
+    <div class="eyebrow">Why Aaron Choice</div>
+    <h2 style="font:500 clamp(35px,4vw,54px)/1.08 var(--serif)">The standard we hold<br>ourselves to.</h2>
+    <div class="benefit-grid">
+      <article class="benefit"><div class="benefit-num">01</div><h3>Botanically Pure</h3><p>Whole-plant extracts and focused formulations, with transparency at the centre of the product experience.</p></article>
+      <article class="benefit"><div class="benefit-num">02</div><h3>Science Backed</h3><p>Scientific information is presented clearly, with room for evidence, references and formulation details to grow with the brand.</p></article>
+      <article class="benefit"><div class="benefit-num">03</div><h3>Transparently Made</h3><p>Make ingredients, doses, sourcing and quality information easy for customers to understand.</p></article>
+      <article class="benefit"><div class="benefit-num">04</div><h3>Quality Focused</h3><p>Build confidence through appropriate manufacturing, testing and batch-level transparency.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="products section" id="shop">
+ <div class="container">
+  <div class="section-head"><div><div class="eyebrow">The Collection</div><h2>Explore Aaron Choice.</h2></div><p>A focused collection of botanical products designed for everyday wellness routines. Product details remain configurable as the catalogue grows.</p></div>
+  <div class="product-grid">
+   <article class="product-card">
+    <div class="product-image"><span class="badge">Best Seller</span><img src="https://static.wixstatic.com/media/980903_c5d20335518840478054ba92603fbcf3~mv2.png" alt="Black Turmeric Capsules"></div>
+    <div class="product-body"><div class="stars">★★★★★</div><h3>Black Turmeric Capsules</h3><p>Botanical support for anti-inflammatory, antioxidant, joint and digestive wellness.</p><div class="price-row"><span class="price">$27.00</span><button class="quick" onclick="addCart('Black Turmeric Capsules',27)">Quick Add</button></div></div>
+   </article>
+   <article class="product-card">
+    <div class="product-image"><img src="https://static.wixstatic.com/media/980903_2e44b5a0e8a848da91ed47696483c88f~mv2.png" alt="Cinnamon Extract"></div>
+    <div class="product-body"><div class="stars">★★★★★</div><h3>Cinnamon Extract</h3><p>Plant-based botanical extract for a considered daily wellness routine.</p><div class="price-row"><span class="price">From $27</span><button class="quick" onclick="addCart('Cinnamon Extract',27)">Quick Add</button></div></div>
+   </article>
+   <article class="product-card">
+    <div class="product-image"><img src="https://static.wixstatic.com/media/980903_f82ef33046184774ab731de175accb7f~mv2.png" alt="Jackfruit Extract"></div>
+    <div class="product-body"><div class="stars">★★★★★</div><h3>Jackfruit Extract</h3><p>A transparent botanical formulation for a consistent wellness regimen.</p><div class="price-row"><span class="price">From $27</span><button class="quick" onclick="addCart('Jackfruit Extract',27)">Quick Add</button></div></div>
+   </article>
+   <article class="product-card">
+    <div class="product-image"><img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=700&q=80" alt="Moringa Leaf"></div>
+    <div class="product-body"><div class="stars">★★★★★</div><h3>Moringa Leaf</h3><p>Plant-based botanical support designed to fit naturally into daily routines.</p><div class="price-row"><span class="price">From $27</span><button class="quick" onclick="addCart('Moringa Leaf',27)">Quick Add</button></div></div>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section class="science section" id="science">
+ <div class="container science-grid">
+  <div class="science-visual">
+   <div class="eyebrow" style="color:#93C5FD">Our formulation approach</div>
+   <div class="flow">
+    <div class="flow-step"><span>01</span><div><strong>Botanical Source</strong><small>Ingredient identity & sourcing</small></div></div>
+    <div class="flow-step"><span>02</span><div><strong>Extraction</strong><small>Focused botanical preparation</small></div></div>
+    <div class="flow-step"><span>03</span><div><strong>Formulation</strong><small>Dose & product architecture</small></div></div>
+    <div class="flow-step"><span>04</span><div><strong>Quality Testing</strong><small>Testing & documentation</small></div></div>
+    <div class="flow-step"><span>05</span><div><strong>Finished Product</strong><small>Ready for your routine</small></div></div>
+   </div>
+  </div>
+  <div class="science-copy">
+   <div class="eyebrow">Science, without the noise</div>
+   <h2>Know what you're taking. Know why it's there.</h2>
+   <p>Aaron Choice can make scientific transparency a core part of the customer experience: ingredient identity, formulation role, dosage, evidence and quality information presented in a way that is understandable without oversimplifying the science.</p>
+   <div class="evidence"><div><b>Ingredient transparency</b><span>Clear ingredient and serving information</span></div><div><b>Evidence-ready</b><span>References can be connected to each ingredient</span></div><div><b>Batch transparency</b><span>Architecture for future batch/CoA lookup</span></div><div><b>Responsible claims</b><span>Wellness language without unsupported disease claims</span></div></div>
+  </div>
+ </div>
+</section>
+
+<section class="ingredients section" id="ingredients">
+ <div class="container">
+  <div class="section-head"><div><div class="eyebrow">What's Inside</div><h2>Ingredient intelligence.</h2></div><p>Explore the botanical story behind Aaron Choice. Expand this library as verified formulation and evidence data become available.</p></div>
+  <div class="ingredient-grid">
+   <article class="ingredient"><div class="circle">🌿</div><h3>Black Turmeric</h3><small>Curcuma caesia</small><p>The flagship botanical in the supplied Aaron Choice product page. Formulation details and evidence should remain tied to verified product documentation.</p></article>
+   <article class="ingredient"><div class="circle">●</div><h3>Black Pepper Extract</h3><small>Bioavailability support</small><p>Included in the supplied Black Turmeric formulation. Display dosage and standardization from verified label data.</p></article>
+   <article class="ingredient"><div class="circle">🌱</div><h3>Ginger Root</h3><small>Botanical extract</small><p>Included in the supplied Black Turmeric formulation. Use the product label as the source of truth for final dosage and claims.</p></article>
+  </div>
+ </div>
+</section>
+
+<section class="finder section" id="finder">
+ <div class="container finder-box">
+  <div><div class="eyebrow" style="color:#93C5FD">Personalised discovery</div><h2>Find your Aaron Choice.</h2><p>Use a simple wellness product finder to discover which product information is most relevant to you. This is a product-discovery tool, not a medical diagnostic or prescribing system.</p><a href="#shop" class="secondary">Browse all products</a></div>
+  <div class="finder-card">
+   <label for="goal">What are you exploring?</label>
+   <select id="goal"><option value="">Choose a wellness area</option><option>Joint & mobility support</option><option>Digestive wellness</option><option>Antioxidant support</option><option>Daily botanical wellness</option></select>
+   <button class="primary" style="width:100%" onclick="findProduct()">Find my product</button>
+   <div id="finderResult" class="finder-result"></div>
+  </div>
+ </div>
+</section>
+
+<section class="reviews section" id="reviews">
+ <div class="container">
+  <div class="section-head"><div><div class="eyebrow">Community</div><h2>What customers say.</h2></div><p>Review content should be populated from verified customer data in production. The supplied source currently contains customer testimonial content, which can be migrated into the review system.</p></div>
+  <div class="review-grid">
+   <article class="review"><div class="stars">★★★★★</div><q>The Black Turmeric Capsules have genuinely changed my mornings. My joints feel freer and my energy is noticeably steadier throughout the day.</q><cite>Colin Clarke · Verified Purchase</cite></article>
+   <article class="review"><div class="stars">★★★★★</div><q>Finally a supplement brand that actually explains what's in their products.</q><cite>Michele Knight · Verified Purchase</cite></article>
+   <article class="review"><div class="stars">★★★★★</div><q>I was skeptical at first, but Aaron Choice won me over with transparency.</q><cite>Dan Preston · Verified Purchase</cite></article>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="faq" style="background:var(--pale)">
+ <div class="container">
+  <div class="section-head"><div><div class="eyebrow">Support</div><h2>Frequently asked.</h2></div></div>
+  <div style="max-width:820px">
+   <details open><summary>How long until I see results?</summary><p>Results vary by individual. Follow the product label and use consistently. Avoid presenting a fixed timeframe as a guaranteed outcome.</p></details>
+   <details><summary>Are there any side effects?</summary><p>Read the product label and consult a qualified healthcare professional if you are pregnant, nursing, taking medications, or have concerns about suitability.</p></details>
+   <details><summary>What is the subscription policy?</summary><p>Subscriptions should ship automatically at the selected interval and provide customers with controls to pause, skip, modify or cancel, subject to the final commerce configuration.</p></details>
+   <details><summary>What is the return policy?</summary><p>The supplied page presents a 90-day money-back guarantee. Final policy language should be synchronized with the operational return policy before launch.</p></details>
+   <details><summary>Are these products vegan and gluten-free?</summary><p>The supplied page states that Aaron Choice products are plant-based, vegan and gluten-free. Confirm the status for every SKU against the final labels and manufacturing documentation.</p></details>
+  </div>
+ </div>
+</section>
+
+<section class="cta"><div class="container"><div class="eyebrow">Aaron Choice</div><h2>Start your <em>wellness journey.</em></h2><p>Premium botanical supplements with a clearer approach to ingredients, formulation and quality.</p><a class="primary" href="#shop">Shop Aaron Choice</a></div></section>
+</main>
+
+<footer>
+ <div class="container">
+  <div class="footer-grid">
+   <div><div class="footer-logo">Aaron Choice</div><p class="footer-desc">Premium plant-based supplements rooted in botanical tradition and presented with modern transparency.</p></div>
+   <div><h4>Shop</h4><ul><li>All Products</li><li>Best Sellers</li><li>Bundles</li><li>Subscribe & Save</li></ul></div>
+   <div><h4>Science</h4><ul><li>Ingredients</li><li>Formulation</li><li>Quality</li><li>Batch Testing</li></ul></div>
+   <div><h4>Company</h4><ul><li>Our Story</li><li>Journal</li><li>Reviews</li><li>Contact</li></ul></div>
+   <div><h4>Support</h4><ul><li>FAQ</li><li>Shipping</li><li>Returns</li><li>Privacy</li></ul></div>
+  </div>
+  <div class="footer-bottom"><div>© 2026 Aaron Choice. All rights reserved.</div><div>*Supplement statements should be reviewed and approved for applicable market regulations before publication.</div></div>
+ </div>
+</footer>
+
+<div class="drawer" id="drawer" onclick="if(event.target===this)closeCart()">
+ <aside class="cart-drawer">
+  <div class="cart-head"><h3>Your Cart</h3><button class="close" onclick="closeCart()">×</button></div>
+  <div id="cartItems" class="cart-empty">Your cart is empty.<br><span style="font-size:11px">Add a product to begin.</span></div>
+  <div class="cart-total"><div class="total-row"><span>Subtotal</span><strong id="cartTotal">$0.00</strong></div><button class="primary" style="width:100%" onclick="alert('Connect this button to your checkout provider.')">Proceed to Checkout</button></div>
+ </aside>
+</div>
+<div class="toast" id="toast">Added to cart</div>
+
+<script>
+let cart=[];
+function addCart(name,price){cart.push({name,price});renderCart();document.getElementById('cartCount').textContent=cart.length;showToast(name+' added to cart');}
+function renderCart(){
+ const el=document.getElementById('cartItems');
+ if(!cart.length){el.className='cart-empty';el.innerHTML='Your cart is empty.<br><span style="font-size:11px">Add a product to begin.</span>';document.getElementById('cartTotal').textContent='$0.00';return;}
+ el.className='';el.innerHTML=cart.map((x,i)=>`<div style="display:flex;justify-content:space-between;gap:12px;padding:15px 0;border-bottom:1px solid var(--border);font-size:12px"><div><b>${x.name}</b><div style="color:var(--muted);margin-top:4px">Qty 1</div></div><div>$${x.price.toFixed(2)} <button style="border:0;background:none;color:#777" onclick="removeCart(${i})">×</button></div></div>`).join('');
+ const total=cart.reduce((s,x)=>s+x.price,0);document.getElementById('cartTotal').textContent='$'+total.toFixed(2);
+}
+function removeCart(i){cart.splice(i,1);document.getElementById('cartCount').textContent=cart.length;renderCart();}
+function openCart(){document.getElementById('drawer').classList.add('open')}
+function closeCart(){document.getElementById('drawer').classList.remove('open')}
+function showToast(t){const x=document.getElementById('toast');x.textContent=t;x.classList.add('show');setTimeout(()=>x.classList.remove('show'),1800)}
+function findProduct(){
+ const v=document.getElementById('goal').value, r=document.getElementById('finderResult');
+ if(!v){r.style.display='block';r.textContent='Select a wellness area to continue.';return;}
+ let p=v.includes('Joint')?'Black Turmeric Capsules':v.includes('Digestive')?'Black Turmeric Capsules':v.includes('Antioxidant')?'Black Turmeric Capsules':'Explore the full Aaron Choice collection';
+ r.style.display='block';r.innerHTML='<b>Suggested starting point:</b> '+p+'<br><span style="color:var(--muted)">This is a product-discovery result, not medical advice.</span>';
+}
+document.querySelectorAll('details').forEach(d=>d.addEventListener('toggle',()=>{}));
+</script>
+</body>
+</html>
