@@ -175,6 +175,13 @@ My suggestion: keep the lightbox for now, and revisit dedicated pages once (a) t
 - Fixed a pre-existing CSS bug found while doing this: the footer's link-list styling (`.footer h4/ul/li`) was targeting a `.footer` class that no elements actually had, so footer links were rendering with default browser bullets and unstyled headings — this was invisible before because it blended into the plain dark background, but shows up now. Corrected the selectors to target the `<footer>` element directly.
 - Verified at desktop and mobile widths, and re-ran the full regression suite on shop.html and blog.html — no errors.
 
+## Trust bar restyle (2026-09-17)
+
+- Restyled the trust bar between the nav and the hero (100% Plant-Based · Third-Party Tested · GMP Certified · Free Shipping · Secure Checkout) to match the rest of the homepage: it was using an orphaned gold/tan accent color (`--gold`) that wasn't used anywhere else on the site, small 14px icons, and small title-case text — swapped it to the same navy/blue palette and uppercase, letter-spaced label style used everywhere else (eyebrows, hero badges), with larger icon circles (38px) and bigger icons (19px).
+- Redrew the "Third-Party Tested" icon (was an odd flask/hourglass shape) as a cleaner award-ribbon/seal icon, and refined the "Secure Checkout" lock and "Free Shipping" truck icons slightly.
+- Bumped the label font size up (11px → 13px, and the tighter desktop-override size from 10px → 12.5px) so it reads more comfortably next to the rest of the page.
+- Verified at desktop and mobile widths, and re-ran the full regression suite on shop.html and blog.html — no errors.
+
 ## Notes / things to swap before going live
 
 - **Checkout**: the "Proceed to Checkout" button still shows an alert. Wire this to a real cart/checkout provider (Shopify, Stripe Checkout, Snipcart, etc.) before launch.
