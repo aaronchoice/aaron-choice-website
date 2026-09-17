@@ -251,6 +251,13 @@ My suggestion: keep the lightbox for now, and revisit dedicated pages once (a) t
 - Article thumbnails are still hidden (unchanged from the last round) since these new images are the larger spotlight-panel size, not the 200–300px square thumbnail size — let me know if/when you'd like square crops made for those too.
 - Verified at desktop and mobile, and re-ran the blog regression check — no errors.
 
+## About page hero portrait added (2026-09-17)
+
+- Replaced the "Portrait coming soon" placeholder in the About page hero with the real photo of Dr. Balasingham Arasabalan you supplied (`images/dr-balasingham-portrait.jpg`).
+- Checked the crop before committing it: the source photo is a different aspect ratio than the `.about-photo` box (4/4.6), so I built a quick side-by-side render at the box's actual desktop and mobile sizes first to confirm `object-fit:cover` centers well with good headroom and no awkward cropping of his face or hands — confirmed good at both sizes.
+- The Featured Research card's `.research-visual` placeholder is unchanged — still using the placeholder treatment, since that's a separate image slot from the hero portrait.
+- Verified at desktop and mobile widths — no console/page errors.
+
 ## Notes / things to swap before going live
 
 - **Checkout**: the "Proceed to Checkout" button still shows an alert. Wire this to a real cart/checkout provider (Shopify, Stripe Checkout, Snipcart, etc.) before launch.
@@ -258,7 +265,7 @@ My suggestion: keep the lightbox for now, and revisit dedicated pages once (a) t
 - **Reviews**: sample testimonials are included; replace with verified customer reviews before launch (using placeholder names/quotes as if genuine is a legal risk once live).
 - **Legal/compliance copy**: the FAQ and footer include notes flagging language that should be reviewed against your actual return policy, supplement regulations, and SKU-level claims before publishing.
 - **Footer social links & newsletter**: the 5 footer social icons currently link to `#`, and the newsletter form just shows a "Subscribed!" confirmation toast. Point the social icons at your real profiles and wire the form up to an email service (Mailchimp, Klaviyo, etc.) before launch.
-- **About page photo**: `about.html` currently uses placeholder graphics in place of a real photo of Dr. Balasingham Arasabalan (hero portrait and research imagery) — swap in real photography once available.
+- **About page research imagery**: the hero portrait is now real (see above), but the Featured Research card's `.research-visual` block still uses placeholder graphics — swap in real imagery once available.
 
 ## File structure
 
