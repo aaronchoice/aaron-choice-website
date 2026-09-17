@@ -196,6 +196,14 @@ My suggestion: keep the lightbox for now, and revisit dedicated pages once (a) t
 - Removed the "Plants · People · A Healthier Tomorrow" line under the evidence cards per your feedback.
 - Verified at desktop and mobile widths, and re-ran the full regression suite on shop.html and blog.html — no errors.
 
+## Community/FAQ/CTA cleanup + eyebrow consistency (2026-09-17)
+
+- **Community section**: removed the placeholder paragraph ("Review content should be populated from verified customer data in production...") next to the "What customers say" heading.
+- **FAQ section**: shifted the FAQ panel (and heading) to the right side of the section so the mortar-and-pestle photo in the background is fully visible on the left, instead of being covered by the panel.
+- **Secondary hero above the footer**: left-aligned the eyebrow/heading/paragraph/button (previously centered) and adjusted the background tint to a left-to-right fade, so the capsule bottle and mortar/pestle on the right are clearly visible instead of being partly washed out behind centered text.
+- **Eyebrow consistency site-wide**: every small uppercase kicker label (Botanicals · Science · Transparency, Why Aaron Choice, Root-Cause Thinking, Science without the noise, Personalised discovery, What's Inside, Community, Support) now shares the same font size (13px), weight, letter-spacing and short accent-line treatment. Previously a leftover "premium" theme rule was silently shrinking every eyebrow down to 9px, and several of them (Community, Support, Personalised discovery, Aaron Choice on the CTA) used a pale light-blue that had very low contrast against light backgrounds — those now use a bold, readable blue, while eyebrows on dark photo backgrounds (hero, benefits, science, finder) keep a light blue for contrast there.
+- Verified at desktop and mobile widths, and re-ran the full regression suite on shop.html and blog.html — no errors.
+
 ## Notes / things to swap before going live
 
 - **Checkout**: the "Proceed to Checkout" button still shows an alert. Wire this to a real cart/checkout provider (Shopify, Stripe Checkout, Snipcart, etc.) before launch.
