@@ -161,6 +161,12 @@ My suggestion: keep the lightbox for now, and revisit dedicated pages once (a) t
 - Kept a dark gradient tint over the photo so the white heading/body text and the white finder card stay fully readable, matching the full-bleed treatment used on the hero, benefits and science sections.
 - Verified at desktop and mobile widths, and re-ran the full regression suite on shop.html and blog.html — no errors.
 
+## Community (reviews) and FAQ backgrounds + frosted glass (2026-09-17)
+
+- Added a full-bleed background photo (`images/community-bg.jpg` — soft leaf branches and shadow on a white wall) to the "Community" / "What customers say" reviews section, and a full-bleed background photo (`images/faq-bg.jpg` — a mortar and pestle with leaves on a marble table) to the "Frequently asked" FAQ section, both matching the airy full-bleed treatment used on the ingredients section.
+- Introduced a shared `.glass-card` style (translucent white background with a backdrop blur, soft border and shadow, slightly stronger on hover) and applied it to the 3 review cards and to the FAQ panel, so the backgrounds show through consistently — the same frosted-glass look already used on the ingredient cards.
+- Verified at desktop and mobile widths, and re-ran the full regression suite on shop.html and blog.html — no errors.
+
 ## Notes / things to swap before going live
 
 - **Checkout**: the "Proceed to Checkout" button still shows an alert. Wire this to a real cart/checkout provider (Shopify, Stripe Checkout, Snipcart, etc.) before launch.
