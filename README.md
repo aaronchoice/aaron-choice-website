@@ -258,6 +258,14 @@ My suggestion: keep the lightbox for now, and revisit dedicated pages once (a) t
 - The Featured Research card's `.research-visual` placeholder is unchanged — still using the placeholder treatment, since that's a separate image slot from the hero portrait.
 - Verified at desktop and mobile widths — no console/page errors.
 
+## About page polish: portrait crop, frosted tag, and 2 more images (2026-09-17)
+
+- **Portrait crop adjusted**: added `object-position:50% 20%` to the hero portrait so his head sits lower in the frame with more breathing room above it, instead of the default centered crop.
+- **"Mind / Behaviour / Physiology / Health" tag box** now has a frosted-glass look — a semi-transparent navy background with `backdrop-filter: blur(10px)` and a soft white border, so the portrait shows through it softly instead of it being a flat solid block.
+- **About Intro section**: replaced the reused `leaf-branch-1.png` in the decorative panel next to the bio copy with your dedicated image (`images/about-intro-leaf.jpg`, supplied at 1170×1345 — matches the size spec given earlier).
+- **Featured Research card**: replaced the "Research imagery placeholder" box with your supplied image (`images/research-visual.jpg`, supplied at 1916×821 — a wide banner, cropped via `object-fit:cover` into the card's 170px-tall slot).
+- Verified all three at desktop width and re-ran the shop.html regression suite — no errors.
+
 ## Notes / things to swap before going live
 
 - **Checkout**: the "Proceed to Checkout" button still shows an alert. Wire this to a real cart/checkout provider (Shopify, Stripe Checkout, Snipcart, etc.) before launch.
@@ -265,7 +273,6 @@ My suggestion: keep the lightbox for now, and revisit dedicated pages once (a) t
 - **Reviews**: sample testimonials are included; replace with verified customer reviews before launch (using placeholder names/quotes as if genuine is a legal risk once live).
 - **Legal/compliance copy**: the FAQ and footer include notes flagging language that should be reviewed against your actual return policy, supplement regulations, and SKU-level claims before publishing.
 - **Footer social links & newsletter**: the 5 footer social icons currently link to `#`, and the newsletter form just shows a "Subscribed!" confirmation toast. Point the social icons at your real profiles and wire the form up to an email service (Mailchimp, Klaviyo, etc.) before launch.
-- **About page research imagery**: the hero portrait is now real (see above), but the Featured Research card's `.research-visual` block still uses placeholder graphics — swap in real imagery once available.
 
 ## File structure
 

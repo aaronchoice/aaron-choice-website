@@ -72,7 +72,7 @@ button{cursor:pointer}
 .about-photo{position:relative;width:100%;aspect-ratio:4/4.6;background:linear-gradient(145deg,#e4ecf8,#cfdcf2);border:1px solid var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:var(--mid)}
 .about-photo svg{width:64px;height:64px;opacity:.55}
 .about-photo span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;opacity:.6}
-.about-watermark{position:absolute;top:24px;right:24px;background:rgba(11,45,94,.85);color:#fff;padding:16px 18px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;line-height:2;text-align:right}
+.about-watermark{position:absolute;top:24px;right:24px;background:rgba(11,45,94,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.18);color:#fff;padding:16px 18px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;line-height:2;text-align:right}
 
 /* intro */
 .intro-grid{display:grid;grid-template-columns:1.15fr .55fr 1fr;gap:40px;align-items:center}
@@ -101,7 +101,8 @@ button{cursor:pointer}
 
 /* featured research */
 .research-grid{display:grid;grid-template-columns:1fr .85fr;gap:44px;align-items:start}
-.research-visual{width:100%;height:170px;background:linear-gradient(145deg,#e4ecf8,#cfdcf2);border:1px solid var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--mid);margin-bottom:22px}
+.research-visual{position:relative;width:100%;height:170px;overflow:hidden;background:linear-gradient(145deg,#e4ecf8,#cfdcf2);border:1px solid var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--mid);margin-bottom:22px}
+.research-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .research-visual svg{width:40px;height:40px;opacity:.55}
 .research-visual span{font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;opacity:.6}
 .research-card h3{font:500 21px/1.4 var(--serif);margin-bottom:10px}
@@ -341,7 +342,7 @@ body{background:#fff;color:var(--ink);letter-spacing:-.01em}
   </div>
   <div class="about-visual">
    <div class="about-photo" style="background:none">
-    <img src="images/dr-balasingham-portrait.jpg" alt="Dr. Balasingham Arasabalan" style="width:100%;height:100%;object-fit:cover">
+    <img src="images/dr-balasingham-portrait.jpg" alt="Dr. Balasingham Arasabalan" style="width:100%;height:100%;object-fit:cover;object-position:50% 20%">
    </div>
    <div class="about-watermark">Mind<br>Behaviour<br>Physiology<br>Health</div>
   </div>
@@ -359,7 +360,7 @@ body{background:#fff;color:var(--ink);letter-spacing:-.01em}
    <a class="learn-more" href="#practice">Learn more &rarr;</a>
   </div>
   <div class="intro-leaf">
-   <img src="images/leaf-branch-1.png" alt="" loading="lazy">
+   <img src="images/about-intro-leaf.jpg" alt="" loading="lazy">
    <div class="tag">People<br>Context<br>Science<br>Possibilities</div>
   </div>
   <div class="intro-list">
@@ -407,7 +408,7 @@ body{background:#fff;color:var(--ink);letter-spacing:-.01em}
   </div>
   <div class="research-grid">
    <div class="research-card">
-    <div class="research-visual"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-6 4 4 5-7 4 5"/><path d="M3 20h18"/></svg><span>Research imagery placeholder</span></div>
+    <div class="research-visual"><img src="images/research-visual.jpg" alt="" loading="lazy"></div>
     <h3>The effectiveness of HeartMath biofeedback intervention to improve blood glucose levels among type 2 diabetes mellitus patients</h3>
     <div class="research-meta"><b>Dr. Balasingham Arasabalan</b> &middot; 2026<br>International Journal of Research in Medical Sciences, 14(4), 1405&ndash;1410.</div>
     <p>This research examines the application of HeartMath emWave Pro biofeedback in adults with type 2 diabetes mellitus, focusing on the relationship between physiological regulation and metabolic health.</p>
