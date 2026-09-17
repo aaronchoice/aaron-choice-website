@@ -227,6 +227,17 @@ My suggestion: keep the lightbox for now, and revisit dedicated pages once (a) t
 - Linked "Our Story" (Company column) to `about.html` on every page, including the homepage, so it's consistent everywhere.
 - Verified at desktop and mobile widths, confirmed the newsletter toast fires correctly on all four pages, and re-ran the full regression suite on `shop.html` and `blog.html` — no errors.
 
+## Blog page redesign (2026-09-17)
+
+- **Rebuilt `blog.html`** end-to-end to match your reference layout:
+  - A new two-column hero ("The Science Behind Botanicals.") with intro copy, a "Real Ingredients. Real Research. A Healthier Tomorrow." tagline, and a full-bleed leafy image on the right with an italic "Nature backed by science." caption — reusing the existing `images/ingredients-bg.jpg` (no new asset needed).
+  - A filter row: pill buttons for "All" and each of the 6 ingredients (now functional — click one to show only that ingredient's section) plus a live search box that filters articles by title across every group and shows a "No articles match your search" message when nothing matches.
+  - Each ingredient is now a "Botanical Spotlight" row: a large image panel with the ingredient name/latin name on the left, and its 3 most relevant articles on the right (thumbnail, title, source/PMID, "Read →" link). Groups with more than 3 citations (Ashwagandha, Jackfruit, Amla, Moringa) get a "View all" link that expands the rest in place — nothing was removed, it's just collapsed by default the way your reference shows 3 per ingredient.
+  - Black Turmeric's detailed featured-research summary (with the "Read on Semantic Scholar" link) is preserved as a highlighted block above its article list.
+  - **Images reused, no new assets needed**: the spotlight panels use your existing product lifestyle photos — `black-turmeric-lifestyle.jpg`, `jackfruit-lifestyle.jpg`, `moringa-lifestyle.jpg`, `hummingbird-lifestyle.jpg` — and, since there's no dedicated Amla photo, `ashwagandha-amla-lifestyle.jpg` is used for both the Ashwagandha section (cropped to the left, showing the roots) and the Amla section (cropped to the right, showing the berries). Article thumbnails reuse the same image cropped smaller rather than needing 18 separate photos.
+  - **If you want a more editorial look later**, the two upgrades that would matter most: (1) a dedicated close-up photo of each raw botanical (turmeric root, ashwagandha root, jackfruit, amla berries, moringa leaves, hummingbird flower) shot against a soft neutral background rather than the product-bottle lifestyle shots — around **1000×1200px** (portrait) each; and (2) a bright, airy hero photo in the same spirit as `ingredients-bg.jpg` but with more open space on the right for the "Nature backed by science" caption — around **1600×1000px** (landscape). Neither is required; the page works fully with what's already in `images/`.
+- Verified at desktop, tablet and mobile widths, tested the pill filter, search, and "View all" expand/collapse interactions, and re-ran the blog regression check — no errors (aside from the sandboxed Google Fonts request, which loads fine once live).
+
 ## Notes / things to swap before going live
 
 - **Checkout**: the "Proceed to Checkout" button still shows an alert. Wire this to a real cart/checkout provider (Shopify, Stripe Checkout, Snipcart, etc.) before launch.

@@ -56,32 +56,62 @@ button{cursor:pointer}
 .section-head p{max-width:620px;color:var(--muted);font-size:14px;line-height:1.8;margin:16px auto 0}
 .eyebrow{font-size:11px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;color:var(--blue);margin-bottom:14px}
 
-.toc{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:38px 0 68px;padding:0 4px}
-.toc a{font-size:11px;text-transform:uppercase;letter-spacing:.07em;font-weight:600;color:var(--navy);border:1px solid var(--border);padding:10px 19px;border-radius:30px;transition:.2s;white-space:nowrap}
-.toc a:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+/* Hero */
+.blog-hero{padding:56px 0 64px}
+.blog-hero-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:0}
+.blog-hero-copy{padding-right:60px}
+.blog-hero-copy h1{font:500 clamp(34px,4.2vw,52px)/1.12 var(--serif);letter-spacing:-.03em;margin-bottom:18px}
+.blog-hero-copy p{max-width:460px;color:var(--muted);font-size:14px;line-height:1.85;margin-bottom:26px}
+.blog-hero-rule{width:34px;height:2px;background:var(--navy);margin-bottom:16px}
+.blog-hero-tagline{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.blog-hero-media{position:relative;height:420px;margin-right:calc((100vw - min(1400px,calc(100% - 72px)))/-2 - 0px);border-radius:2px;overflow:hidden}
+.blog-hero-media img{width:100%;height:100%;object-fit:cover;display:block}
+.blog-hero-caption{position:absolute;right:36px;top:50%;transform:translateY(-50%);text-align:right;color:var(--navy)}
+.blog-hero-caption .rule{width:1px;height:60px;background:rgba(11,45,94,.35);margin:0 0 14px auto}
+.blog-hero-caption span{display:block;font:italic 500 20px/1.3 var(--serif)}
 
-.ingredient-group{max-width:900px;margin:0 auto 78px;scroll-margin-top:100px}
-.group-head{border-bottom:2px solid var(--navy);padding-bottom:16px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
-.group-head h2{font:500 32px var(--serif);letter-spacing:-.02em}
-.group-head .latin{font-size:12px;font-style:italic;color:var(--muted)}
+/* Filter row */
+.filter-row{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding-bottom:30px;margin-bottom:34px;border-bottom:1px solid var(--border)}
+.pill-row{display:flex;gap:10px;flex-wrap:wrap}
+.pill{font-size:11px;text-transform:uppercase;letter-spacing:.06em;font-weight:600;color:var(--navy);border:1px solid var(--border);background:transparent;padding:11px 20px;border-radius:30px;transition:.2s;white-space:nowrap}
+.pill:hover{border-color:var(--navy)}
+.pill.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+.search-box{position:relative;flex:none}
+.search-box svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:15px;height:15px;color:var(--muted)}
+.search-box input{border:1px solid var(--border);background:var(--pale);padding:12px 16px 12px 38px;font-size:13px;border-radius:2px;width:230px;color:var(--ink)}
+.search-box input::placeholder{color:var(--muted)}
 
-.featured-card{border:1px solid var(--navy);background:var(--pale);padding:32px;margin:24px 0 6px}
-.featured-badge{display:inline-block;font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:#fff;background:var(--navy);padding:5px 11px;margin-bottom:16px;font-weight:600}
-.featured-card h3{font:500 22px/1.35 var(--serif);margin-bottom:10px}
-.featured-card .cr-meta{margin-bottom:14px}
-.featured-card p.summary{font-size:13px;color:var(--muted);line-height:1.85;margin-bottom:18px}
+/* Spotlight groups */
+.spotlight-group{display:grid;grid-template-columns:minmax(260px,32%) 1fr;gap:0;margin-bottom:36px;border:1px solid var(--border)}
+.spotlight-media{position:relative;min-height:320px;background-size:cover;background-position:center}
+.spotlight-scrim{position:absolute;inset:0;background:linear-gradient(0deg,rgba(7,15,30,.82) 0%,rgba(7,15,30,.35) 55%,rgba(7,15,30,0) 85%);display:flex;flex-direction:column;justify-content:flex-end;padding:28px;color:#fff}
+.spotlight-eyebrow{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.75);margin-bottom:10px;font-weight:600}
+.spotlight-scrim h2{font:500 clamp(24px,2.4vw,30px)/1.15 var(--serif);margin-bottom:6px}
+.spotlight-latin{font-size:12px;font-style:italic;color:rgba(255,255,255,.7);margin-bottom:18px}
+.view-all{background:none;border:0;display:inline-flex;align-items:center;gap:7px;font-size:10px;text-transform:uppercase;letter-spacing:.1em;font-weight:700;color:#fff;padding:0}
+.view-all svg{width:12px;height:12px;transition:.2s}
+.view-all:hover svg{transform:translateX(3px)}
+.articles-head{display:flex;justify-content:flex-end;padding:16px 24px 0}
+.articles-head .view-all{color:var(--navy)}
+.article-list{padding:2px 24px 8px}
+.article-row{display:flex;align-items:flex-start;gap:16px;padding:18px 0;border-bottom:1px solid var(--border)}
+.article-row:last-child{border-bottom:0}
+.article-thumb{flex:none;width:66px;height:66px;border-radius:3px;background-size:cover;background-position:center}
+.article-body{flex:1;min-width:0}
+.article-title{font:500 15px/1.4 var(--serif);color:var(--ink);margin-bottom:5px}
+.article-meta{font-size:11px;color:var(--muted)}
+.tag{display:inline-block;font-size:9px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--blue);border:1px solid var(--blue);padding:2px 7px;margin-right:8px;border-radius:2px;vertical-align:middle}
+.topic-title{font-style:italic;font-weight:400}
+.article-read{flex:none;display:inline-flex;align-items:center;gap:6px;font-size:10px;text-transform:uppercase;letter-spacing:.1em;font-weight:700;color:var(--navy);white-space:nowrap;margin-top:4px}
+.article-read svg{width:12px;height:12px;transition:.2s}
+.article-read:hover svg{transform:translate(2px,-2px)}
+.article-row.is-hidden{display:none}
+.featured-extra{margin:6px 24px 20px;padding:22px;background:var(--pale);border:1px solid var(--border)}
+.featured-extra .cr-summary{font-size:13px;color:var(--muted);line-height:1.8;margin:10px 0 14px}
+.featured-extra .article-read{margin-top:0}
+.no-results{text-align:center;color:var(--muted);font-size:13px;padding:40px 0;display:none}
 
-.citation-list{border-top:1px solid var(--border)}
-.citation-row{display:flex;justify-content:space-between;gap:24px;padding:22px 2px;border-bottom:1px solid var(--border);align-items:flex-start}
-.citation-row .cr-title{font:500 16px/1.4 var(--serif);margin-bottom:6px;color:var(--ink)}
-.cr-meta{font-size:11px;color:var(--muted);letter-spacing:.02em}
-.cr-source{display:inline-block;font-size:9px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--blue);border:1px solid var(--blue);padding:2px 7px;margin-right:8px;border-radius:2px;vertical-align:middle}
-.cr-link{flex:none;display:inline-flex;align-items:center;gap:6px;font-size:10px;text-transform:uppercase;letter-spacing:.1em;font-weight:700;color:var(--navy);white-space:nowrap;margin-top:6px}
-.cr-link svg{width:12px;height:12px;transition:.2s}
-.cr-link:hover svg{transform:translate(2px,-2px)}
-.cr-topic{font-style:italic;color:var(--muted);font-weight:400}
-
-.journal-note{max-width:900px;margin:50px auto 0;font-size:11px;color:var(--muted);line-height:1.8;border-top:1px solid var(--border);padding-top:24px}
+.journal-note{margin:50px auto 0;font-size:11px;color:var(--muted);line-height:1.8;border-top:1px solid var(--border);padding-top:24px}
 
 footer{background:#030A14;color:#fff;padding:70px 0 25px;position:relative;overflow:hidden}
 .footer-bg{position:absolute;inset:0;z-index:0}
@@ -131,14 +161,20 @@ footer li{font-size:12px;color:rgba(255,255,255,.48)}
 @media(max-width:1000px){
  .navlinks{display:none}.mobile-menu{display:block}
  .footer-grid{grid-template-columns:2fr 1fr 1fr}
+ .blog-hero-grid{grid-template-columns:1fr;gap:34px}
+ .blog-hero-copy{padding-right:0}
+ .blog-hero-media{margin-right:0;height:280px}
+ .spotlight-group{grid-template-columns:1fr}
+ .spotlight-media{min-height:220px}
 }
 @media(max-width:620px){
  .container,.nav-inner{width:min(100% - 30px,var(--max))}
  .announcement{font-size:9px}.nav{height:64px}.logo{font-size:21px}.cart-btn{padding:10px 13px}.brand{padding-left:68px}.brand-mark{height:64px;top:-20px}.brand-text{font-size:21px}
  .section{padding:62px 0}
- .featured-card{padding:24px}
- .citation-row{flex-direction:column;gap:12px}
- .group-head h2{font-size:26px}
+ .filter-row{flex-direction:column;align-items:stretch}
+ .search-box,.search-box input{width:100%}
+ .article-row{flex-wrap:wrap}
+ .article-read{margin-left:82px}
  .footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:1/-1}
  .footer-bottom{display:block}.footer-bottom div+div{margin-top:8px}
  .footer-mid{flex-direction:column;align-items:flex-start;gap:22px}
@@ -205,180 +241,277 @@ body{background:#fff;color:var(--ink);letter-spacing:-.01em}
 </div>
 
 <main>
-<section class="journal section">
+<section class="blog-hero">
   <div class="container">
-    <div class="section-head">
-      <div class="eyebrow" style="text-align:center">Research & Evidence</div>
-      <h1>Blog.</h1>
-      <p>Published, peer-reviewed research behind the botanicals in Aaron Choice formulations — organized by ingredient. This library grows as new evidence becomes available.</p>
+    <div class="blog-hero-grid">
+      <div class="blog-hero-copy">
+        <div class="eyebrow">Research & Evidence</div>
+        <h1>The Science Behind Botanicals.</h1>
+        <p>Explore peer-reviewed research on the ingredients in Aaron Choice formulations. Because informed choices lead to better wellbeing.</p>
+        <div class="blog-hero-rule"></div>
+        <div class="blog-hero-tagline">Real ingredients. Real research. A healthier tomorrow.</div>
+      </div>
+      <div class="blog-hero-media">
+        <img src="images/ingredients-bg.jpg" alt="" loading="lazy">
+        <div class="blog-hero-caption"><div class="rule"></div><span>Nature backed<br>by science.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="journal section" style="padding-top:0">
+  <div class="container">
+
+    <div class="filter-row">
+      <div class="pill-row" id="pillRow">
+        <button class="pill active" data-filter="all">All</button>
+        <button class="pill" data-filter="black-turmeric">Black Turmeric</button>
+        <button class="pill" data-filter="ashwagandha">Ashwagandha</button>
+        <button class="pill" data-filter="jackfruit">Jackfruit</button>
+        <button class="pill" data-filter="amla">Amla</button>
+        <button class="pill" data-filter="moringa">Moringa</button>
+        <button class="pill" data-filter="hummingbird">Hummingbird Flower</button>
+      </div>
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="articleSearch" placeholder="Search articles...">
+      </div>
     </div>
 
-    <nav class="toc" aria-label="Jump to ingredient">
-      <a href="#black-turmeric">Black Turmeric</a>
-      <a href="#ashwagandha">Ashwagandha</a>
-      <a href="#jackfruit">Jackfruit</a>
-      <a href="#amla">Amla</a>
-      <a href="#moringa">Moringa</a>
-      <a href="#hummingbird">Hummingbird Flower</a>
-    </nav>
-
     <!-- BLACK TURMERIC -->
-    <div class="ingredient-group" id="black-turmeric">
-      <div class="group-head"><h2>Black Turmeric</h2><span class="latin">Curcuma caesia</span></div>
-
-      <div class="featured-card">
-        <span class="featured-badge">Featured Research</span>
-        <h3>Analysis of Total Flavonoid and Antioxidant Activity of Black Turmeric (Curcuma caesia) using ABTS Method</h3>
-        <div class="cr-meta">Tanesib, M. F.; Kurniasih, K. S. I.; Nugraha, A. T. · Journal of Food and Pharmaceutical Sciences, Vol. 11, No. 3 · 2023</div>
-        <p class="summary">This study examined black turmeric's phytochemical composition through methanol extraction, finding positive qualitative results for flavonoids, phenolics and tannins with a 13.26% extract yield — evidence of the antioxidant strength behind Aaron Choice's flagship botanical.</p>
-        <a class="cr-link" href="https://www.semanticscholar.org/paper/Analysis-of-Total-Flavonoid-and-Antioxidant-of-ABTS-Tanesib-Kurniasih/55b8f8a8edd10e96187c570f009a8c3b8facf52f" target="_blank" rel="noopener noreferrer">
-          Read on Semantic Scholar
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
-        </a>
+    <div class="spotlight-group" data-ingredient="black-turmeric" id="black-turmeric">
+      <div class="spotlight-media" style="background-image:url('images/black-turmeric-lifestyle.jpg')">
+        <div class="spotlight-scrim">
+          <div class="spotlight-eyebrow">Botanical Spotlight</div>
+          <h2>Black Turmeric</h2>
+          <div class="spotlight-latin">Curcuma caesia</div>
+        </div>
       </div>
-
-      <div class="citation-list">
-        <div class="citation-row">
-          <div><div class="cr-title">Comparing the Therapeutic Efficacy of Curcuma Caesia Roxb Over Curcuma Longa in Managing Oral Submucous Fibrosis: A Non-Randomized Clinical Trial</div><div class="cr-meta"><span class="cr-source">PubMed</span>PMID 41148610</div></div>
-          <a class="cr-link" href="https://pubmed.ncbi.nlm.nih.gov/41148610/" target="_blank" rel="noopener noreferrer">View<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+      <div class="spotlight-articles">
+        <div class="articles-head"><button class="view-all" data-target="black-turmeric">View all<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></button></div>
+        <div class="featured-extra">
+          <span class="tag">Featured</span>
+          <div class="article-title" style="font-size:17px;margin-top:8px">Analysis of Total Flavonoid and Antioxidant Activity of Black Turmeric (Curcuma caesia) using ABTS Method</div>
+          <div class="article-meta">Tanesib, M. F.; Kurniasih, K. S. I.; Nugraha, A. T. · Journal of Food and Pharmaceutical Sciences, Vol. 11, No. 3 · 2023</div>
+          <p class="cr-summary">This study examined black turmeric's phytochemical composition through methanol extraction, finding positive qualitative results for flavonoids, phenolics and tannins with a 13.26% extract yield — evidence of the antioxidant strength behind Aaron Choice's flagship botanical.</p>
+          <a class="article-read" href="https://www.semanticscholar.org/paper/Analysis-of-Total-Flavonoid-and-Antioxidant-of-ABTS-Tanesib-Kurniasih/55b8f8a8edd10e96187c570f009a8c3b8facf52f" target="_blank" rel="noopener noreferrer">Read on Semantic Scholar<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
         </div>
-        <div class="citation-row">
-          <div><div class="cr-title">A Comprehensive Review with Future Prospects on the Medicinal Properties and Biological Activities of Curcuma caesia Roxb</div><div class="cr-meta"><span class="cr-source">PubMed</span>PMID 36704214 · 2023</div></div>
-          <a class="cr-link" href="https://pubmed.ncbi.nlm.nih.gov/36704214/" target="_blank" rel="noopener noreferrer">View<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
-        </div>
-        <div class="citation-row">
-          <div><div class="cr-title">Pharmacological Evaluation of Phytochemicals from South Indian Black Turmeric (Curcuma caesia Roxb.) to Target Cancer Apoptosis</div><div class="cr-meta"><span class="cr-source">PubMed</span>PMID 28733192</div></div>
-          <a class="cr-link" href="https://pubmed.ncbi.nlm.nih.gov/28733192/" target="_blank" rel="noopener noreferrer">View<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+        <div class="article-list">
+          <div class="article-row" data-title="comparing the therapeutic efficacy of curcuma caesia roxb over curcuma longa in managing oral submucous fibrosis">
+            <div class="article-thumb" style="background-image:url('images/black-turmeric-lifestyle.jpg');background-position:top"></div>
+            <div class="article-body"><div class="article-title">Comparing the Therapeutic Efficacy of Curcuma Caesia Roxb Over Curcuma Longa in Managing Oral Submucous Fibrosis</div><div class="article-meta"><span class="tag">PubMed</span>PMID 41148610</div></div>
+            <a class="article-read" href="https://pubmed.ncbi.nlm.nih.gov/41148610/" target="_blank" rel="noopener noreferrer">Read<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+          </div>
+          <div class="article-row" data-title="a comprehensive review with future prospects on the medicinal properties and biological activities of curcuma caesia roxb">
+            <div class="article-thumb" style="background-image:url('images/black-turmeric-lifestyle.jpg');background-position:center"></div>
+            <div class="article-body"><div class="article-title">A Comprehensive Review with Future Prospects on the Medicinal Properties and Biological Activities of Curcuma caesia Roxb</div><div class="article-meta"><span class="tag">PubMed</span>PMID 36704214 · 2023</div></div>
+            <a class="article-read" href="https://pubmed.ncbi.nlm.nih.gov/36704214/" target="_blank" rel="noopener noreferrer">Read<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+          </div>
+          <div class="article-row" data-title="pharmacological evaluation of phytochemicals from south indian black turmeric curcuma caesia roxb to target cancer apoptosis">
+            <div class="article-thumb" style="background-image:url('images/black-turmeric-lifestyle.jpg');background-position:bottom"></div>
+            <div class="article-body"><div class="article-title">Pharmacological Evaluation of Phytochemicals from South Indian Black Turmeric (Curcuma caesia Roxb.) to Target Cancer Apoptosis</div><div class="article-meta"><span class="tag">PubMed</span>PMID 28733192</div></div>
+            <a class="article-read" href="https://pubmed.ncbi.nlm.nih.gov/28733192/" target="_blank" rel="noopener noreferrer">Read<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- ASHWAGANDHA -->
-    <div class="ingredient-group" id="ashwagandha">
-      <div class="group-head"><h2>Ashwagandha</h2><span class="latin">Withania somnifera</span></div>
-      <div class="citation-list">
-        <div class="citation-row">
-          <div><div class="cr-title">Effect of Ashwagandha (Withania somnifera) Extract on Sleep: A Systematic Review and Meta-Analysis</div><div class="cr-meta"><span class="cr-source">PubMed</span>PMID 34559859 · PLOS ONE, 2021</div></div>
-          <a class="cr-link" href="https://pubmed.ncbi.nlm.nih.gov/34559859/" target="_blank" rel="noopener noreferrer">View<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+    <div class="spotlight-group" data-ingredient="ashwagandha" id="ashwagandha">
+      <div class="spotlight-media" style="background-image:url('images/ashwagandha-amla-lifestyle.jpg');background-position:left center">
+        <div class="spotlight-scrim">
+          <div class="spotlight-eyebrow">Botanical Spotlight</div>
+          <h2>Ashwagandha</h2>
+          <div class="spotlight-latin">Withania somnifera</div>
         </div>
-        <div class="citation-row">
-          <div><div class="cr-title">Safety and Efficacy of Withania somnifera for Anxiety and Insomnia: Systematic Review and Meta-Analysis</div><div class="cr-meta"><span class="cr-source">PubMed</span>PMID 39083548</div></div>
-          <a class="cr-link" href="https://pubmed.ncbi.nlm.nih.gov/39083548/" target="_blank" rel="noopener noreferrer">View<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
-        </div>
-        <div class="citation-row">
-          <div><div class="cr-title">The Effect of Withania somnifera (Ashwagandha) on Mental Health Symptoms in Individuals with Mental Disorders: Systematic Review and Meta-Analysis</div><div class="cr-meta"><span class="cr-source">PubMed</span>PMID 41140145 · BJPsych Open</div></div>
-          <a class="cr-link" href="https://pubmed.ncbi.nlm.nih.gov/41140145/" target="_blank" rel="noopener noreferrer">View<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
-        </div>
-        <div class="citation-row">
-          <div><div class="cr-title">Effects of Withania somnifera (L.) Dunal (Ashwagandha) on Cognitive and Physical Function in Adults: A Systematic Review and Meta-Analysis</div><div class="cr-meta"><span class="cr-source">PubMed</span>PMID 42199854</div></div>
-          <a class="cr-link" href="https://pubmed.ncbi.nlm.nih.gov/42199854/" target="_blank" rel="noopener noreferrer">View<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
-        </div>
-        <div class="citation-row">
-          <div><div class="cr-title">Hormonal Modulation with Withania somnifera (Ashwagandha): A Systematic Review and Meta-Analysis</div><div class="cr-meta"><span class="cr-source">PubMed</span>PMID 41740946</div></div>
-          <a class="cr-link" href="https://pubmed.ncbi.nlm.nih.gov/41740946/" target="_blank" rel="noopener noreferrer">View<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+      </div>
+      <div class="spotlight-articles">
+        <div class="articles-head"><button class="view-all" data-target="ashwagandha">View all<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></button></div>
+        <div class="article-list">
+          <div class="article-row" data-title="effect of ashwagandha withania somnifera extract on sleep a systematic review and meta-analysis">
+            <div class="article-thumb" style="background-image:url('images/ashwagandha-amla-lifestyle.jpg');background-position:left top"></div>
+            <div class="article-body"><div class="article-title">Effect of Ashwagandha (Withania somnifera) Extract on Sleep: A Systematic Review and Meta-Analysis</div><div class="article-meta"><span class="tag">PubMed</span>PMID 34559859 · PLOS ONE, 2021</div></div>
+            <a class="article-read" href="https://pubmed.ncbi.nlm.nih.gov/34559859/" target="_blank" rel="noopener noreferrer">Read<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+          </div>
+          <div class="article-row" data-title="safety and efficacy of withania somnifera for anxiety and insomnia systematic review and meta-analysis">
+            <div class="article-thumb" style="background-image:url('images/ashwagandha-amla-lifestyle.jpg');background-position:left center"></div>
+            <div class="article-body"><div class="article-title">Safety and Efficacy of Withania somnifera for Anxiety and Insomnia: Systematic Review and Meta-Analysis</div><div class="article-meta"><span class="tag">PubMed</span>PMID 39083548</div></div>
+            <a class="article-read" href="https://pubmed.ncbi.nlm.nih.gov/39083548/" target="_blank" rel="noopener noreferrer">Read<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+          </div>
+          <div class="article-row" data-title="the effect of withania somnifera ashwagandha on mental health symptoms in individuals with mental disorders">
+            <div class="article-thumb" style="background-image:url('images/ashwagandha-amla-lifestyle.jpg');background-position:left bottom"></div>
+            <div class="article-body"><div class="article-title">The Effect of Withania somnifera (Ashwagandha) on Mental Health Symptoms in Individuals with Mental Disorders</div><div class="article-meta"><span class="tag">PubMed</span>PMID 41140145 · BJPsych Open</div></div>
+            <a class="article-read" href="https://pubmed.ncbi.nlm.nih.gov/41140145/" target="_blank" rel="noopener noreferrer">Read<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+          </div>
+          <div class="article-row is-hidden" data-title="effects of withania somnifera l dunal ashwagandha on cognitive and physical function in adults">
+            <div class="article-thumb" style="background-image:url('images/ashwagandha-amla-lifestyle.jpg');background-position:left top"></div>
+            <div class="article-body"><div class="article-title">Effects of Withania somnifera (L.) Dunal (Ashwagandha) on Cognitive and Physical Function in Adults</div><div class="article-meta"><span class="tag">PubMed</span>PMID 42199854</div></div>
+            <a class="article-read" href="https://pubmed.ncbi.nlm.nih.gov/42199854/" target="_blank" rel="noopener noreferrer">Read<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+          </div>
+          <div class="article-row is-hidden" data-title="hormonal modulation with withania somnifera ashwagandha a systematic review and meta-analysis">
+            <div class="article-thumb" style="background-image:url('images/ashwagandha-amla-lifestyle.jpg');background-position:left center"></div>
+            <div class="article-body"><div class="article-title">Hormonal Modulation with Withania somnifera (Ashwagandha): A Systematic Review and Meta-Analysis</div><div class="article-meta"><span class="tag">PubMed</span>PMID 41740946</div></div>
+            <a class="article-read" href="https://pubmed.ncbi.nlm.nih.gov/41740946/" target="_blank" rel="noopener noreferrer">Read<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- JACKFRUIT -->
-    <div class="ingredient-group" id="jackfruit">
-      <div class="group-head"><h2>Raw / Green Jackfruit</h2><span class="latin">Artocarpus heterophyllus</span></div>
-      <div class="citation-list">
-        <div class="citation-row">
-          <div><div class="cr-title">Efficacy of Green Jackfruit Flour as a Medical Nutrition Therapy Replacing Rice or Wheat in Patients with Type 2 Diabetes Mellitus: A Randomized, Double-Blind, Placebo-Controlled Study</div><div class="cr-meta"><span class="cr-source">PubMed</span>PMID 34127645 · npj Science of Food, 2021</div></div>
-          <a class="cr-link" href="https://pubmed.ncbi.nlm.nih.gov/34127645/" target="_blank" rel="noopener noreferrer">View<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+    <div class="spotlight-group" data-ingredient="jackfruit" id="jackfruit">
+      <div class="spotlight-media" style="background-image:url('images/jackfruit-lifestyle.jpg')">
+        <div class="spotlight-scrim">
+          <div class="spotlight-eyebrow">Botanical Spotlight</div>
+          <h2>Raw / Green Jackfruit</h2>
+          <div class="spotlight-latin">Artocarpus heterophyllus</div>
         </div>
-        <div class="citation-row">
-          <div><div class="cr-title">Jackfruit (Artocarpus heterophyllus Lam.) in Health and Disease: A Critical Review</div><div class="cr-meta"><span class="cr-source">PubMed</span>PMID 35144492</div></div>
-          <a class="cr-link" href="https://pubmed.ncbi.nlm.nih.gov/35144492/" target="_blank" rel="noopener noreferrer">View<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
-        </div>
-        <div class="citation-row">
-          <div><div class="cr-title">Nutritional and Health Benefits of Jackfruit (Artocarpus heterophyllus Lam.): A Review</div><div class="cr-meta"><span class="cr-source">PubMed</span>PMID 30723733</div></div>
-          <a class="cr-link" href="https://pubmed.ncbi.nlm.nih.gov/30723733/" target="_blank" rel="noopener noreferrer">View<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
-        </div>
-        <div class="citation-row">
-          <div><div class="cr-title cr-topic">Green Jackfruit Flour — Polyphenol Content Study</div><div class="cr-meta"><span class="cr-source">PubMed</span>PMID 35335251</div></div>
-          <a class="cr-link" href="https://pubmed.ncbi.nlm.nih.gov/35335251/" target="_blank" rel="noopener noreferrer">View<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+      </div>
+      <div class="spotlight-articles">
+        <div class="articles-head"><button class="view-all" data-target="jackfruit">View all<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></button></div>
+        <div class="article-list">
+          <div class="article-row" data-title="efficacy of green jackfruit flour as a medical nutrition therapy replacing rice or wheat in patients with type 2 diabetes mellitus">
+            <div class="article-thumb" style="background-image:url('images/jackfruit-lifestyle.jpg');background-position:top"></div>
+            <div class="article-body"><div class="article-title">Efficacy of Green Jackfruit Flour as a Medical Nutrition Therapy Replacing Rice or Wheat in Patients with Type 2 Diabetes Mellitus</div><div class="article-meta"><span class="tag">PubMed</span>PMID 34127645 · npj Science of Food, 2021</div></div>
+            <a class="article-read" href="https://pubmed.ncbi.nlm.nih.gov/34127645/" target="_blank" rel="noopener noreferrer">Read<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+          </div>
+          <div class="article-row" data-title="jackfruit artocarpus heterophyllus lam in health and disease a critical review">
+            <div class="article-thumb" style="background-image:url('images/jackfruit-lifestyle.jpg');background-position:center"></div>
+            <div class="article-body"><div class="article-title">Jackfruit (Artocarpus heterophyllus Lam.) in Health and Disease: A Critical Review</div><div class="article-meta"><span class="tag">PubMed</span>PMID 35144492</div></div>
+            <a class="article-read" href="https://pubmed.ncbi.nlm.nih.gov/35144492/" target="_blank" rel="noopener noreferrer">Read<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+          </div>
+          <div class="article-row" data-title="nutritional and health benefits of jackfruit artocarpus heterophyllus lam a review">
+            <div class="article-thumb" style="background-image:url('images/jackfruit-lifestyle.jpg');background-position:bottom"></div>
+            <div class="article-body"><div class="article-title">Nutritional and Health Benefits of Jackfruit (Artocarpus heterophyllus Lam.): A Review</div><div class="article-meta"><span class="tag">PubMed</span>PMID 30723733</div></div>
+            <a class="article-read" href="https://pubmed.ncbi.nlm.nih.gov/30723733/" target="_blank" rel="noopener noreferrer">Read<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+          </div>
+          <div class="article-row is-hidden" data-title="green jackfruit flour polyphenol content study">
+            <div class="article-thumb" style="background-image:url('images/jackfruit-lifestyle.jpg');background-position:top"></div>
+            <div class="article-body"><div class="article-title topic-title">Green Jackfruit Flour — Polyphenol Content Study</div><div class="article-meta"><span class="tag">PubMed</span>PMID 35335251</div></div>
+            <a class="article-read" href="https://pubmed.ncbi.nlm.nih.gov/35335251/" target="_blank" rel="noopener noreferrer">Read<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- AMLA -->
-    <div class="ingredient-group" id="amla">
-      <div class="group-head"><h2>Amla</h2><span class="latin">Phyllanthus emblica (syn. Emblica officinalis)</span></div>
-      <div class="citation-list">
-        <div class="citation-row">
-          <div><div class="cr-title">Clinical Effects of Emblica officinalis Fruit Consumption on Cardiovascular Disease Risk Factors: A Systematic Review and Meta-Analysis</div><div class="cr-meta"><span class="cr-source">PubMed</span>PMID 37296402</div></div>
-          <a class="cr-link" href="https://pubmed.ncbi.nlm.nih.gov/37296402/" target="_blank" rel="noopener noreferrer">View<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+    <div class="spotlight-group" data-ingredient="amla" id="amla">
+      <div class="spotlight-media" style="background-image:url('images/ashwagandha-amla-lifestyle.jpg');background-position:right center">
+        <div class="spotlight-scrim">
+          <div class="spotlight-eyebrow">Botanical Spotlight</div>
+          <h2>Amla</h2>
+          <div class="spotlight-latin">Phyllanthus emblica</div>
         </div>
-        <div class="citation-row">
-          <div><div class="cr-title cr-topic">Amla and Endothelial Function — Vascular Study</div><div class="cr-meta"><span class="cr-source">PubMed</span>PMID 23935377</div></div>
-          <a class="cr-link" href="https://pubmed.ncbi.nlm.nih.gov/23935377/" target="_blank" rel="noopener noreferrer">View<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
-        </div>
-        <div class="citation-row">
-          <div><div class="cr-title">A Randomized, Double-Blind, Placebo-Controlled, Multicenter Clinical Trial to Assess the Efficacy and Safety of Emblica officinalis Extract in Patients with Dyslipidemia</div><div class="cr-meta"><span class="cr-source">PubMed</span>PMID 30670010</div></div>
-          <a class="cr-link" href="https://pubmed.ncbi.nlm.nih.gov/30670010/" target="_blank" rel="noopener noreferrer">View<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
-        </div>
-        <div class="citation-row">
-          <div><div class="cr-title">Antihypertensive and Pleiotropic Effects of Phyllanthus emblica Extract as an Add-On Therapy in Patients with Essential Hypertension: A Randomized Double-Blind Placebo-Controlled Trial</div><div class="cr-meta"><span class="cr-source">PubMed</span>PMID 33570228</div></div>
-          <a class="cr-link" href="https://pubmed.ncbi.nlm.nih.gov/33570228/" target="_blank" rel="noopener noreferrer">View<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
-        </div>
-        <div class="citation-row">
-          <div><div class="cr-title cr-topic">Amla and Metabolic Syndrome — Clinical Study</div><div class="cr-meta"><span class="cr-source">PubMed</span>PMID 31060549</div></div>
-          <a class="cr-link" href="https://pubmed.ncbi.nlm.nih.gov/31060549/" target="_blank" rel="noopener noreferrer">View<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
-        </div>
-        <div class="citation-row">
-          <div><div class="cr-title">Clinical Evaluation of Emblica Officinalis Gatertn (Amla) in Healthy Human Subjects: Health Benefits and Safety Results from a Randomized, Double-Blind, Crossover Placebo-Controlled Study</div><div class="cr-meta"><span class="cr-source">PubMed</span>PMID 31890983</div></div>
-          <a class="cr-link" href="https://pubmed.ncbi.nlm.nih.gov/31890983/" target="_blank" rel="noopener noreferrer">View<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+      </div>
+      <div class="spotlight-articles">
+        <div class="articles-head"><button class="view-all" data-target="amla">View all<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></button></div>
+        <div class="article-list">
+          <div class="article-row" data-title="clinical effects of emblica officinalis fruit consumption on cardiovascular disease risk factors">
+            <div class="article-thumb" style="background-image:url('images/ashwagandha-amla-lifestyle.jpg');background-position:right top"></div>
+            <div class="article-body"><div class="article-title">Clinical Effects of Emblica officinalis Fruit Consumption on Cardiovascular Disease Risk Factors</div><div class="article-meta"><span class="tag">PubMed</span>PMID 37296402</div></div>
+            <a class="article-read" href="https://pubmed.ncbi.nlm.nih.gov/37296402/" target="_blank" rel="noopener noreferrer">Read<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+          </div>
+          <div class="article-row" data-title="amla and endothelial function vascular study">
+            <div class="article-thumb" style="background-image:url('images/ashwagandha-amla-lifestyle.jpg');background-position:right center"></div>
+            <div class="article-body"><div class="article-title topic-title">Amla and Endothelial Function — Vascular Study</div><div class="article-meta"><span class="tag">PubMed</span>PMID 23935377</div></div>
+            <a class="article-read" href="https://pubmed.ncbi.nlm.nih.gov/23935377/" target="_blank" rel="noopener noreferrer">Read<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+          </div>
+          <div class="article-row" data-title="a randomized double-blind placebo-controlled multicenter clinical trial to assess the efficacy and safety of emblica officinalis extract in patients with dyslipidemia">
+            <div class="article-thumb" style="background-image:url('images/ashwagandha-amla-lifestyle.jpg');background-position:right bottom"></div>
+            <div class="article-body"><div class="article-title">A Randomized, Double-Blind, Placebo-Controlled, Multicenter Clinical Trial to Assess the Efficacy and Safety of Emblica officinalis Extract in Patients with Dyslipidemia</div><div class="article-meta"><span class="tag">PubMed</span>PMID 30670010</div></div>
+            <a class="article-read" href="https://pubmed.ncbi.nlm.nih.gov/30670010/" target="_blank" rel="noopener noreferrer">Read<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+          </div>
+          <div class="article-row is-hidden" data-title="antihypertensive and pleiotropic effects of phyllanthus emblica extract as an add-on therapy in patients with essential hypertension">
+            <div class="article-thumb" style="background-image:url('images/ashwagandha-amla-lifestyle.jpg');background-position:right top"></div>
+            <div class="article-body"><div class="article-title">Antihypertensive and Pleiotropic Effects of Phyllanthus emblica Extract as an Add-On Therapy in Patients with Essential Hypertension</div><div class="article-meta"><span class="tag">PubMed</span>PMID 33570228</div></div>
+            <a class="article-read" href="https://pubmed.ncbi.nlm.nih.gov/33570228/" target="_blank" rel="noopener noreferrer">Read<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+          </div>
+          <div class="article-row is-hidden" data-title="amla and metabolic syndrome clinical study">
+            <div class="article-thumb" style="background-image:url('images/ashwagandha-amla-lifestyle.jpg');background-position:right center"></div>
+            <div class="article-body"><div class="article-title topic-title">Amla and Metabolic Syndrome — Clinical Study</div><div class="article-meta"><span class="tag">PubMed</span>PMID 31060549</div></div>
+            <a class="article-read" href="https://pubmed.ncbi.nlm.nih.gov/31060549/" target="_blank" rel="noopener noreferrer">Read<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+          </div>
+          <div class="article-row is-hidden" data-title="clinical evaluation of emblica officinalis gatertn amla in healthy human subjects">
+            <div class="article-thumb" style="background-image:url('images/ashwagandha-amla-lifestyle.jpg');background-position:right bottom"></div>
+            <div class="article-body"><div class="article-title">Clinical Evaluation of Emblica Officinalis Gatertn (Amla) in Healthy Human Subjects: Health Benefits and Safety Results</div><div class="article-meta"><span class="tag">PubMed</span>PMID 31890983</div></div>
+            <a class="article-read" href="https://pubmed.ncbi.nlm.nih.gov/31890983/" target="_blank" rel="noopener noreferrer">Read<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- MORINGA -->
-    <div class="ingredient-group" id="moringa">
-      <div class="group-head"><h2>Moringa</h2><span class="latin">Moringa oleifera</span></div>
-      <div class="citation-list">
-        <div class="citation-row">
-          <div><div class="cr-title cr-topic">Moringa and Prediabetes — Randomized Controlled Trial</div><div class="cr-meta"><span class="cr-source">PubMed</span>PMID 35010932</div></div>
-          <a class="cr-link" href="https://pubmed.ncbi.nlm.nih.gov/35010932/" target="_blank" rel="noopener noreferrer">View<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+    <div class="spotlight-group" data-ingredient="moringa" id="moringa">
+      <div class="spotlight-media" style="background-image:url('images/moringa-lifestyle.jpg')">
+        <div class="spotlight-scrim">
+          <div class="spotlight-eyebrow">Botanical Spotlight</div>
+          <h2>Moringa</h2>
+          <div class="spotlight-latin">Moringa oleifera</div>
         </div>
-        <div class="citation-row">
-          <div><div class="cr-title">Moringa oleifera: A Systematic Review of Its Botany, Phytochemistry and Pharmacology</div><div class="cr-meta"><span class="cr-source">PubMed</span>PMID 34718669</div></div>
-          <a class="cr-link" href="https://pubmed.ncbi.nlm.nih.gov/34718669/" target="_blank" rel="noopener noreferrer">View<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
-        </div>
-        <div class="citation-row">
-          <div><div class="cr-title">Moringa oleifera: An Updated Comprehensive Review of Its Pharmacological Activities, Ethnomedicinal, Phytopharmaceutical Formulation, Clinical, Phytochemical, and Toxicological Aspects</div><div class="cr-meta"><span class="cr-source">PubMed</span>PMID 36768420</div></div>
-          <a class="cr-link" href="https://pubmed.ncbi.nlm.nih.gov/36768420/" target="_blank" rel="noopener noreferrer">View<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
-        </div>
-        <div class="citation-row">
-          <div><div class="cr-title">Biological Properties of Moringa oleifera: A Systematic Review of the Last Decade</div><div class="cr-meta"><span class="cr-source">PubMed</span>PMID 39895949</div></div>
-          <a class="cr-link" href="https://pubmed.ncbi.nlm.nih.gov/39895949/" target="_blank" rel="noopener noreferrer">View<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
-        </div>
-        <div class="citation-row">
-          <div><div class="cr-title">Effect of Moringa oleifera on Inflammatory Diseases: An Umbrella Review of 26 Systematic Reviews</div><div class="cr-meta"><span class="cr-source">PubMed</span>PMID 40458803 · Frontiers in Pharmacology, 2025</div></div>
-          <a class="cr-link" href="https://pubmed.ncbi.nlm.nih.gov/40458803/" target="_blank" rel="noopener noreferrer">View<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+      </div>
+      <div class="spotlight-articles">
+        <div class="articles-head"><button class="view-all" data-target="moringa">View all<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></button></div>
+        <div class="article-list">
+          <div class="article-row" data-title="moringa and prediabetes randomized controlled trial">
+            <div class="article-thumb" style="background-image:url('images/moringa-lifestyle.jpg');background-position:top"></div>
+            <div class="article-body"><div class="article-title topic-title">Moringa and Prediabetes — Randomized Controlled Trial</div><div class="article-meta"><span class="tag">PubMed</span>PMID 35010932</div></div>
+            <a class="article-read" href="https://pubmed.ncbi.nlm.nih.gov/35010932/" target="_blank" rel="noopener noreferrer">Read<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+          </div>
+          <div class="article-row" data-title="moringa oleifera a systematic review of its botany phytochemistry and pharmacology">
+            <div class="article-thumb" style="background-image:url('images/moringa-lifestyle.jpg');background-position:center"></div>
+            <div class="article-body"><div class="article-title">Moringa oleifera: A Systematic Review of Its Botany, Phytochemistry and Pharmacology</div><div class="article-meta"><span class="tag">PubMed</span>PMID 34718669</div></div>
+            <a class="article-read" href="https://pubmed.ncbi.nlm.nih.gov/34718669/" target="_blank" rel="noopener noreferrer">Read<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+          </div>
+          <div class="article-row" data-title="moringa oleifera an updated comprehensive review of its pharmacological activities ethnomedicinal phytopharmaceutical formulation clinical phytochemical and toxicological aspects">
+            <div class="article-thumb" style="background-image:url('images/moringa-lifestyle.jpg');background-position:bottom"></div>
+            <div class="article-body"><div class="article-title">Moringa oleifera: An Updated Comprehensive Review of Its Pharmacological, Clinical and Phytochemical Aspects</div><div class="article-meta"><span class="tag">PubMed</span>PMID 36768420</div></div>
+            <a class="article-read" href="https://pubmed.ncbi.nlm.nih.gov/36768420/" target="_blank" rel="noopener noreferrer">Read<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+          </div>
+          <div class="article-row is-hidden" data-title="biological properties of moringa oleifera a systematic review of the last decade">
+            <div class="article-thumb" style="background-image:url('images/moringa-lifestyle.jpg');background-position:top"></div>
+            <div class="article-body"><div class="article-title">Biological Properties of Moringa oleifera: A Systematic Review of the Last Decade</div><div class="article-meta"><span class="tag">PubMed</span>PMID 39895949</div></div>
+            <a class="article-read" href="https://pubmed.ncbi.nlm.nih.gov/39895949/" target="_blank" rel="noopener noreferrer">Read<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+          </div>
+          <div class="article-row is-hidden" data-title="effect of moringa oleifera on inflammatory diseases an umbrella review of 26 systematic reviews">
+            <div class="article-thumb" style="background-image:url('images/moringa-lifestyle.jpg');background-position:center"></div>
+            <div class="article-body"><div class="article-title">Effect of Moringa oleifera on Inflammatory Diseases: An Umbrella Review of 26 Systematic Reviews</div><div class="article-meta"><span class="tag">PubMed</span>PMID 40458803 · Frontiers in Pharmacology, 2025</div></div>
+            <a class="article-read" href="https://pubmed.ncbi.nlm.nih.gov/40458803/" target="_blank" rel="noopener noreferrer">Read<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- HUMMINGBIRD FLOWER -->
-    <div class="ingredient-group" id="hummingbird">
-      <div class="group-head"><h2>Hummingbird Tree Flower</h2><span class="latin">Sesbania grandiflora</span></div>
-      <div class="citation-list">
-        <div class="citation-row">
-          <div><div class="cr-title cr-topic">Sesbania grandiflora — Flowers and Leaves Study</div><div class="cr-meta"><span class="cr-source">PubMed</span>PMID 35813364</div></div>
-          <a class="cr-link" href="https://pubmed.ncbi.nlm.nih.gov/35813364/" target="_blank" rel="noopener noreferrer">View<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+    <div class="spotlight-group" data-ingredient="hummingbird" id="hummingbird">
+      <div class="spotlight-media" style="background-image:url('images/hummingbird-lifestyle.jpg')">
+        <div class="spotlight-scrim">
+          <div class="spotlight-eyebrow">Botanical Spotlight</div>
+          <h2>Hummingbird Tree Flower</h2>
+          <div class="spotlight-latin">Sesbania grandiflora</div>
         </div>
-        <div class="citation-row">
-          <div><div class="cr-title">Evaluation of Sesbania grandiflora for Antiurolithiatic and Antioxidant Properties</div><div class="cr-meta"><span class="cr-source">PubMed</span>PMID 18408896</div></div>
-          <a class="cr-link" href="https://pubmed.ncbi.nlm.nih.gov/18408896/" target="_blank" rel="noopener noreferrer">View<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
-        </div>
-        <div class="citation-row">
-          <div><div class="cr-title cr-topic">Sesbania grandiflora Flower — Full-Text Research Article</div><div class="cr-meta"><span class="cr-source">PMC</span>PMC9261989</div></div>
-          <a class="cr-link" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9261989/" target="_blank" rel="noopener noreferrer">View<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+      </div>
+      <div class="spotlight-articles">
+        <div class="articles-head"><button class="view-all" data-target="hummingbird">View all<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></button></div>
+        <div class="article-list">
+          <div class="article-row" data-title="sesbania grandiflora flowers and leaves study">
+            <div class="article-thumb" style="background-image:url('images/hummingbird-lifestyle.jpg');background-position:top"></div>
+            <div class="article-body"><div class="article-title topic-title">Sesbania grandiflora — Flowers and Leaves Study</div><div class="article-meta"><span class="tag">PubMed</span>PMID 35813364</div></div>
+            <a class="article-read" href="https://pubmed.ncbi.nlm.nih.gov/35813364/" target="_blank" rel="noopener noreferrer">Read<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+          </div>
+          <div class="article-row" data-title="evaluation of sesbania grandiflora for antiurolithiatic and antioxidant properties">
+            <div class="article-thumb" style="background-image:url('images/hummingbird-lifestyle.jpg');background-position:center"></div>
+            <div class="article-body"><div class="article-title">Evaluation of Sesbania grandiflora for Antiurolithiatic and Antioxidant Properties</div><div class="article-meta"><span class="tag">PubMed</span>PMID 18408896</div></div>
+            <a class="article-read" href="https://pubmed.ncbi.nlm.nih.gov/18408896/" target="_blank" rel="noopener noreferrer">Read<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+          </div>
+          <div class="article-row" data-title="sesbania grandiflora flower full-text research article">
+            <div class="article-thumb" style="background-image:url('images/hummingbird-lifestyle.jpg');background-position:bottom"></div>
+            <div class="article-body"><div class="article-title topic-title">Sesbania grandiflora Flower — Full-Text Research Article</div><div class="article-meta"><span class="tag">PMC</span>PMC9261989</div></div>
+            <a class="article-read" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9261989/" target="_blank" rel="noopener noreferrer">Read<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+          </div>
         </div>
       </div>
     </div>
+
+    <p class="no-results" id="noResults">No articles match your search.</p>
 
     <p class="journal-note">Research summaries and citations are provided for general educational context and do not constitute medical advice or claims about Aaron Choice products' effects on any disease. Titles shown in italics reflect the study's subject rather than a confirmed published title. Consult a qualified healthcare professional before starting any supplement regimen.</p>
   </div>
@@ -426,6 +559,59 @@ body{background:#fff;color:var(--ink);letter-spacing:-.01em}
 function showToast(t){const x=document.getElementById('toast');x.textContent=t;x.classList.add('show');setTimeout(()=>x.classList.remove('show'),1800)}
 function openMenu(){document.getElementById('menuDrawer').classList.add('open')}
 function closeMenu(){document.getElementById('menuDrawer').classList.remove('open')}
+
+let activeFilter='all';
+const groups=[...document.querySelectorAll('.spotlight-group')];
+
+function applyFilter(){
+  const q=document.getElementById('articleSearch').value.trim().toLowerCase();
+  let anyVisible=false;
+  groups.forEach(g=>{
+    const matchesPill = activeFilter==='all' || g.dataset.ingredient===activeFilter;
+    if(!matchesPill){ g.style.display='none'; return; }
+    if(!q){ g.style.display=''; anyVisible=true; g.querySelectorAll('.article-row').forEach(row=>row.classList.remove('search-hidden')); return; }
+    let groupHasMatch=false;
+    g.querySelectorAll('.article-row').forEach(row=>{
+      const isMatch=row.dataset.title.includes(q);
+      row.classList.toggle('search-hidden', !isMatch);
+      if(isMatch)groupHasMatch=true;
+    });
+    const featuredText=g.querySelector('.featured-extra');
+    const featuredMatch=featuredText && featuredText.textContent.toLowerCase().includes(q);
+    if(featuredMatch)groupHasMatch=true;
+    g.style.display = groupHasMatch ? '' : 'none';
+    if(groupHasMatch)anyVisible=true;
+  });
+  document.getElementById('noResults').style.display = anyVisible ? 'none' : 'block';
+}
+
+document.getElementById('pillRow').addEventListener('click',e=>{
+  const btn=e.target.closest('.pill');
+  if(!btn)return;
+  document.querySelectorAll('.pill').forEach(p=>p.classList.remove('active'));
+  btn.classList.add('active');
+  activeFilter=btn.dataset.filter;
+  applyFilter();
+});
+
+document.getElementById('articleSearch').addEventListener('input',applyFilter);
+
+document.querySelectorAll('.view-all').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const group=document.getElementById(btn.dataset.target);
+    const expanded=group.classList.toggle('expanded');
+    group.querySelectorAll('.article-row.is-hidden').forEach(row=>{
+      row.style.display = expanded ? 'flex' : 'none';
+    });
+    group.querySelectorAll('.view-all').forEach(b=>{
+      b.innerHTML = expanded
+        ? 'Show less<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 7L7 17M7 17H16M7 17V8"/></svg>'
+        : 'View all<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>';
+    });
+  });
+});
 </script>
+
+<style>.article-row.search-hidden{display:none !important}</style>
 </body>
 </html>
