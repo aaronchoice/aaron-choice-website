@@ -189,6 +189,13 @@ My suggestion: keep the lightbox for now, and revisit dedicated pages once (a) t
 - Replaced the Genetics/Lifestyle/Environment icons with more purpose-built ones (a DNA double-helix for Genetics, a heart with a pulse line for Lifestyle, a globe with latitude lines for Environment) instead of a generic leaf and plain heart, increased their size, and switched them from a 3-across row (which was wrapping awkwardly with a stray divider line) to a cleaner stacked list with bigger label and description text.
 - Verified at desktop and mobile widths, and re-ran the full regression suite on shop.html and blog.html — no errors.
 
+## Science section evidence cards polish (2026-09-17)
+
+- Made the 4 evidence cards (Ingredient transparency, Evidence-ready, Batch transparency, Responsible claims) noticeably bigger — more padding, taller minimum height, larger icon circles (36px → 48px) — and increased the heading and description text size so they're easier to read at a glance.
+- Replaced the icons with ones that match each card's meaning more clearly: a labeled clipboard for Ingredient transparency, an open book for Evidence-ready, a document with a lookup/magnifying glass for Batch transparency (Responsible claims keeps its shield-check).
+- Removed the "Plants · People · A Healthier Tomorrow" line under the evidence cards per your feedback.
+- Verified at desktop and mobile widths, and re-ran the full regression suite on shop.html and blog.html — no errors.
+
 ## Notes / things to swap before going live
 
 - **Checkout**: the "Proceed to Checkout" button still shows an alert. Wire this to a real cart/checkout provider (Shopify, Stripe Checkout, Snipcart, etc.) before launch.
