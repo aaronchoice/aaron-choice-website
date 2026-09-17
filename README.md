@@ -182,6 +182,13 @@ My suggestion: keep the lightbox for now, and revisit dedicated pages once (a) t
 - Bumped the label font size up (11px → 13px, and the tighter desktop-override size from 10px → 12.5px) so it reads more comfortably next to the rest of the page.
 - Verified at desktop and mobile widths, and re-ran the full regression suite on shop.html and blog.html — no errors.
 
+## Origin of Disease section polish (2026-09-17)
+
+- Made the "Root-Cause Thinking" eyebrow stand out: bumped it up to 13px, bolder weight, wider letter-spacing, a saturated blue instead of the pale blue that was blending into the light background, and added a short accent line in front of it.
+- Turned the "For educational context only — not a diagnostic tool..." line under the wheel infographic into a proper callout: larger, bolder text in a bordered card with a blue accent stripe on the left, instead of small muted gray text that was easy to miss.
+- Replaced the Genetics/Lifestyle/Environment icons with more purpose-built ones (a DNA double-helix for Genetics, a heart with a pulse line for Lifestyle, a globe with latitude lines for Environment) instead of a generic leaf and plain heart, increased their size, and switched them from a 3-across row (which was wrapping awkwardly with a stray divider line) to a cleaner stacked list with bigger label and description text.
+- Verified at desktop and mobile widths, and re-ran the full regression suite on shop.html and blog.html — no errors.
+
 ## Notes / things to swap before going live
 
 - **Checkout**: the "Proceed to Checkout" button still shows an alert. Wire this to a real cart/checkout provider (Shopify, Stripe Checkout, Snipcart, etc.) before launch.
