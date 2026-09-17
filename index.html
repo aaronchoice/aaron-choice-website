@@ -188,14 +188,28 @@ button{cursor:pointer}
 .evidence span{font-size:11.5px;color:rgba(255,255,255,.62);line-height:1.6}
 .science-bottom{margin-top:56px;text-align:right;font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.4);position:relative;z-index:1}
 
-.ingredients{background:#fff}
+.ingredients{background:#fff;position:relative;overflow:hidden}
+.ingredients-bg{position:absolute;inset:0;z-index:0}
+.ingredients-bg img{width:100%;height:100%;object-fit:cover}
+.ingredients .container{position:relative;z-index:1}
+.ingredients-head{display:flex;justify-content:space-between;align-items:flex-start;gap:30px}
+.ingredients-head .section-head{margin-bottom:0}
+.ingredients-tag{text-align:right;flex:none;padding-top:8px}
+.ingredients-tag .script{display:block;font:italic 400 26px var(--serif);color:#2f4a3a;margin-bottom:8px;white-space:nowrap;text-shadow:0 0 10px #fff,0 0 18px #fff}
+.ingredients-tag small{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#4f7d5c;font-weight:700;text-shadow:0 0 10px #fff,0 0 18px #fff}
+.ingredients-tag:after{content:"";display:block;width:34px;height:1px;background:rgba(0,0,0,.2);margin:14px 0 0 auto}
 .ingredient-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.ingredient{border:1px solid var(--border);padding:28px;min-height:220px}
-.ingredient .circle{width:48px;height:48px;background:var(--light);display:grid;place-items:center;border-radius:50%;margin-bottom:20px;color:var(--blue)}
-.ingredient .circle svg{width:22px;height:22px}
+.ingredient{border:1px solid var(--border);background:rgba(255,255,255,.6);padding:28px;padding-right:150px;min-height:220px;position:relative;overflow:visible}
+.ingredient-num{font:500 20px var(--serif);color:#9aa5a0;margin-bottom:14px}
+.ingredient-photo{position:absolute;right:-14px;top:50%;transform:translateY(-50%);width:150px;height:150px}
+.ingredient-photo img{width:100%;height:100%;object-fit:contain}
 .ingredient h3{font:500 22px var(--serif);margin-bottom:5px}
-.ingredient small{font-size:10px;color:var(--blue);letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+.ingredient small{font-size:10px;color:#4f7d5c;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
 .ingredient p{font-size:12px;color:var(--muted);line-height:1.7;margin-top:12px}
+.ingredient .learn-more{display:inline-flex;align-items:center;gap:6px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--ink);margin-top:18px;text-decoration:none}
+.ingredient .learn-more span{transition:.2s}
+.ingredient .learn-more:hover span{transform:translateX(3px)}
+.ingredients-foot{margin-top:44px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:inline-block;text-shadow:0 0 10px #fff,0 0 18px #fff,0 0 24px #fff}
 
 .finder{background:linear-gradient(120deg,#0b2d5e,#1a4a8a);color:#fff}
 .finder-box{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
@@ -248,7 +262,7 @@ footer{background:var(--dark);color:#fff;padding:65px 0 25px}
 @media(max-width:1000px){
  .navlinks{display:none}.mobile-menu{display:block}.product-grid{grid-template-columns:repeat(2,1fr)}
  .benefit-grid{grid-template-columns:repeat(2,1fr)}.science-grid,.finder-box{grid-template-columns:1fr}.science-visual{padding-left:20px}.flow-icon{width:100px;height:100px}.flow:before{left:50px;top:50px;bottom:50px}
- .hero{min-height:600px}.hero-copy-col{flex-basis:auto;width:100%;padding:48px 24px}.hero-bg:after{background:linear-gradient(180deg,rgba(4,12,26,.5) 0%,rgba(4,12,26,.75) 100%)}.ingredient-grid{grid-template-columns:1fr 1fr}
+ .hero{min-height:600px}.hero-copy-col{flex-basis:auto;width:100%;padding:48px 24px}.hero-bg:after{background:linear-gradient(180deg,rgba(4,12,26,.5) 0%,rgba(4,12,26,.75) 100%)}.ingredients .ingredient-grid{grid-template-columns:1fr}.ingredients-head{display:block}.ingredients-tag{text-align:left;padding-top:18px}.ingredients-tag:after{margin:14px auto 0 0}.ingredient{padding-right:170px;min-height:200px}
  .footer-grid{grid-template-columns:2fr 1fr 1fr}.review-grid{grid-template-columns:1fr}
 }
 @media(max-width:620px){
@@ -258,6 +272,7 @@ footer{background:var(--dark);color:#fff;padding:65px 0 25px}
  .hero-watermark{top:16px;right:18px}.hero-watermark em{font-size:20px}.hero-caption{right:18px;bottom:16px}.hero-caption b{font-size:16px}
  .section{padding:62px 0}.section-head{display:block}.section-head h2{margin-bottom:12px}
  .product-grid,.ingredient-grid,.benefit-grid{grid-template-columns:1fr}.product-image{height:330px}
+ .ingredient{padding:24px;padding-right:120px;min-height:170px}.ingredient-photo{width:120px;height:120px;right:-10px}.ingredients-tag .script{font-size:21px}
  .science-copy h2,.finder h2,.cta h2{font-size:40px}.evidence{grid-template-columns:1fr}
  .footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:1/-1}
  .footer-bottom{display:block}.footer-bottom div+div{margin-top:8px}
@@ -329,10 +344,10 @@ body{background:#fff;color:var(--ink);letter-spacing:-.01em}
 .evidence b{font-size:11px;letter-spacing:.02em}.evidence span{font-size:10px}
 
 .ingredients{background:#fff}
-.ingredient-grid{gap:20px}
-.ingredient{padding:32px;min-height:250px;transition:.3s}
+.ingredient-grid{gap:20px;margin-top:34px}
+.ingredient{padding:32px;padding-right:190px;min-height:250px;transition:.3s;background:rgba(255,255,255,.85)}
 .ingredient:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:rgba(46,111,209,.3)}
-.ingredient .circle{width:52px;height:52px}
+.ingredient-photo{width:180px;height:180px}
 .ingredient h3{font-size:24px}
 
 .finder{background:linear-gradient(120deg,#071D3B,#123B70)}
@@ -566,13 +581,36 @@ footer{background:#030A14}
 </section>
 
 <section class="ingredients section" id="ingredients">
+ <div class="ingredients-bg"><img src="images/ingredients-bg.jpg" alt="" loading="lazy"></div>
  <div class="container">
-  <div class="section-head"><div><div class="eyebrow">What's Inside</div><h2>Ingredient intelligence.</h2></div><p>Explore the botanical story behind Aaron Choice. Expand this library as verified formulation and evidence data become available.</p></div>
-  <div class="ingredient-grid">
-   <article class="ingredient"><div class="circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c6-1.5 9-6.5 9-13 0-2-.3-3.7-1-5-3.5.7-6.3 2.3-8 5-1.2-3-3.5-5.3-6-6.5-.7 2-1 4-1 6 0 6.5 3.5 12 7 13.5z"/></svg></div><h3>Black Turmeric</h3><small>Curcuma caesia</small><p>The flagship botanical in the supplied Aaron Choice product page. Formulation details and evidence should remain tied to verified product documentation.</p></article>
-   <article class="ingredient"><div class="circle"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><circle cx="8.5" cy="9" r="3.2"/><circle cx="15.5" cy="9" r="3.2"/><circle cx="12" cy="15.5" r="3.2"/></svg></div><h3>Black Pepper Extract</h3><small>Bioavailability support</small><p>Included in the supplied Black Turmeric formulation. Display dosage and standardization from verified label data.</p></article>
-   <article class="ingredient"><div class="circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21V9M12 9C12 5 9 3 6 3c0 4 1.5 6.5 6 6zM12 12c0-4.5 3-6.5 6-6.5-.2 4-2 6.5-6 6.5z"/></svg></div><h3>Ginger Root</h3><small>Botanical extract</small><p>Included in the supplied Black Turmeric formulation. Use the product label as the source of truth for final dosage and claims.</p></article>
+  <div class="ingredients-head">
+   <div class="section-head"><div><div class="eyebrow">What's Inside</div><h2>Ingredient intelligence.</h2></div><p>Explore the botanical story behind Aaron Choice.<br>Each ingredient is backed by verified formulation and evidence data.</p></div>
+   <div class="ingredients-tag"><span class="script">Plants with purpose.</span><small>Trusted by Science.</small></div>
   </div>
+  <div class="ingredient-grid">
+   <article class="ingredient">
+    <div class="ingredient-num">01</div>
+    <div class="ingredient-photo"><img src="images/ingredient-black-turmeric.png" alt="Black Turmeric" loading="lazy"></div>
+    <h3>Black Turmeric</h3><small>Curcuma caesia</small>
+    <p>The flagship botanical in the supplied Aaron Choice product page. Formulation details and evidence should remain tied to verified product documentation.</p>
+    <a class="learn-more" href="#">Learn More <span>&rarr;</span></a>
+   </article>
+   <article class="ingredient">
+    <div class="ingredient-num">02</div>
+    <div class="ingredient-photo"><img src="images/ingredient-black-pepper.png" alt="Black Pepper Extract" loading="lazy"></div>
+    <h3>Black Pepper Extract</h3><small>Bioavailability support</small>
+    <p>Included in the supplied Black Turmeric formulation. Display dosage and standardization from verified label data.</p>
+    <a class="learn-more" href="#">Learn More <span>&rarr;</span></a>
+   </article>
+   <article class="ingredient">
+    <div class="ingredient-num">03</div>
+    <div class="ingredient-photo"><img src="images/ingredient-ginger-root.png" alt="Ginger Root" loading="lazy"></div>
+    <h3>Ginger Root</h3><small>Botanical extract</small>
+    <p>Included in the supplied Black Turmeric formulation. Use the product label as the source of truth for final dosage and claims.</p>
+    <a class="learn-more" href="#">Learn More <span>&rarr;</span></a>
+   </article>
+  </div>
+  <div class="ingredients-foot">Real Ingredients &middot; Real Evidence &middot; Real Impact</div>
  </div>
 </section>
 

@@ -139,6 +139,16 @@ My suggestion: keep the lightbox for now, and revisit dedicated pages once (a) t
   - Fixed a CSS specificity bug while building this: the card border/background rule was initially matching every `<div>` inside the info cards (including the inner text wrapper), producing a "double card" look — scoped it to direct children only.
 - Verified at desktop and mobile widths, and re-ran the full regression suite on shop.html and blog.html — no errors.
 
+## Ingredient intelligence section redesign (2026-09-17)
+
+- Rebuilt the "Ingredient intelligence" section (`#ingredients`) — previously a plain 3-column bordered card grid with generic line-icons — using your reference layout and new assets:
+  - A full-bleed light background photo (`images/ingredients-bg.jpg` — soft leaf branches and thin arc lines in each corner) behind the whole section, matching the airy look of the reference. No dark tint needed here since the section uses dark text on a light background.
+  - Added the top-right "Plants with purpose." / "TRUSTED BY SCIENCE." decorative label (with a white text-glow so it stays legible over the leaf branch behind it), matching the reference.
+  - Each of the 3 cards (Black Turmeric, Black Pepper Extract, Ginger Root) now has its own product photo — `images/ingredient-black-turmeric.png`, `images/ingredient-black-pepper.png`, `images/ingredient-ginger-root.png` (resized down from your originals) — bleeding past the right edge of the card, plus a numbered label (01/02/03), the green small-caps subtitle, and a "LEARN MORE →" link, matching the reference card layout.
+  - Added the bottom-left "REAL INGREDIENTS · REAL EVIDENCE · REAL IMPACT" line, also with a white text-glow for legibility over the leaves.
+  - On tablet/mobile, cards stack to a single column and the ingredient photos shrink so nothing overlaps the copy.
+- Verified at desktop, tablet, and mobile widths, and re-ran the full regression suite on shop.html and blog.html — no errors.
+
 ## Notes / things to swap before going live
 
 - **Checkout**: the "Proceed to Checkout" button still shows an alert. Wire this to a real cart/checkout provider (Shopify, Stripe Checkout, Snipcart, etc.) before launch.
