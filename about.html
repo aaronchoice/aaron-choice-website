@@ -156,14 +156,16 @@ button{cursor:pointer}
 .focus-row span{font-size:12.5px;color:var(--muted);text-align:right}
 
 /* philosophy */
-.philosophy{background:linear-gradient(180deg,#e3ecf7,#eef3f9);position:relative}
-.philosophy-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:center}
-.philosophy blockquote{font:italic 500 26px/1.5 var(--serif);color:var(--navy);position:relative}
-.philosophy .eyebrow{margin-bottom:22px}
-.philosophy-side p{font-size:13px;color:var(--muted);line-height:1.85;margin-bottom:20px}
+.philosophy{position:relative;overflow:hidden;color:#fff}
+.philosophy-bg{position:absolute;inset:0;z-index:0}
+.philosophy-bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center bottom;display:block}
+.philosophy-bg:after{content:"";position:absolute;inset:0;background:rgba(4,12,26,.38)}
+.philosophy-grid{position:relative;z-index:1;max-width:680px}
+.philosophy blockquote{font:italic 500 26px/1.5 var(--serif);color:#fff;position:relative}
+.philosophy .eyebrow{margin-bottom:22px;color:#bcd2f2}
 .philosophy-attr{display:flex;align-items:center;gap:14px;margin-top:24px}
-.philosophy-attr .line{width:30px;height:1px;background:var(--navy)}
-.philosophy-attr span{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--navy)}
+.philosophy-attr .line{width:30px;height:1px;background:#fff}
+.philosophy-attr span{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:#fff}
 
 /* pub + cta band */
 .pub-band{display:grid;grid-template-columns:1fr 1fr}
@@ -490,14 +492,12 @@ body{background:#fff;color:var(--ink);letter-spacing:-.01em}
 
 <!-- PHILOSOPHY -->
 <section class="philosophy">
- <div class="container philosophy-grid" style="padding:80px 0">
+ <div class="philosophy-bg"><img src="images/science-bg.jpg" alt="" loading="lazy"></div>
+ <div class="container philosophy-grid" style="padding:120px 0 100px">
   <div>
    <div class="eyebrow">Research Philosophy</div>
    <blockquote>&ldquo;Understanding health requires looking beyond symptoms&mdash;to the interaction between mind, body, behaviour and environment.&rdquo;</blockquote>
    <div class="philosophy-attr"><span class="line"></span><span>Dr. Balasingham Arasabalan</span></div>
-  </div>
-  <div class="philosophy-side">
-   <p>Clinical experience and scientific inquiry come together to explore how psychological and physiological processes interact in health and wellbeing.</p>
   </div>
  </div>
 </section>

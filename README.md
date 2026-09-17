@@ -266,6 +266,13 @@ My suggestion: keep the lightbox for now, and revisit dedicated pages once (a) t
 - **Featured Research card**: replaced the "Research imagery placeholder" box with your supplied image (`images/research-visual.jpg`, supplied at 1916×821 — a wide banner, cropped via `object-fit:cover` into the card's 170px-tall slot).
 - Verified all three at desktop width and re-ran the shop.html regression suite — no errors.
 
+## Research Philosophy section redesign (2026-09-17)
+
+- Removed the short paragraph next to the pull-quote ("Clinical experience and scientific inquiry come together...") per your feedback.
+- Reused the homepage's Science section background photo (`images/science-bg.jpg`) as a full-bleed background for this section, cropped with `object-position:center bottom` so it shows the rock/leaves/water reflection detail at the bottom of the image (the part you liked), rather than the plainer dark-blue upper portion.
+- Switched the eyebrow, quote and attribution text to white/light-blue so they read clearly over the new dark photo background, and widened the vertical padding slightly so the quote has more breathing room against the image.
+- Verified at desktop and mobile widths, and re-ran the shop.html and blog.html regression suites — no errors.
+
 ## Notes / things to swap before going live
 
 - **Checkout**: the "Proceed to Checkout" button still shows an alert. Wire this to a real cart/checkout provider (Shopify, Stripe Checkout, Snipcart, etc.) before launch.
