@@ -309,6 +309,13 @@ My suggestion: keep the lightbox for now, and revisit dedicated pages once (a) t
 - Your supplied logo had a flat white background — removed it programmatically so it sits cleanly on the hero's pale background instead of showing a white box around it (same treatment used for the Aaron Choice logo in the nav).
 - Verified at desktop and mobile widths, re-ran the shop.html regression suite — no errors.
 
+## Shop hero → full-bleed single column, leaf panel text moved, Personalised Discovery added (2026-09-17)
+
+- **Shop hero rebuilt as a single, full-bleed section**: the hero was a two-column layout (a light copy panel on the left, the photo confined to a separate column on the right). It's now one section — the photo covers the entire width, edge-to-edge, matching the full-bleed treatment used on the homepage/Blog heroes, with the cream-tinted gradient still fading left-to-right so the copy stays legible over the photo.
+- **Leaf panel text moved up**: "Small choices. A healthier tomorrow." was anchored to the bottom of the panel, which could sit uncomfortably low once the card stretched to match the height of its taller neighbors in the grid row. Moved it to the top of the panel instead, with the gradient flipped (now a light fade from the top) to match.
+- **Added the "Personalised Discovery" section** below the product grid — the same "Find your Aaron Choice" wellness finder from the homepage (background photo, eyebrow/heading/copy, "Browse All Products" button, and the working wellness-area dropdown + "Find my product" result), reusing `images/finder-bg.jpg`. The dropdown/button use their own ids (`shopGoal`, `findShopProduct()`) so they don't collide with the homepage's finder script.
+- Verified at desktop and mobile widths, tested the finder's suggestion logic, and re-ran the shop.html regression suite — no errors.
+
 ## Notes / things to swap before going live
 
 - **Checkout**: the "Proceed to Checkout" button still shows an alert. Wire this to a real cart/checkout provider (Shopify, Stripe Checkout, Snipcart, etc.) before launch.
