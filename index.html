@@ -68,8 +68,9 @@ button{cursor:pointer}
 .trust-icon svg{width:14px;height:14px}
 @media(max-width:1000px){.trust-item{padding:5px 15px}.trust-item+.trust-item:before{display:none}}
 
-.hero{background:linear-gradient(105deg,#f4f7fd 0%,#fff 54%,#e8f0fb 100%);min-height:650px;display:grid;align-items:center}
-.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:60px;align-items:center;padding:75px 0}
+.hero{background:linear-gradient(105deg,#f4f7fd 0%,#fff 54%,#e8f0fb 100%);position:relative;overflow:hidden}
+.hero-flex{display:flex;align-items:stretch;min-height:650px}
+.hero-copy-col{flex:0 0 clamp(420px,44%,600px);box-sizing:border-box;padding:75px 40px 75px max(24px,calc((100vw - 1400px)/2 + 24px));display:flex;flex-direction:column;justify-content:center}
 .eyebrow{font-size:11px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;color:var(--blue);margin-bottom:18px}
 .hero h1{font:500 clamp(48px,6vw,82px)/1.02 var(--serif);letter-spacing:-.045em;max-width:700px}
 .hero h1 em{color:var(--blue);font-style:italic}
@@ -80,7 +81,7 @@ button{cursor:pointer}
 .hero-badge{display:flex;align-items:center;gap:9px;font-size:11px;font-weight:600;color:var(--navy);text-transform:uppercase;letter-spacing:.06em}
 .hero-badge svg{width:19px;height:19px;color:var(--blue);flex:none}
 
-.hero-art{position:relative;border-radius:16px;overflow:hidden;min-height:490px;box-shadow:0 30px 60px rgba(11,45,94,.18)}
+.hero-art{flex:1 1 auto;position:relative;overflow:hidden;min-height:490px}
 .hero-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 .hero-art:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(4,12,26,.6) 0%,rgba(4,12,26,0) 38%);pointer-events:none}
 .hero-watermark{position:absolute;top:24px;right:28px;text-align:right;color:rgba(255,255,255,.92);font-family:var(--serif);font-style:italic;z-index:2;line-height:1.15}
@@ -97,23 +98,40 @@ button{cursor:pointer}
 .section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:42px}
 .section-head h2{font:500 clamp(34px,4vw,54px)/1.08 var(--serif);letter-spacing:-.03em}
 .section-head p{max-width:500px;color:var(--muted);font-size:14px;line-height:1.8}
-.origin{background:#fff}
-.origin-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+.origin{background:#fdfcf9;position:relative;overflow:hidden}
+.origin:after{content:"";position:absolute;inset:-15% -12% auto auto;width:46vw;height:46vw;border:1px solid rgba(46,111,209,.09);border-radius:50%;pointer-events:none}
+.origin-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:60px;align-items:center;position:relative}
+.origin-visual{position:relative;display:flex;flex-direction:column;align-items:center;padding:30px 0}
+.origin-leaf{position:absolute;pointer-events:none;z-index:0;width:180px;height:auto}
+.origin-leaf.tl{top:-56px;left:-8px}
+.origin-leaf.bl{bottom:36px;left:-46px;width:150px;transform:scaleY(-1)}
+.origin-circle{position:relative;z-index:1;width:min(440px,100%);aspect-ratio:1/1;border-radius:50%;background:#F6F1E4;box-shadow:0 30px 70px rgba(11,45,94,.12);padding:20px;box-sizing:border-box;cursor:zoom-in}
+.origin-circle img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;transition:.25s}
+.origin-circle:hover img{box-shadow:0 0 0 1px rgba(11,45,94,.06)}
+.origin-zoom-hint{position:absolute;right:22px;bottom:22px;background:rgba(7,29,59,.78);color:#fff;font-size:10px;letter-spacing:.05em;padding:7px 12px;border-radius:20px;display:flex;align-items:center;gap:6px;pointer-events:none;z-index:2}
+.origin-zoom-hint svg{width:12px;height:12px}
+.origin-caption{margin-top:20px;font-size:10px;color:var(--muted);letter-spacing:.02em;max-width:400px;text-align:center;position:relative;z-index:1}
+.origin-sciencetext{position:absolute;left:-6px;bottom:-8px;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(11,45,94,.35);line-height:2.1;z-index:1}
 .origin-copy .eyebrow{margin-bottom:16px}
 .origin-copy h2{font:500 clamp(32px,3.6vw,46px)/1.1 var(--serif);letter-spacing:-.03em;margin-bottom:16px}
-.origin-copy p{color:var(--muted);font-size:14px;line-height:1.85;max-width:480px}
-.origin-figure{position:relative;cursor:zoom-in;max-width:420px}
-.origin-figure img{width:100%;height:auto;border-radius:6px;box-shadow:0 18px 45px rgba(11,45,94,.12);display:block;transition:.25s}
-.origin-figure:hover img{box-shadow:0 22px 55px rgba(11,45,94,.18)}
-.origin-zoom-hint{position:absolute;right:12px;bottom:12px;background:rgba(7,29,59,.78);color:#fff;font-size:10px;letter-spacing:.05em;padding:7px 12px;border-radius:20px;display:flex;align-items:center;gap:6px;pointer-events:none}
-.origin-zoom-hint svg{width:12px;height:12px}
-.origin-caption{margin-top:14px;font-size:10px;color:var(--muted);letter-spacing:.02em;max-width:420px}
+.origin-copy h2 .dot{color:var(--blue)}
+.origin-copy p{color:var(--muted);font-size:14px;line-height:1.85;max-width:480px;margin-bottom:28px}
+.origin-copy .primary{display:inline-block;margin-bottom:32px}
+.origin-mini-icons{display:flex;flex-wrap:wrap;margin-top:8px;gap:0 16px}
+.origin-mini-icon{display:flex;align-items:center;gap:9px;padding:4px 14px 4px 0;position:relative;flex:0 1 auto;min-width:0}
+.origin-mini-icon+.origin-mini-icon{padding-left:14px}
+.origin-mini-icon+.origin-mini-icon:before{content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);width:1px;height:32px;background:var(--border)}
+.origin-mini-icon .ic{width:34px;height:34px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--blue);flex:none}
+.origin-mini-icon .ic svg{width:15px;height:15px}
+.origin-mini-icon b{display:block;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);font-weight:700;white-space:nowrap}
+.origin-mini-icon small{font-size:10.5px;color:var(--muted);white-space:nowrap}
+.origin-tomorrow{position:absolute;right:5%;bottom:8%;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:rgba(11,45,94,.32);transform:rotate(-5deg);z-index:1}
 .lightbox{position:fixed;inset:0;background:rgba(4,10,20,.92);z-index:400;display:none;align-items:center;justify-content:center;padding:50px;cursor:zoom-out}
 .lightbox.open{display:flex}
 .lightbox img{max-width:100%;max-height:100%;box-shadow:0 30px 80px rgba(0,0,0,.5);border-radius:4px}
 .lightbox-close{position:fixed;top:24px;right:24px;background:rgba(255,255,255,.12);border:0;color:#fff;width:44px;height:44px;border-radius:50%;display:grid;place-items:center}
 .lightbox-close svg{width:18px;height:18px}
-@media(max-width:1000px){.origin-grid{grid-template-columns:1fr;gap:36px}.origin-figure{max-width:100%;margin:0 auto}}
+@media(max-width:1000px){.origin-grid{grid-template-columns:1fr;gap:36px}.origin-circle{width:min(340px,80%)}.origin-leaf{width:130px}.origin-sciencetext{display:none}.origin-tomorrow{display:none}}
 .benefits{background:var(--navy);color:#fff}
 .benefit-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:45px}
 .benefit{padding:35px 28px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);min-height:210px}
@@ -211,14 +229,14 @@ footer{background:var(--dark);color:#fff;padding:65px 0 25px}
 
 @media(max-width:1000px){
  .navlinks{display:none}.mobile-menu{display:block}.product-grid{grid-template-columns:repeat(2,1fr)}
- .benefit-grid{grid-template-columns:repeat(2,1fr)}.hero-grid,.science-grid,.finder-box{grid-template-columns:1fr}
- .hero-art{order:-1;min-height:390px}.ingredient-grid{grid-template-columns:1fr 1fr}
+ .benefit-grid{grid-template-columns:repeat(2,1fr)}.science-grid,.finder-box{grid-template-columns:1fr}
+ .hero-flex{flex-direction:column}.hero-copy-col{flex-basis:auto;width:100%;padding:48px 24px}.hero-art{order:-1;min-height:390px}.ingredient-grid{grid-template-columns:1fr 1fr}
  .footer-grid{grid-template-columns:2fr 1fr 1fr}.review-grid{grid-template-columns:1fr}
 }
 @media(max-width:620px){
  .container,.nav-inner{width:min(100% - 30px,var(--max))}
  .announcement{font-size:9px}.nav{height:64px}.logo{font-size:21px}.cart-btn{padding:10px 13px}.brand{padding-left:68px}.brand-mark{height:64px;top:-20px}.brand-text{font-size:21px}
- .hero-grid{padding:48px 0}.hero h1{font-size:38px}.hero-art{min-height:300px}
+ .hero-copy-col{padding:40px 18px}.hero h1{font-size:38px}.hero-art{min-height:300px}
  .hero-watermark{top:16px;right:18px}.hero-watermark em{font-size:20px}.hero-caption{left:18px;bottom:16px}.hero-caption b{font-size:16px}
  .section{padding:62px 0}.section-head{display:block}.section-head h2{margin-bottom:12px}
  .product-grid,.ingredient-grid,.benefit-grid{grid-template-columns:1fr}.product-image{height:330px}
@@ -256,17 +274,16 @@ body{background:#fff;color:var(--ink);letter-spacing:-.01em}
  position:relative;overflow:hidden
 }
 .hero:after{content:"";position:absolute;inset:auto -10% -35% auto;width:55vw;height:55vw;border:1px solid rgba(46,111,209,.10);border-radius:50%}
-.hero-grid{width:min(1400px,calc(100% - 72px));padding:105px 0;gap:70px}
-.hero h1{font-size:clamp(55px,7vw,96px);max-width:760px;line-height:.96}
+.hero-copy-col{padding:105px 40px 105px max(36px,calc((100vw - 1400px)/2 + 36px))}
+.hero h1{font-size:clamp(48px,4.6vw,68px);max-width:600px;line-height:1.02}
 .hero h1 em{color:var(--blue)}
-.hero-copy{font-size:15px;max-width:525px;line-height:1.9}
+.hero-copy{font-size:15px;max-width:480px;line-height:1.9}
 .eyebrow{font-size:9px;letter-spacing:.28em}
 .primary,.secondary{padding:15px 25px;font-size:10px;letter-spacing:.16em}
 .secondary{border-color:rgba(7,29,59,.28)}
-.hero-badges{margin-top:40px;gap:32px}
+.hero-badges{margin-top:40px;gap:24px;flex-wrap:wrap}
 .hero-badge{font-size:10px;letter-spacing:.08em}
-.hero-art{min-height:560px;border-radius:10px}
-.hero-icons span{background:rgba(7,29,59,.45)}
+.hero-art{min-height:560px}
 .hero-caption b{font-size:21px}
 
 .section{padding:108px 0}
@@ -346,12 +363,12 @@ footer{background:#030A14}
 .toast{box-shadow:0 12px 35px rgba(0,0,0,.2)}
 
 @media(max-width:1000px){
- .nav-inner,.trust-inner,.hero-grid,.container{width:min(100% - 42px,1400px)}
- .hero-grid{padding:75px 0}.hero-art{order:-1}
+ .nav-inner,.trust-inner,.container{width:min(100% - 42px,1400px)}
+ .hero-copy-col{padding:75px 24px}.hero-art{order:-1}
 }
 @media(max-width:620px){
- .nav-inner,.trust-inner,.hero-grid,.container{width:calc(100% - 30px)}
- .hero{min-height:auto}.hero-grid{padding:55px 0 70px}.hero h1{font-size:40px}
+ .nav-inner,.trust-inner,.container{width:calc(100% - 30px)}
+ .hero{min-height:auto}.hero-copy-col{padding:55px 20px 70px}.hero h1{font-size:40px}
  .hero-art{min-height:320px}
  .section{padding:72px 0}.product-image{height:350px}
 }
@@ -409,8 +426,8 @@ footer{background:#030A14}
 
 <main>
 <section class="hero">
-  <div class="container hero-grid">
-    <div>
+  <div class="hero-flex">
+    <div class="hero-copy-col">
       <div class="eyebrow">Botanicals · Science · Transparency</div>
       <h1>Rooted in nature.<em>Made with purpose.</em></h1>
       <p class="hero-copy">Plant-based supplements rooted in botanical tradition, created with transparency, intention and a respect for the wisdom of nature.</p>
@@ -431,19 +448,29 @@ footer{background:#030A14}
 
 <section class="origin section" id="origin">
   <div class="container origin-grid">
-    <div class="origin-copy">
-      <div class="eyebrow">Root-Cause Thinking</div>
-      <h2>The origin of disease.</h2>
-      <p>Wellness starts with understanding the many interconnected factors that influence how the body functions — genetics, lifestyle, environment and more.</p>
-    </div>
-    <div>
-      <div class="origin-figure" onclick="openLightbox('images/origin-of-disease.jpg','Diagram illustrating interconnected contributing factors to disease')">
+    <div class="origin-visual">
+      <img class="origin-leaf tl" src="images/leaf-branch-1.png" alt="" loading="lazy">
+      <img class="origin-leaf bl" src="images/leaf-branch-2.png" alt="" loading="lazy">
+      <div class="origin-circle" onclick="openLightbox('images/origin-of-disease.jpg','Diagram illustrating interconnected contributing factors to disease')">
         <img src="images/origin-of-disease.jpg" alt="Diagram illustrating interconnected contributing factors to disease, including infections, stress, adrenal fatigue, nutrient deficiencies, environmental toxins, inflammation, GI dysfunction, emotional trauma, mold biotoxins, hormone dysfunction, mitochondrial dysfunction, electromagnetic pollution, immune dysfunction, and food sensitivities, arranged around a central figure with genetic susceptibility, lifestyle, environment and interactions at the core" loading="lazy">
         <span class="origin-zoom-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>Click to enlarge</span>
       </div>
       <p class="origin-caption">For educational context only — not a diagnostic tool. Consult a qualified healthcare professional about any health condition.</p>
+      <div class="origin-sciencetext">Science<br>Nature<br>People</div>
+    </div>
+    <div class="origin-copy">
+      <div class="eyebrow">Root-Cause Thinking</div>
+      <h2>The origin of disease<span class="dot">.</span></h2>
+      <p>Wellness starts with understanding the many interconnected factors that influence how the body functions — genetics, lifestyle, environment and more.</p>
+      <a class="primary" href="#science">Explore the Science →</a>
+      <div class="origin-mini-icons">
+        <div class="origin-mini-icon"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c6-1.5 9-6.5 9-13 0-2-.3-3.7-1-5-3.5.7-6.3 2.3-8 5-1.2-3-3.5-5.3-6-6.5-.7 2-1 4-1 6 0 6.5 3.5 12 7 13.5z"/></svg></span><div><b>Genetics</b><small>Our unique biological blueprint</small></div></div>
+        <div class="origin-mini-icon"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-4.5-3-8-6.5-8-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 4.5-3.5 8-8 11z"/></svg></span><div><b>Lifestyle</b><small>Daily choices shape health</small></div></div>
+        <div class="origin-mini-icon"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18z"/></svg></span><div><b>Environment</b><small>The world around us matters</small></div></div>
+      </div>
     </div>
   </div>
+  <div class="origin-tomorrow">A Healthier Tomorrow</div>
 </section>
 
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">

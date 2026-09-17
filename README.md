@@ -104,6 +104,17 @@ You asked whether each product should get its own dedicated page instead. For a 
 
 My suggestion: keep the lightbox for now, and revisit dedicated pages once (a) the catalogue grows past ~10–15 SKUs, or (b) you have enough unique content per product (lab results, usage guides, verified reviews) to justify a page each. If you want, I can build out one example product page later so you can compare the experience directly before deciding.
 
+## Full-bleed hero & Origin of Disease redesign (2026-09-17)
+
+- **Hero section is now truly full-bleed**: the image previously sat inside the site's max-width container, so it never reached the true edge of a wide browser window. The hero markup was restructured from a `.container`-nested grid to a full-width flex layout (`.hero-flex`) — the text column (`.hero-copy-col`) keeps the site's usual left gutter via a `calc()` formula, while the image column stretches to the actual edge of the viewport on wide screens. The rounded corners and drop shadow were removed for a hard-edge, edge-to-edge look matching the reference. The hero photo (`images/hero-black-turmeric.jpg`) was also replaced with a new landscape shot sized to fill this wider box correctly. Verified at 1920px, 1440px, tablet and mobile widths — the layout stacks cleanly (text above image) on tablet/mobile.
+- **"The origin of disease" section redesigned** to match a richer reference layout:
+  - The wheel infographic now sits inside a padded cream circle (pure CSS — no new image needed) with a soft shadow, and a "Click to enlarge" hint on hover.
+  - Two decorative leaf-branch images (`images/leaf-branch-1.png`, `images/leaf-branch-2.png`) frame the circle at the top-left and bottom-left corners.
+  - Added a faint decorative ring behind the section, vertical "Science / Nature / People" text, a rotated "A Healthier Tomorrow" accent, and a single-row of three icon callouts (Genetics, Lifestyle, Environment) reusing the site's existing icon style — no new icon images were needed.
+  - The compliance disclaimer beneath the image is unchanged.
+- Both sections were rebuilt in `index.html` only; `shop.html` and `blog.html` are untouched and were re-tested to confirm no regressions (product filters, cart, lightbox carousel, and page load all still work with no console/page errors — aside from a Google Fonts request, which is blocked only in this sandbox and will load normally once the site is live).
+- **Still pending, awaiting more of your redesigned images**: Footer, the secondary "Start your wellness journey" hero (sits just above the footer), FAQ, testimonials, ingredient cards, and the science-process/benefits icon rows. The homepage product/collection grid is intentionally unchanged, per your note that it already looks right.
+
 ## Notes / things to swap before going live
 
 - **Checkout**: the "Proceed to Checkout" button still shows an alert. Wire this to a real cart/checkout provider (Shopify, Stripe Checkout, Snipcart, etc.) before launch.
