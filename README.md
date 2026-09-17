@@ -167,12 +167,21 @@ My suggestion: keep the lightbox for now, and revisit dedicated pages once (a) t
 - Introduced a shared `.glass-card` style (translucent white background with a backdrop blur, soft border and shadow, slightly stronger on hover) and applied it to the 3 review cards and to the FAQ panel, so the backgrounds show through consistently — the same frosted-glass look already used on the ingredient cards.
 - Verified at desktop and mobile widths, and re-ran the full regression suite on shop.html and blog.html — no errors.
 
+## Secondary hero + footer redesign (2026-09-17)
+
+- Added a full-bleed light background photo (`images/cta-bg.jpg` — the capsule bottle and mortar/pestle on a marble podium) to the "Start your wellness journey" section right above the footer, with a soft radial white vignette behind the centered text so it stays fully readable while the product shot shows through at the edges.
+- Added a full-bleed dark background photo (`images/footer-bg.jpg` — leaf branches on a navy backdrop) to the footer, with a dark gradient tint for contrast.
+- Rebuilt the footer to match your reference: a larger "Aaron Choice" logotype with a "PLANTS PEOPLE PURPOSE" tagline and circular social icons (Instagram, Facebook, YouTube, Pinterest, LinkedIn — currently placeholder `#` links); a "REAL INGREDIENTS / REAL IMPACT" label in the top-right corner; rounded out the Shop/Science/Support link columns to match your reference (added Gift Cards, Research & Evidence, Subscriptions, Terms of Service); a new "A Healthier Tomorrow" + "Stay in the know" newsletter signup row (submitting shows a confirmation toast — no email service is wired up yet); and a "🍁 Proudly Canadian" line next to the copyright.
+- Fixed a pre-existing CSS bug found while doing this: the footer's link-list styling (`.footer h4/ul/li`) was targeting a `.footer` class that no elements actually had, so footer links were rendering with default browser bullets and unstyled headings — this was invisible before because it blended into the plain dark background, but shows up now. Corrected the selectors to target the `<footer>` element directly.
+- Verified at desktop and mobile widths, and re-ran the full regression suite on shop.html and blog.html — no errors.
+
 ## Notes / things to swap before going live
 
 - **Checkout**: the "Proceed to Checkout" button still shows an alert. Wire this to a real cart/checkout provider (Shopify, Stripe Checkout, Snipcart, etc.) before launch.
 - **Search**: currently a simple client-side name filter over the products shown. If your catalogue grows or you want full-text/typo-tolerant search, connect a real search service.
 - **Reviews**: sample testimonials are included; replace with verified customer reviews before launch (using placeholder names/quotes as if genuine is a legal risk once live).
 - **Legal/compliance copy**: the FAQ and footer include notes flagging language that should be reviewed against your actual return policy, supplement regulations, and SKU-level claims before publishing.
+- **Footer social links & newsletter**: the 5 footer social icons currently link to `#`, and the newsletter form just shows a "Subscribed!" confirmation toast. Point the social icons at your real profiles and wire the form up to an email service (Mailchimp, Klaviyo, etc.) before launch.
 
 ## File structure
 

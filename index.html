@@ -243,18 +243,45 @@ button{cursor:pointer}
 .faq-panel{padding:36px 44px}
 .faq-panel details{border-bottom-color:rgba(11,45,94,.12)}
 
-.cta{background:var(--light);text-align:center;padding:85px 20px}
+.cta{background:var(--light);text-align:center;padding:110px 20px;position:relative;overflow:hidden}
+.cta-bg{position:absolute;inset:0;z-index:0}
+.cta-bg img{width:100%;height:100%;object-fit:cover}
+.cta-bg:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 42%,rgba(255,255,255,.68) 0%,rgba(255,255,255,.32) 52%,rgba(255,255,255,.05) 80%)}
+.cta .container{position:relative;z-index:1}
 .cta h2{font:500 52px/1.08 var(--serif)}
 .cta p{color:var(--muted);font-size:14px;margin:14px auto 25px;max-width:550px}
 
-footer{background:var(--dark);color:#fff;padding:65px 0 25px}
-.footer-grid{display:grid;grid-template-columns:2fr repeat(4,1fr);gap:45px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.1)}
-.footer-logo{font:600 25px var(--serif);margin-bottom:13px}
-.footer-desc{font-size:12px;color:rgba(255,255,255,.42);line-height:1.8;max-width:260px}
-.footer h4{font-size:10px;color:#93C5FD;letter-spacing:.18em;text-transform:uppercase;margin-bottom:17px}
-.footer ul{list-style:none;display:grid;gap:9px}
-.footer li{font-size:12px;color:rgba(255,255,255,.48)}
-.footer-bottom{display:flex;justify-content:space-between;gap:20px;padding-top:20px;font-size:10px;color:rgba(255,255,255,.27)}
+footer{background:var(--dark);color:#fff;padding:70px 0 25px;position:relative;overflow:hidden}
+.footer-bg{position:absolute;inset:0;z-index:0}
+.footer-bg img{width:100%;height:100%;object-fit:cover}
+.footer-bg:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,10,20,.6),rgba(3,10,20,.88))}
+footer .container{position:relative;z-index:1}
+.footer-tag{position:absolute;top:0;right:0;text-align:right;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.6);line-height:1.7}
+.footer-tag:after{content:"";display:block;width:34px;height:1px;background:rgba(255,255,255,.25);margin:12px 0 0 auto}
+.footer-grid{display:grid;grid-template-columns:2fr repeat(4,1fr);gap:45px;padding-bottom:40px;padding-top:58px;border-bottom:1px solid rgba(255,255,255,.1)}
+.footer-logo{font:600 32px var(--serif);margin-bottom:8px}
+.footer-tagline{display:inline-block;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#93C5FD;font-weight:600;padding-bottom:14px;margin-bottom:16px;border-bottom:1px solid rgba(255,255,255,.2)}
+.footer-desc{font-size:12px;color:rgba(255,255,255,.5);line-height:1.8;max-width:270px;margin-bottom:22px}
+.footer-social{display:flex;gap:10px}
+.footer-social a{width:38px;height:38px;border:1px solid rgba(255,255,255,.25);border-radius:50%;display:grid;place-items:center;color:#fff;text-decoration:none;font-size:10px;font-weight:700;letter-spacing:.02em;transition:.2s}
+.footer-social a:hover{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.55)}
+footer h4{font-size:10px;color:#93C5FD;letter-spacing:.18em;text-transform:uppercase;margin-bottom:17px}
+footer ul{list-style:none;display:grid;gap:9px;margin:0;padding:0}
+footer li{font-size:12px;color:rgba(255,255,255,.48)}
+.footer-mid{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;padding:32px 0;flex-wrap:wrap}
+.footer-mid-left{position:relative;padding-bottom:14px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+.footer-mid-left:after{content:"";position:absolute;left:0;bottom:0;width:34px;height:1px;background:rgba(255,255,255,.25)}
+.footer-newsletter{display:flex;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.footer-newsletter b{display:block;font:500 16px var(--serif);margin-bottom:4px;font-weight:500}
+.footer-newsletter span{display:block;font-size:12px;color:rgba(255,255,255,.5);max-width:280px}
+.footer-newsletter form{display:flex;border:1px solid rgba(255,255,255,.3)}
+.footer-newsletter input{background:transparent;border:0;color:#fff;padding:13px 16px;font-size:12px;width:220px}
+.footer-newsletter input::placeholder{color:rgba(255,255,255,.45)}
+.footer-newsletter button{border:0;background:transparent;color:#fff;width:44px;display:grid;place-items:center;cursor:pointer;border-left:1px solid rgba(255,255,255,.3)}
+.footer-newsletter button svg{width:16px;height:16px}
+.footer-bottom{display:flex;justify-content:space-between;gap:20px;padding-top:20px;font-size:10px;color:rgba(255,255,255,.35)}
+.footer-canada{display:flex;align-items:center;gap:7px}
+.footer-canada svg{width:14px;height:14px}
 
 .drawer{position:fixed;inset:0;background:rgba(7,15,30,.42);z-index:200;display:none}
 .drawer.open{display:block}
@@ -280,6 +307,7 @@ footer{background:var(--dark);color:#fff;padding:65px 0 25px}
  .benefit-grid{grid-template-columns:repeat(2,1fr)}.science-grid,.finder-box{grid-template-columns:1fr}.science-visual{padding-left:20px}.flow-icon{width:100px;height:100px}.flow:before{left:50px;top:50px;bottom:50px}
  .hero{min-height:600px}.hero-copy-col{flex-basis:auto;width:100%;padding:48px 24px}.hero-bg:after{background:linear-gradient(180deg,rgba(4,12,26,.5) 0%,rgba(4,12,26,.75) 100%)}.ingredients .ingredient-grid{grid-template-columns:1fr}.ingredients-head{display:block}.ingredients-tag{text-align:left;padding-top:18px}.ingredients-tag:after{margin:14px auto 0 0}.ingredient{padding-right:170px;min-height:200px}
  .footer-grid{grid-template-columns:2fr 1fr 1fr}.review-grid{grid-template-columns:1fr}
+ .footer-tag{position:static;text-align:left;margin-bottom:24px}.footer-tag:after{margin:12px 0 0 0}
 }
 @media(max-width:620px){
  .container,.nav-inner{width:min(100% - 30px,var(--max))}
@@ -293,6 +321,10 @@ footer{background:var(--dark);color:#fff;padding:65px 0 25px}
  .science-copy h2,.finder h2,.cta h2{font-size:40px}.evidence{grid-template-columns:1fr}
  .footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:1/-1}
  .footer-bottom{display:block}.footer-bottom div+div{margin-top:8px}
+ .footer-mid{flex-direction:column;align-items:flex-start;gap:22px}
+ .footer-newsletter{flex-direction:column;align-items:flex-start;width:100%}
+ .footer-newsletter form{width:100%}
+ .footer-newsletter input{flex:1;width:auto}
 }
 </style>
 
@@ -385,15 +417,15 @@ details summary:after{content:"+";font:400 22px var(--sans);color:var(--blue)}
 details[open] summary:after{content:"−"}
 details p{padding:0 4px 22px;color:var(--muted);font-size:12px;line-height:1.8}
 
-.cta{background:linear-gradient(120deg,#e9f0fa,#f7f9fc);position:relative;overflow:hidden}
-.cta:before{content:"";position:absolute;width:500px;height:500px;border:1px solid rgba(46,111,209,.1);border-radius:50%;left:-200px;top:-220px}
+.cta{background:#fff}
+.cta-bg:after{background:radial-gradient(circle at 50% 42%,rgba(255,255,255,.72) 0%,rgba(255,255,255,.35) 52%,rgba(255,255,255,.06) 80%)}
 .cta h2{font-size:clamp(48px,5vw,68px)}
 .cta h2 em{font-style:italic;color:var(--blue)}
 
 footer{background:#030A14}
 .footer-grid{border-bottom-color:rgba(255,255,255,.08)}
-.footer-logo{font-size:27px}
-.footer h4{font-size:9px;letter-spacing:.22em}
+.footer-logo{font-size:34px}
+footer h4{font-size:9px;letter-spacing:.22em}
 
 .drawer{backdrop-filter:blur(7px)}
 .cart-drawer{box-shadow:-25px 0 70px rgba(0,0,0,.18)}
@@ -669,19 +701,45 @@ footer{background:#030A14}
  </div>
 </section>
 
-<section class="cta"><div class="container"><div class="eyebrow">Aaron Choice</div><h2>Start your <em>wellness journey.</em></h2><p>Premium botanical supplements with a clearer approach to ingredients, formulation and quality.</p><a class="primary" href="shop.html">Shop Aaron Choice</a></div></section>
+<section class="cta">
+ <div class="cta-bg"><img src="images/cta-bg.jpg" alt="" loading="lazy"></div>
+ <div class="container"><div class="eyebrow">Aaron Choice</div><h2>Start your <em>wellness journey.</em></h2><p>Premium botanical supplements with a clearer approach to ingredients, formulation and quality.</p><a class="primary" href="shop.html">Shop Aaron Choice</a></div>
+</section>
 </main>
 
 <footer>
+ <div class="footer-bg"><img src="images/footer-bg.jpg" alt="" loading="lazy"></div>
  <div class="container">
+  <div class="footer-tag">Real Ingredients<br>Real Impact</div>
   <div class="footer-grid">
-   <div><div class="footer-logo">Aaron Choice</div><p class="footer-desc">Premium plant-based supplements rooted in botanical tradition and presented with modern transparency.</p></div>
-   <div><h4>Shop</h4><ul><li><a href="shop.html" style="color:inherit">All Products</a></li><li>Best Sellers</li><li>Bundles</li><li>Subscribe & Save</li></ul></div>
-   <div><h4>Science</h4><ul><li>Ingredients</li><li>Formulation</li><li>Quality</li><li>Batch Testing</li></ul></div>
-   <div><h4>Company</h4><ul><li>Our Story</li><li><a href="blog.html" style="color:inherit">Blog</a></li><li>Reviews</li><li>Contact</li></ul></div>
-   <div><h4>Support</h4><ul><li>FAQ</li><li>Shipping</li><li>Returns</li><li>Privacy</li></ul></div>
+   <div>
+    <div class="footer-logo">Aaron Choice</div>
+    <div class="footer-tagline">Plants People Purpose</div>
+    <p class="footer-desc">Premium plant-based supplements rooted in botanical tradition and presented with modern transparency.</p>
+    <div class="footer-social">
+     <a href="#" aria-label="Instagram">IG</a>
+     <a href="#" aria-label="Facebook">FB</a>
+     <a href="#" aria-label="YouTube">YT</a>
+     <a href="#" aria-label="Pinterest">P</a>
+     <a href="#" aria-label="LinkedIn">in</a>
+    </div>
+   </div>
+   <div><h4>Shop</h4><ul><li><a href="shop.html" style="color:inherit">All Products</a></li><li>Best Sellers</li><li>Bundles</li><li>Subscribe & Save</li><li>Gift Cards</li></ul></div>
+   <div><h4>Science</h4><ul><li><a href="#ingredients" style="color:inherit">Ingredients</a></li><li>Formulation</li><li>Quality</li><li>Batch Testing</li><li>Research & Evidence</li></ul></div>
+   <div><h4>Company</h4><ul><li>Our Story</li><li><a href="blog.html" style="color:inherit">Blog</a></li><li><a href="#reviews" style="color:inherit">Reviews</a></li><li>Contact</li></ul></div>
+   <div><h4>Support</h4><ul><li><a href="#faq" style="color:inherit">FAQ</a></li><li>Shipping</li><li>Returns</li><li>Subscriptions</li><li>Privacy Policy</li><li>Terms of Service</li></ul></div>
   </div>
-  <div class="footer-bottom"><div>© 2026 Aaron Choice. All rights reserved.</div><div>*Supplement statements should be reviewed and approved for applicable market regulations before publication.</div></div>
+  <div class="footer-mid">
+   <div class="footer-mid-left">A Healthier Tomorrow</div>
+   <div class="footer-newsletter">
+    <div><b>Stay in the know</b><span>Get the latest on new products, research and wellness tips.</span></div>
+    <form onsubmit="event.preventDefault();showToast('Subscribed!');this.reset()">
+     <input type="email" placeholder="Your email address" required>
+     <button type="submit" aria-label="Subscribe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+    </form>
+   </div>
+  </div>
+  <div class="footer-bottom"><div>© 2026 Aaron Choice. All rights reserved.</div><div class="footer-canada">🍁 Proudly Canadian</div></div>
  </div>
 </footer>
 
