@@ -321,6 +321,12 @@ My suggestion: keep the lightbox for now, and revisit dedicated pages once (a) t
 - **Trust bar** (`index.html` + `shop.html`) — the 5-item icon row wrapped raggedly on mobile. Fixed by switching each `.trust-item` to `flex-direction:column` (icon stacked above label, centered) with a smaller icon/font so labels fit on one line per cell.
 - **Ingredient filter pills** on `blog.html` — same ragged-wrap problem, fixed with a 2-column CSS grid on mobile.
 
+## Homepage hero background image replaced (2026-09-19)
+
+- Swapped `images/hero-black-turmeric.jpg` (the full-bleed background behind the homepage's main hero — "Rooted in nature. Made with purpose.") for Ann's new product shot: the Black Turmeric Extract Capsules bottle (now carrying the new logo) staged with turmeric root and powder on a stone slab against a sunlit leafy backdrop.
+- New image was already the same 1536×1024 dimensions as the one it replaced, so it dropped straight in — no CSS/crop changes needed.
+- Verified at desktop and mobile widths: the existing dark left-to-right gradient overlay (`.hero-bg:after`) still gives the headline/copy enough contrast against the new image.
+
 ## Nav logo replaced (2026-09-19)
 
 - Swapped `images/aaron-choice-logo.png` for Ann's new "Aaron Choice Canada" medallion logo (navy flat-top tab + circular badge with the sunrise/hands artwork, "Healing Begins Within", Psalm 104:14).
