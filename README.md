@@ -316,6 +316,14 @@ My suggestion: keep the lightbox for now, and revisit dedicated pages once (a) t
 - **Added the "Personalised Discovery" section** below the product grid — the same "Find your Aaron Choice" wellness finder from the homepage (background photo, eyebrow/heading/copy, "Browse All Products" button, and the working wellness-area dropdown + "Find my product" result), reusing `images/finder-bg.jpg`. The dropdown/button use their own ids (`shopGoal`, `findShopProduct()`) so they don't collide with the homepage's finder script.
 - Verified at desktop and mobile widths, tested the finder's suggestion logic, and re-ran the shop.html regression suite — no errors.
 
+## New 8th product added — Master Antioxidant, $75 CAD (2026-09-19)
+
+- Added **Master Antioxidant** (Norway Spruce / 7-hydroxymatairesinol extract) to both `index.html` and `shop.html` as an 8th product, at Ann's request. This one is a third-party manufactured item — the box carries its own **"Fountain of Life" / Opulence Global** branding, not Aaron Choice's — Ann confirmed listing it with that packaging as-is rather than waiting for Aaron Choice-branded packaging.
+- Images: 3 supplied photos (forest lifestyle shot, front-of-box studio shot, back-of-box ingredients/cautions panel) prepped and saved as `images/master-antioxidant-lifestyle.jpg` (950×950), `images/master-antioxidant-studio.webp` and `images/master-antioxidant-label.webp` (both 800×1200, transparent cutouts). The box studio/label shots needed a higher near-white threshold (248 vs. the usual 235) than prior cutouts — the box's own light-grey flap shading was being caught by the flood fill at the lower threshold, gets eaten by the transparency.
+- `shop.html`: new `<article class="product-card">` (`data-categories="antioxidant"`, tag "Antioxidant" — per Ann's choice, grouped with Ashwagandha & Amla under the existing Antioxidant Support filter pill, no new pill added), new `productGallery` entry with **3** lightbox images (Lifestyle / Studio / "Ingredients & Cautions" — the label panel included as a 3rd slide per Ann's request so shoppers can read the NPN/dosage/cautions before buying), and a new Product entry (position 8) in the page's JSON-LD `ItemList` — with `brand: "Fountain of Life"` (not "Aaron Choice", to accurately reflect the box).
+- `index.html`: matching product-grid card (`addCart('Master Antioxidant',75)`), no structured data there (index.html doesn't carry product JSON-LD).
+- Verified: Shop grid card, "Antioxidant Support" filter includes it, all 3 lightbox slides cycle correctly with clean transparent cutouts against the dark lightbox frame, Add to Cart → cart drawer shows "$75.00" correctly, homepage grid shows the new 8th card.
+
 ## All 7 products' photography replaced (2026-09-19)
 
 - Ann sent 14 new product photos (a lifestyle + studio shot for each of the 7 products, all carrying the new logo), asking to replace product images on both the homepage and Shop page.
