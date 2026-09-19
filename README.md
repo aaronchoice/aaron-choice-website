@@ -366,6 +366,13 @@ My suggestion: keep the lightbox for now, and revisit dedicated pages once (a) t
 - Footer now only shows links that actually go somewhere: Shop → All Products; Science → Ingredients; Company → Our Story, Blog, Reviews; Support → FAQ, Shipping, Returns, Privacy Policy, Terms of Service.
 - Verified via headless screenshot that the footer renders cleanly with no empty gaps.
 
+## Full-site QA pass — mobile nav overflow bug found & fixed (2026-09-19)
+
+- Ran a full QA pass across all 8 pages: every internal link and image reference, JSON-LD validity, meta tag/canonical consistency, console errors, and every interactive element (cart toast, cookie banner, mobile menu, FAQ, shop filters/sort, product lightbox, newsletter form, blog article search, homepage product search).
+- **Found and fixed a real mobile bug**: on `index.html` only, at phone widths from roughly 320–412px (the range covering most iPhones and Android phones), the homepage nav overflowed horizontally — the "Cart" button was cut off past the right edge of the screen, tappable area was reduced, and the whole page could scroll sideways. Cause: the homepage nav has a search icon that no other page has, and at narrow widths the logo wordmark + hamburger + search icon + cart button no longer fit in one row without wrapping.
+- **Fix**: below 430px, the search icon now hides from the top nav (search is a "nice to have" here — the homepage's product grid is short enough to scroll, and full search remains available on the Shop page's filters and the Blog's article search). Below 340px (older/smaller phones), the logo and Cart button also shrink slightly further. Verified zero horizontal overflow at every common phone width (320–428px) after the fix, with no change to desktop or tablet layout.
+- Everything else passed clean: no broken links or images anywhere on the site, all JSON-LD product/organization data parses correctly, no console errors on any page (the only console message anywhere is Google Fonts being blocked in this sandbox — not a real-site issue), and every interactive element worked as expected.
+
 ## Notes / things to swap before going live
 
 - **Checkout**: the "Proceed to Checkout" button still shows an alert. Wire this to a real cart/checkout provider (Shopify, Stripe Checkout, Snipcart, etc.) before launch.
