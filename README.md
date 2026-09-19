@@ -359,13 +359,20 @@ My suggestion: keep the lightbox for now, and revisit dedicated pages once (a) t
 - **Footer "Support" links wired up**: the footer's Shipping / Returns / Privacy Policy / Terms of Service items (previously plain unlinked text on every page) now link to the new pages, across all 8 HTML files.
 - Verified via headless screenshots: toast message, all 4 legal pages (desktop), cookie banner on desktop and mobile, and the linked footer.
 
+## Footer cleanup: dead links removed, social icons point home (2026-09-19)
+
+- Removed every footer link that didn't actually go anywhere: **Best Sellers, Bundles, Subscribe & Save, Gift Cards** (Shop column), **Formulation, Quality, Batch Testing, Research & Evidence** (Science column), **Contact** (Company column), and **Subscriptions** (Support column). These were plain unlinked text with no destination page — removing them avoids customers clicking something that goes nowhere. Applied across all 8 pages (the 4 original pages + the 4 new legal pages, which share the same footer).
+- The 5 social icons (Instagram, Facebook, YouTube, Pinterest, LinkedIn) previously linked to `#` (nowhere). Per your instruction, they now point to `index.html` as a placeholder until the real social profiles exist — swap each `href="index.html"` in the `.footer-social` block for the real profile URL once you have them.
+- Footer now only shows links that actually go somewhere: Shop → All Products; Science → Ingredients; Company → Our Story, Blog, Reviews; Support → FAQ, Shipping, Returns, Privacy Policy, Terms of Service.
+- Verified via headless screenshot that the footer renders cleanly with no empty gaps.
+
 ## Notes / things to swap before going live
 
 - **Checkout**: the "Proceed to Checkout" button still shows an alert. Wire this to a real cart/checkout provider (Shopify, Stripe Checkout, Snipcart, etc.) before launch.
 - **Search**: currently a simple client-side name filter over the products shown. If your catalogue grows or you want full-text/typo-tolerant search, connect a real search service.
 - **Reviews**: sample testimonials are included; replace with verified customer reviews before launch (using placeholder names/quotes as if genuine is a legal risk once live).
 - **Legal/compliance copy**: the FAQ and footer include notes flagging language that should be reviewed against your actual return policy, supplement regulations, and SKU-level claims before publishing.
-- **Footer social links & newsletter**: the 5 footer social icons currently link to `#`, and the newsletter form just shows a "Subscribed!" confirmation toast. Point the social icons at your real profiles and wire the form up to an email service (Mailchimp, Klaviyo, etc.) before launch.
+- **Footer social links & newsletter**: the 5 footer social icons currently link to `index.html` (a placeholder, per your instruction, until the real profiles exist), and the newsletter form just shows a "Subscribed!" confirmation toast. Point the social icons at your real profiles and wire the form up to an email service (Mailchimp, Klaviyo, etc.) before launch.
 - **Domain in SEO/social tags**: canonical links, `og:url`, `og:image`, `twitter:image` and the sitemap all currently point at `https://aaron-choice-website.pages.dev`. If/when you connect a custom domain, do a find-and-replace across all 8 HTML files + `sitemap.xml` + `robots.txt` to the new domain, or search engines and link previews will keep referencing the old address.
 - **Product schema currency**: the `Product` structured data on `shop.html` is marked `CAD` (based on the footer's "Proudly Canadian" line) — confirm this matches your actual pricing currency before launch.
 - **Legal pages need real details before launch**: `terms.html`, `privacy.html`, `shipping.html`, `returns.html` currently have your legal business name, registered address, and contact email left as highlighted placeholders, plus a few operational placeholders (processing time, delivery window, carrier name, governing province). Fill those in, have the pages reviewed, then remove the `noindex` meta tag and the "Note for internal review" box on each page so they're ready to be found and trusted by visitors.
