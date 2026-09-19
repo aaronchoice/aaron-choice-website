@@ -316,6 +316,14 @@ My suggestion: keep the lightbox for now, and revisit dedicated pages once (a) t
 - **Added the "Personalised Discovery" section** below the product grid — the same "Find your Aaron Choice" wellness finder from the homepage (background photo, eyebrow/heading/copy, "Browse All Products" button, and the working wellness-area dropdown + "Find my product" result), reusing `images/finder-bg.jpg`. The dropdown/button use their own ids (`shopGoal`, `findShopProduct()`) so they don't collide with the homepage's finder script.
 - Verified at desktop and mobile widths, tested the finder's suggestion logic, and re-ran the shop.html regression suite — no errors.
 
+## All 7 products' photography replaced (2026-09-19)
+
+- Ann sent 14 new product photos (a lifestyle + studio shot for each of the 7 products, all carrying the new logo), asking to replace product images on both the homepage and Shop page.
+- Mapped each pair to its existing filenames — Black Turmeric, Cinnamon, Jackfruit, Moringa, Hummingbird, Ashwagandha & Amla, Cinnamon Oil — so **no HTML changed**, only the image files:
+  - `*-lifestyle.jpg` (used in the homepage grid, the Shop grid, and the Shop lightbox's first image, plus `shop.html`'s Product structured-data `image` field): resized to the existing 950×950 and saved as JPG.
+  - `*-studio.webp` (the Shop lightbox's second/studio image): the source files had solid white backgrounds (unlike the existing site files, which are transparent cutouts that blend into the lightbox's dark radial-gradient frame) — ran the same border-connected flood-fill used for the logo to knock the background to transparency, then resized to the existing 800×1200 and saved as WEBP with alpha.
+- Verified: homepage product grid, Shop page grid, and the Shop lightbox (both the lifestyle slide and, after clicking the second dot, the studio slide) all render correctly with clean transparent cutouts against the dark lightbox frame.
+
 ## Trust bar mobile wrap fix + nav trust bar/pill mobile grid fixes (2026-09-19)
 
 - **Trust bar** (`index.html` + `shop.html`) — the 5-item icon row wrapped raggedly on mobile. Fixed by switching each `.trust-item` to `flex-direction:column` (icon stacked above label, centered) with a smaller icon/font so labels fit on one line per cell.
