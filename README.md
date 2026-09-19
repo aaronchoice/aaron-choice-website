@@ -373,6 +373,18 @@ My suggestion: keep the lightbox for now, and revisit dedicated pages once (a) t
 - **Fix**: below 430px, the search icon now hides from the top nav (search is a "nice to have" here — the homepage's product grid is short enough to scroll, and full search remains available on the Shop page's filters and the Blog's article search). Below 340px (older/smaller phones), the logo and Cart button also shrink slightly further. Verified zero horizontal overflow at every common phone width (320–428px) after the fix, with no change to desktop or tablet layout.
 - Everything else passed clean: no broken links or images anywhere on the site, all JSON-LD product/organization data parses correctly, no console errors on any page (the only console message anywhere is Google Fonts being blocked in this sandbox — not a real-site issue), and every interactive element worked as expected.
 
+## Hummingbird photography replaced + 5 product names corrected to match bottle labels (2026-09-19)
+
+- Swapped `images/hummingbird-lifestyle.jpg` and `images/hummingbird-studio.webp` for your new bottle photography (the studio shot arrived as an already-clean transparent cutout, so no background removal was needed — just resized both to match the site's existing dimensions).
+- While checking the new label text against the site, compared **all 8 bottle labels** against their on-site product names and found 5 mismatches (not just Hummingbird). Corrected sitewide — product card titles, lightbox captions, and JSON-LD product data — on `index.html` and `shop.html`:
+  - Black Turmeric Capsules → **Black Turmeric Extract Capsules**
+  - Cinnamon Extract → **Cinnamon Extract Capsules**
+  - Jackfruit Extract → **Raw Jackfruit Extract Capsules**
+  - Moringa Superfood Capsules → **Moringa Leaf Extract Capsules**
+  - Hummingbird Flower Powder Capsules → **Hummingbird Flower Extract Capsules**
+- Ashwagandha & Amla Extract Capsules, Cinnamon Oil, and Master Antioxidant already matched (Master Antioxidant's box carries no English product name of its own — "Master Antioxidant" is the site's own name for that third-party item, left as-is).
+- Verified: no leftover old names anywhere, no console errors, lightbox captions and product-card titles read identically for all 5 corrected products, JSON-LD still valid.
+
 ## Notes / things to swap before going live
 
 - **Checkout**: the "Proceed to Checkout" button still shows an alert. Wire this to a real cart/checkout provider (Shopify, Stripe Checkout, Snipcart, etc.) before launch.
