@@ -316,6 +316,18 @@ My suggestion: keep the lightbox for now, and revisit dedicated pages once (a) t
 - **Added the "Personalised Discovery" section** below the product grid — the same "Find your Aaron Choice" wellness finder from the homepage (background photo, eyebrow/heading/copy, "Browse All Products" button, and the working wellness-area dropdown + "Find my product" result), reusing `images/finder-bg.jpg`. The dropdown/button use their own ids (`shopGoal`, `findShopProduct()`) so they don't collide with the homepage's finder script.
 - Verified at desktop and mobile widths, tested the finder's suggestion logic, and re-ran the shop.html regression suite — no errors.
 
+## Trust bar mobile wrap fix + nav trust bar/pill mobile grid fixes (2026-09-19)
+
+- **Trust bar** (`index.html` + `shop.html`) — the 5-item icon row wrapped raggedly on mobile. Fixed by switching each `.trust-item` to `flex-direction:column` (icon stacked above label, centered) with a smaller icon/font so labels fit on one line per cell.
+- **Ingredient filter pills** on `blog.html` — same ragged-wrap problem, fixed with a 2-column CSS grid on mobile.
+
+## Nav logo replaced (2026-09-19)
+
+- Swapped `images/aaron-choice-logo.png` for Ann's new "Aaron Choice Canada" medallion logo (navy flat-top tab + circular badge with the sunrise/hands artwork, "Healing Begins Within", Psalm 104:14).
+- The source file had a solid near-white background; ran a border-connected flood fill to knock it out to transparency, then trimmed to a tight bounding box (1218×1244) so the image edges match the artwork's own tag/medallion outline — same treatment the old logo file had.
+- No CSS/markup changes needed — `.brand-mark` already scales by height and keeps the flat top pinned to `top:-24px` inside `.brand`, so the new logo hangs the same way (flat top tucked into the navy announcement bar, medallion poking down over the nav line). Same file is shared by all four pages' navs, so one image swap updated `index.html`, `shop.html`, `about.html`, and `blog.html` at once.
+- Verified in headless screenshots at both mobile (390px) and desktop widths, and on shop/about (which share the same nav partial).
+
 ## Notes / things to swap before going live
 
 - **Checkout**: the "Proceed to Checkout" button still shows an alert. Wire this to a real cart/checkout provider (Shopify, Stripe Checkout, Snipcart, etc.) before launch.
