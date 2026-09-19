@@ -272,6 +272,17 @@ footer li{font-size:12px;color:rgba(255,255,255,.48)}
  .footer-newsletter input{flex:1;width:auto}
 }
 </style>
+<style>
+.cookie-banner{position:fixed;left:16px;right:16px;bottom:16px;max-width:640px;margin:0 auto;background:var(--navy);color:#fff;padding:18px 20px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;z-index:500;box-shadow:0 18px 50px rgba(0,0,0,.28);transform:translateY(140%);opacity:0;transition:transform .35s ease,opacity .35s ease}
+.cookie-banner.show{transform:translateY(0);opacity:1}
+.cookie-banner p{font-size:12.5px;line-height:1.6;color:rgba(255,255,255,.85);flex:1;min-width:200px;margin:0}
+.cookie-banner a{color:#9DC2F7;text-decoration:underline}
+.cookie-actions{display:flex;gap:10px;flex:none}
+.cookie-actions button{border:0;padding:10px 16px;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
+.cookie-accept{background:#fff;color:var(--navy)}
+.cookie-decline{background:transparent;color:rgba(255,255,255,.75);border:1px solid rgba(255,255,255,.3) !important}
+@media(max-width:620px){.cookie-banner{left:12px;right:12px;bottom:12px;padding:16px}}
+</style>
 </head>
 <body>
 
@@ -528,7 +539,7 @@ footer li{font-size:12px;color:rgba(255,255,255,.48)}
    <div><h4>Shop</h4><ul><li><a href="shop.html" style="color:inherit">All Products</a></li><li>Best Sellers</li><li>Bundles</li><li>Subscribe & Save</li><li>Gift Cards</li></ul></div>
    <div><h4>Science</h4><ul><li><a href="index.html#ingredients" style="color:inherit">Ingredients</a></li><li>Formulation</li><li>Quality</li><li>Batch Testing</li><li>Research & Evidence</li></ul></div>
    <div><h4>Company</h4><ul><li><a href="about.html" style="color:inherit">Our Story</a></li><li><a href="blog.html" style="color:inherit">Blog</a></li><li><a href="index.html#reviews" style="color:inherit">Reviews</a></li><li>Contact</li></ul></div>
-   <div><h4>Support</h4><ul><li><a href="index.html#faq" style="color:inherit">FAQ</a></li><li>Shipping</li><li>Returns</li><li>Subscriptions</li><li>Privacy Policy</li><li>Terms of Service</li></ul></div>
+   <div><h4>Support</h4><ul><li><a href="index.html#faq" style="color:inherit">FAQ</a></li><li><a href="shipping.html" style="color:inherit">Shipping</a></li><li><a href="returns.html" style="color:inherit">Returns</a></li><li>Subscriptions</li><li><a href="privacy.html" style="color:inherit">Privacy Policy</a></li><li><a href="terms.html" style="color:inherit">Terms of Service</a></li></ul></div>
   </div>
   <div class="footer-mid">
    <div class="footer-mid-left">A Healthier Tomorrow</div>
@@ -553,6 +564,15 @@ footer li{font-size:12px;color:rgba(255,255,255,.48)}
 </div>
 <div class="toast" id="toast">Added to cart</div>
 
+<div class="cookie-banner" id="cookieBanner">
+  <p>We use cookies to run this site and understand how it's used. See our <a href="privacy.html">Privacy Policy</a> for details.</p>
+  <div class="cookie-actions">
+    <button class="cookie-decline" onclick="cookieChoice(false)">Decline</button>
+    <button class="cookie-accept" onclick="cookieChoice(true)">Accept</button>
+  </div>
+</div>
+
+
 <div class="plightbox" id="plightbox" onclick="if(event.target===this)closeProductLightbox()">
   <button class="plightbox-close" aria-label="Close" onclick="closeProductLightbox()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg></button>
   <div class="plightbox-stage">
@@ -571,11 +591,7 @@ footer li{font-size:12px;color:rgba(255,255,255,.48)}
 let cart={};
 
 function addCart(name,price,qty){
- qty=qty||1;
- if(cart[name]){cart[name].qty+=qty;}else{cart[name]={name,price,qty};}
- renderCart();
- updateCartCount();
- showToast(qty+'× '+name+' added to cart');
+ showToast(name+' is currently sold out');
 }
 function changeQty(name,delta){
  if(!cart[name])return;
@@ -722,6 +738,20 @@ function findShopProduct(){
  let p=v.includes('Joint')?'Black Turmeric Capsules':v.includes('Digestive')?'Black Turmeric Capsules':v.includes('Antioxidant')?'Black Turmeric Capsules':'Explore the full Aaron Choice collection';
  r.style.display='block';r.innerHTML='<b>Suggested starting point:</b> '+p+'<br><span style="color:var(--muted)">This is a product-discovery result, not medical advice.</span>';
 }
+
+(function(){
+  try{
+    if(localStorage.getItem('ac_cookie_consent'))return;
+  }catch(e){}
+  var b=document.getElementById('cookieBanner');
+  if(b)setTimeout(function(){b.classList.add('show')},600);
+})();
+function cookieChoice(accepted){
+  try{localStorage.setItem('ac_cookie_consent',accepted?'accepted':'declined')}catch(e){}
+  var b=document.getElementById('cookieBanner');
+  if(b)b.classList.remove('show');
+}
+
 </script>
 </body>
 </html>

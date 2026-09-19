@@ -350,6 +350,15 @@ My suggestion: keep the lightbox for now, and revisit dedicated pages once (a) t
 - No CSS/markup changes needed — `.brand-mark` already scales by height and keeps the flat top pinned to `top:-24px` inside `.brand`, so the new logo hangs the same way (flat top tucked into the navy announcement bar, medallion poking down over the nav line). Same file is shared by all four pages' navs, so one image swap updated `index.html`, `shop.html`, `about.html`, and `blog.html` at once.
 - Verified in headless screenshots at both mobile (390px) and desktop widths, and on shop/about (which share the same nav partial).
 
+## Add to Cart → "sold out" notice, legal pages, cookie banner (2026-09-19)
+
+- **Add to Cart disabled sitewide**: every "Add to Cart"/"Quick Add" button on the homepage and Shop page (all 8 products, both pages) now shows a toast reading "*Product* is currently sold out" instead of adding the item to the cart. Nothing is added to the cart object and the cart drawer/count no longer changes on click. This was requested by the site owner — reverting is a one-line change back to the original `addCart()` logic in `index.html`/`shop.html` once products are back in stock.
+- **Four new legal/policy pages added**: `terms.html`, `privacy.html`, `shipping.html`, `returns.html` — built with the same nav/footer/fonts/color tokens as the rest of the site, each with a sticky table-of-contents sidebar. These are **first drafts only**, not legal advice: business legal name, registered address, and contact email are left as clearly highlighted `[placeholder]` text (per your instruction, since those weren't available yet), and each page carries a visible "Note for internal review" box saying so. Have them reviewed by a qualified professional before publishing, especially the liability, returns and privacy sections. Content reuses facts already published elsewhere on the site (90-day money-back guarantee, free shipping, CAD pricing) and references Canadian federal privacy law (PIPEDA) in the privacy policy.
+- These 4 pages are currently marked `noindex` (not yet meant to be found by search engines) and their canonical tags still point at the `.pages.dev` address — both should be revisited in the same pass as the domain find-and-replace below, once the real domain is live and the legal content has been reviewed/finalized.
+- **Cookie consent banner** added sitewide (`index.html`, `shop.html`, `about.html`, `blog.html`, and the 4 new legal pages): a bottom bar reading "We use cookies to run this site and understand how it's used," with a link to the new Privacy Policy and Accept/Decline buttons. Appears ~0.6s after first page load, remembers the visitor's choice in `localStorage` (key `ac_cookie_consent`) so it won't reappear on later visits/pages.
+- **Footer "Support" links wired up**: the footer's Shipping / Returns / Privacy Policy / Terms of Service items (previously plain unlinked text on every page) now link to the new pages, across all 8 HTML files.
+- Verified via headless screenshots: toast message, all 4 legal pages (desktop), cookie banner on desktop and mobile, and the linked footer.
+
 ## Notes / things to swap before going live
 
 - **Checkout**: the "Proceed to Checkout" button still shows an alert. Wire this to a real cart/checkout provider (Shopify, Stripe Checkout, Snipcart, etc.) before launch.
@@ -357,20 +366,26 @@ My suggestion: keep the lightbox for now, and revisit dedicated pages once (a) t
 - **Reviews**: sample testimonials are included; replace with verified customer reviews before launch (using placeholder names/quotes as if genuine is a legal risk once live).
 - **Legal/compliance copy**: the FAQ and footer include notes flagging language that should be reviewed against your actual return policy, supplement regulations, and SKU-level claims before publishing.
 - **Footer social links & newsletter**: the 5 footer social icons currently link to `#`, and the newsletter form just shows a "Subscribed!" confirmation toast. Point the social icons at your real profiles and wire the form up to an email service (Mailchimp, Klaviyo, etc.) before launch.
-- **Domain in SEO/social tags**: canonical links, `og:url`, `og:image`, `twitter:image` and the sitemap all currently point at `https://aaron-choice-website.pages.dev`. If/when you connect a custom domain, do a find-and-replace across all 4 HTML files + `sitemap.xml` + `robots.txt` to the new domain, or search engines and link previews will keep referencing the old address.
+- **Domain in SEO/social tags**: canonical links, `og:url`, `og:image`, `twitter:image` and the sitemap all currently point at `https://aaron-choice-website.pages.dev`. If/when you connect a custom domain, do a find-and-replace across all 8 HTML files + `sitemap.xml` + `robots.txt` to the new domain, or search engines and link previews will keep referencing the old address.
 - **Product schema currency**: the `Product` structured data on `shop.html` is marked `CAD` (based on the footer's "Proudly Canadian" line) — confirm this matches your actual pricing currency before launch.
+- **Legal pages need real details before launch**: `terms.html`, `privacy.html`, `shipping.html`, `returns.html` currently have your legal business name, registered address, and contact email left as highlighted placeholders, plus a few operational placeholders (processing time, delivery window, carrier name, governing province). Fill those in, have the pages reviewed, then remove the `noindex` meta tag and the "Note for internal review" box on each page so they're ready to be found and trusted by visitors.
+- **Add to Cart currently shows "sold out"**: every Add to Cart/Quick Add button shows a sold-out toast instead of adding to the cart (see changelog above). Revert `addCart()` in `index.html` and `shop.html` once products are back in stock.
 
 ## File structure
 
 ```
 .
-├── index.html    # the marketing homepage (HTML + CSS + JS inline)
-├── shop.html     # the full retail Shop page (filter, sort, cart)
-├── blog.html     # the research Blog, organized by ingredient
-├── about.html    # About page — Dr. Balasingham Arasabalan profile
-├── images/       # product photos and the "origin of disease" infographic
-├── _headers      # Cloudflare Pages response headers
+├── index.html      # the marketing homepage (HTML + CSS + JS inline)
+├── shop.html       # the full retail Shop page (filter, sort, cart)
+├── blog.html       # the research Blog, organized by ingredient
+├── about.html      # About page — Dr. Balasingham Arasabalan profile
+├── terms.html      # Terms and Conditions of Use (draft)
+├── privacy.html    # Privacy Policy (draft)
+├── shipping.html   # Shipping and Delivery Policy (draft)
+├── returns.html    # Cancellation and Returns Policy (draft)
+├── images/         # product photos and the "origin of disease" infographic
+├── _headers        # Cloudflare Pages response headers
 ├── robots.txt
 ├── sitemap.xml
-└── README.md     # this file
+└── README.md       # this file
 ```
